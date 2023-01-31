@@ -5,6 +5,8 @@
 # a를 b번 곱한 거듭제곱을 출력하는 프로그램을 작성해보자.
 
 a, b = map(int, input().split())
+print(a // b) # a를 b로 나눈 몫을 출력
+print(a % b) # a를 b로 나눈 나머지 출력
 print(a ** b)
 
 '''
