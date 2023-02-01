@@ -14,6 +14,29 @@ second = data[n - 2] # 두 번째로 큰 수
 
 result = 0
 
+# 가장 큰 수가 더해지는 횟수 계산
+cnt = int(m / (k + 1)) * k
+cnt += m % (k + 1)
+
+
+result += (cnt) * first # 가장 큰 수 더하기
+result += (m - cnt) * second # 두 번째로 큰 수 더하기
+
+print(result)
+
+'''
+ m / (k + 1) 수열이 반복되는 횟수
+ 수열 반복되는 횟수에 K를 곱하면 
+ 가장 큰 수(first)가 등장하는 횟수
+ 
+ 이때 M이 (K + 1)로 나누어덜어지지 않는 경우도 고려
+ 그럴 때는 M을 (K+1)로 나눈 나머지만큼 가장 큰 수가
+ 추가로 더해지마를 이를 고려해 주어야 한다.
+ 
+'''
+        
+        
+'''
 while True:
     for i in range(k) : # 가장 큰 수를 K번 더하기
         if m == 0: # m이 0이라면 반복문 탈출
@@ -26,4 +49,4 @@ while True:
     m -= 1 #더할 때마다 1씩 빼기
     
 print(result) #최종 답안 출력
-        
+'''
