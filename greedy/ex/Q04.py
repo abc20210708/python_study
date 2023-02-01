@@ -2,8 +2,8 @@
 
 # N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값
 
- n = int(input())
- c = list(map(int, input().split()))
+n = int(input())
+c = list(map(int, input().split()))
 #c = [1, 2, 3, 8]
 c.sort()
 
