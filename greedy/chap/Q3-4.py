@@ -6,6 +6,7 @@
 '''
 
 n, k = map(int, input().split())
+#n, k = 27, 3
 result = 0
 
 while True:
