@@ -11,8 +11,8 @@ result = 0
 
 while True:
     #(N == K로 나누어 떨어지는 수)가 될 때까지 1씩 빼기
-    target = (n // k) * k
-    result += (n - target)
+    target = (n // k) * k # K의 배수로 만들기
+    result += (n - target) # K의 배수로 만들기까지의 -1 횟수 더하기
     n = target
     
     # N이 K보다 작을 때 (더 이상 나눌 수 없을 때) 반복문 탈출
@@ -25,6 +25,7 @@ while True:
 
 
 # 마지막으로 남은 수에 대하여 1씩 빼기
+# n이 k보다 작아졌을 때는 계속 -1해서 1로 만들기
 result += (n - 1)
 print(result)
 
