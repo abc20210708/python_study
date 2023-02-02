@@ -1,24 +1,32 @@
 
-# 거스름돈 다시 풀어보기
+# 큰 수의 법칙 다시 풀어보기
 
 '''
-카운터에는 거스름돈으로 사용할 500, 100, 50, 10원짜리 동전이 무한히 존재한다고 가정
-손님에게 거슬러 줘야 할 돈이 N원일 때 거슬러 줘야 할 동전의 최소 개수
-단, 거슬러 줘야 할 돈 N은 항상 10의 배수이다.
+다양한 수로 이루어진 배열이 있을 때 주어진 수들을
+M번 더하여 가장 큰 수를 만드는 법칙
+단, 배열의 특정한 인덱스(번호)에 해당하는 수가
+연속해서 K번을 초과해 더해질 수 없는 것이 이 법칙의 특징
 '''
 
-money = 1260
-coins = [10, 50, 100, 500]
+n, m, k = 5, 7, 2
+data = [3, 4, 3, 4, 3]
 
-coins.sort()
-coins.reverse()
+data.sort()
+
+first = data[-1]
+second = data[-2]
 
 result = 0
 
-for i in coins:
-    result += money // i
-    money %= i
-    
+cnt = (m // (k+1)) * k
+cnt += m % (k + 1)
+
+result = (cnt) * first
+result += (m - cnt) * second
+
 print(result)
+
+
+
 
 
