@@ -1,22 +1,26 @@
 
-# 만들 수 없는 금액 다시 풀기
+# 볼링공 고르기 다시 풀기
 
 '''
 
 '''
- 
-coins = [3, 2, 1, 1, 9]
+n, m = 5, 3
+data = [1, 3, 2, 3, 2]
 
-num = 1
+# 1부터 10까지 무게를 담을 수 있는 리스트
+a = [0] * 11
 
-coins.sort()
-
-for i in coins:
-    if num < i:
-        break
-    num += i
+for x in data:
+    # 각 무게에 해당하는 볼링공의 개수 카운트
+    a[x] += 1
     
-print(num)
+result = 0
+# 1부터 m까지 각 무게에 대하여 처리
+for i in range(1, m + 1) :
+    n -= a[i] # 무게가 i인 볼링공의 개수 (A가 선택할 수 있는 개수) 제외
+    result += a[i] * n # B가 선택하는 경우의 수와 곱하기
+    
+print(result)
         
         
     
