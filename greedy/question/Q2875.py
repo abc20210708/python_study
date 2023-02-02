@@ -1,10 +1,12 @@
 
 # 대회 or 인턴
+# 참고 블로그 https://jeongminhee99.tistory.com/65
 
-#n, m, k = map(int, input().split())
-n, m, k = 6, 3, 2
+n, m, k = map(int, input().split())
+##n, m, k = 6, 3, 2
  
 team = 0
+
 
 while True:
     
