@@ -1,33 +1,27 @@
 
-# 1이 될 때까지 다시 풀어보기
+# 모험가 길드 다시 풀어보기
 
 '''
-
+여행을 떠날 수 있는 그룹의 최댓값을 출력
 '''
 
-n, k = 27, 3
+#n = 5
 
-result = 0
+m =[2, 3, 1, 2, 2]
+m.sort()
 
+cnt = 0 #현재 그룹에 포함된 모험가 수
+team = 0
 
-while True :
-    target = (n // k) * 3
-    result += (n - target)
-    n = target
+for i in m: #공포도를 낮은 것부터 하나씩 확인
+    cnt += 1 #현재 그룹에 모험가 포함시키기
+    # 현재 그룹에 포함된 모험가의 수가
+    # 현재의 공포도 이상이라면
+    if cnt >= i: 
+        team += 1 # 그룹 결성
+        cnt = 0
     
-    if n < k:
-        break
-    
-    # K로 나누기
-    result += 1
-    n //= k
-
-# n이 k보다 작아졌을 때는 계속 -1해서 1로 만들기
-result += (n -1)
-print(result)
-
-
-
+print(team)
 
 
 
