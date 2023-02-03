@@ -2,11 +2,11 @@
 # 상하좌우
 
 # n을 입력받기
-#n = int(input())
-n = 5
+n = int(input())
+##n = 5
 x, y = 1, 1
-#plans = input().split()
-plans = ["R", "R", "R", "U", "D", "D"]
+plans = input().split()
+##plans = ["R", "R", "R", "U", "D", "D"]
 
 # L, R, U, D에 따른 이동 방향
 dx = [0, 0, -1, 1]
