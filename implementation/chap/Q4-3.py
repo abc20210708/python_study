@@ -32,3 +32,18 @@ for step in steps:
         result += 1
 
 print(result)
+
+
+'''
+# 참고 블로그  https://velog.io/@gabang2/%EC%99%95%EC%8B%A4%EC%9D%98-%EB%82%98%EC%9D%B4%ED%8A%B8
+
+location = input()
+location = [ord(location[0]) - 96, int(location[1])]
+temp_list = [[2, 1], [2, -1], [-2, -1], [-2, 1], [1, 2], [1, -2], [-1, -2], [-1, 2]]
+result = 0
+for i in temp_list:
+    if 1 <= location[0] - i[0] <= 8 and 1 <= location[1] - i[1] <= 8:
+        result += 1
+
+print(result)
+'''
