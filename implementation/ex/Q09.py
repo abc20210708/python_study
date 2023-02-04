@@ -8,6 +8,7 @@ def solution(s):
         prev = s[0:step] #앞에서부터 step만큼의 문자열 추출
         cnt = 1
         
+      
         # 단위(step) 크기만큼 증가시키며 이전 문자열과 비교
         for j in range(step, len(s), step) :
             # 이전 상태와 동일하다면 압축 횟수(cnt) 증가
@@ -25,3 +26,10 @@ def solution(s):
 
     return answer
 
+result = solution("aaaabbabbabb")
+
+'''
+range함수 매개변수에 숫자를 세개 넣는 경우 range(A, B, C)
+A부터 C 숫자만큼의 간격으로 B-1 까지의 정수 범위를 반환합니다. 
+B까지가 아닌 B-1 이라는 것에 주의하세요.
+'''
