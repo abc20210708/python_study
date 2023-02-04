@@ -14,6 +14,7 @@ here = input()
 ## here = "a1"
 row = int(here[1]) #행
 column = int(ord(here[0])) - int(ord('a')) + 1 #열
+column = int(ord(here[0])) - 96 #열
 
 # 나이트가 이동할 수 있는 8가지 방향 정의
 steps = [(-2, 1), (-1, -2), (1, -2), (2, -1), 
