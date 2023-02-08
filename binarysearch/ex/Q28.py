@@ -15,8 +15,10 @@ def binary_search(array, start, end):
     else:
         return binary_search(array, mid + 1, end)
     
-n = int(input())
-array = list(map(int, input().split()))
+#n = int(input())
+n = 5
+#array = list(map(int, input().split()))
+array = [-15, -6, 1, 3, 7]
 
 # 이진 탐색 수행
 idx = binary_search(array, 0, n - 1)
