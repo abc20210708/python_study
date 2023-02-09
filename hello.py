@@ -1,27 +1,18 @@
 
-# 볼링공 고르기 다시 풀기
+# 숫자 카드 게임 min()함수를 이용해 다시 풀기
 
 '''
 
 '''
-n, m = 5, 3
-data = [1, 3, 2, 3, 2]
-
-# 1부터 10까지 무게를 담을 수 있는 리스트
-a = [0] * 11
-
-for x in data:
-    # 각 무게에 해당하는 볼링공의 개수 카운트
-    a[x] += 1
-    
+n, m = 3, 3
 result = 0
-# 1부터 m까지 각 무게에 대하여 처리
-for i in range(1, m + 1) :
-    n -= a[i] # 무게가 i인 볼링공의 개수 (A가 선택할 수 있는 개수) 제외
-    result += a[i] * n # B가 선택하는 경우의 수와 곱하기
+
+for i in range(n):
+    data = list(map(int, input().split()))
+    min_value = min(data)
+    result = max(result, min_value)
     
 print(result)
-        
         
     
 
