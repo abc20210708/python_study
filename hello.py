@@ -1,22 +1,16 @@
 
-# 상하좌우 다시 풀기
+# 시각 다시 풀기
 
-# n을 입력받기
-n = 5
-x, y = 1, 1
-data = ["R", "R", "R", "U", "D", "D"]
+hour = 5
+cnt = 0
 
-#    상 하  좌 우
-dx = [0, 0, -1, 1]
-dy = [-1, 1, 0, 0]
-move_types = ['U','D','L','R']
+for i in range(hour + 1):
+    for j in range(60):
+        for k in range(60):
+            #매 시각 안에 '3'이 포함되어 있다면
+            # 카운트 증가
+            if '3' in str(i) + str(j) + str(k):
+                cnt += 1
+                
+print(cnt)
 
-for d in data:
-    v = move_types.index(d)
-    if (x + dx[v]) < 1 or (y + dy[v]) < 1:
-        continue
-    else:
-        x += dx[v]
-        y += dy[v]
-        
-print('x={}, y={}'.format(y, x))
