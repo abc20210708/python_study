@@ -1,3 +1,5 @@
+# 숫자 카드 게임
+
 # N, M 공백으로 입력받기
 n, m = map(int, input().split())
 
@@ -14,7 +16,9 @@ for i in range(n) :
 print(result)
 
 
-'''
+''' 
+'각 행마다 가장 작은 수를 찾은 뒤에 그 중에서 가장 큰 수'를 찾기
+
 # 2중 반복문 구조를 이용
 # 한 줄씩 입력받아 확인
 for i in range(n) :
