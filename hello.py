@@ -1,20 +1,26 @@
 
-# 숫자 카드 게임 2중 반복문 구조를 이용해 다시 풀기
+# 1이 될 때까지 단순하게 다시 풀기
 
 '''
 
 '''
-n, m = 3, 3
+n, k = 25, 3
 result = 0
 
-for i in range(n):
-    data = list(map(int, input().split()))
-    # 현재 줄에서 '가장 작은 수' 찾기
-    min_value = 10001
-    for a in data:
-        min_value = min(min_value, a)
-    # '가장 작은 수'들 중에서 가장 큰 수 찾기
-    result = max(result, min_value)
+# N이 K 이상이라면 K로 계속 나누기
+while n >= k:
+    # N이 K로 나누어 떨어지지 않는다면 N에서 1씩 빼기
+    while n % k != 0:
+        n -= 1
+        result += 1
+    # K로 나누기
+    n //= k
+    result += 1
+    
+# 마지막으로 남은 수에 대하여 1씩 빼기
+while n > 1:
+    n -= 1
+    result += 1
     
 print(result)
         
