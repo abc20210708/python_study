@@ -1,32 +1,22 @@
 
-# 볼링공 고르기 다시 풀기
-# 참고 블로그 https://wooono.tistory.com/543
-## 볼링공의 개수 N, 공의 최대 무게 M
-'''
-1(무게가 1인 공의 개수) X 4(무게가 1보다 큰 공의 개수) = 4
-2(무게가 2인 공의 개수) X 2(무게가 2보다 큰 공의 개수) = 4
-2(무게가 3인 공의 개수) X 0(무게가 3보다 큰 공의 개수) = 0
-'''
+# 상하좌우 다시 풀기
 
-n, m = 5, 3
-data = [1, 3, 2, 3, 2]
+# n을 입력받기
+n = 5
+x, y = 1, 1
+data = ["R", "R", "R", "U", "D", "D"]
 
-# 1부터 10까지의 무게를 담을 수 있는 리스트
-array = [0] * 11
+#    상 하  좌 우
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types = ['U','D','L','R']
 
-for i in data:
-    # 각 무게에 해당하는 볼링공의 개수 카운트
-    array[i] += 1
-    
-result = 0
-# 1부터 m까지의 각 무에게 대하여 처리
-for i in range(1, m + 1):
-    n -= array[i] # i번째 무게보다 높은 무게의 볼링공 개수
-    result += array[i] * n # i번째 무게의 볼링공 개수 * i번째 무게보다 높은 무게의 볼링공 개수
-    
-print(result)
-
-
-    
-
-
+for d in data:
+    v = move_types.index(d)
+    if (x + dx[v]) < 1 or (y + dy[v]) < 1:
+        continue
+    else:
+        x += dx[v]
+        y += dy[v]
+        
+print('x={}, y={}'.format(y, x))
