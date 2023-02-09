@@ -1,5 +1,6 @@
 
 # 상하좌우
+# 참고 블로그 https://pgmjun.tistory.com/66
 
 # n을 입력받기
 n = int(input())
