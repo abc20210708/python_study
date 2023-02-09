@@ -1,22 +1,19 @@
 
-# 모험가 길드 다시 풀기
+# 곱하기 혹은 더하기 다시 풀기
 
 '''
 
 '''
-n = 5
-data = [2, 3, 1, 2, 2]
+data = "567"
 
-data.sort()
+result =  int(data[0])
 
-cnt = 0
-result = 0
-
-for i in data:
-    cnt += 1
-    if cnt >= i:
-        result += 1
-        cnt = 0
+for i in range(1, len(data)):
+    num = int(data[i])
+    if result <= 1 or num <= 1:
+        result += num
+    else:
+        result *= num
     
 print(result)
         
