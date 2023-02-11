@@ -1,43 +1,41 @@
 
-# BFS 예제 다시 풀기
+# 음료수 얼려 먹기 다시 풀기
 
-from collections import deque
 
-def bfs(graph, start, visited):
-    queue = deque([start])
-    # 현재 노드를 방문 처리
-    visited[start] = True
-    # 큐가 빌 때까지 반복
-    while queue:
-        # 큐에서 하나의 원소를 뽑아 출력
-        v = queue.popleft()
-        print(v, end=' ')
-        # 해당 원소와 연결된, 아직 방문하지 않은
-        # 원소들을 큐에 삽입
-        for i in graph[v]:
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
+n, m = 3, 3
+
+# 2차원 리스트의 맵 정보 
+graph = [
+    [0,0,1],
+    [0,1,0],
+    [1,0,1]
+]
+
     
 
+# DFS로 특정한 노드를 방문한 뒤에 연결된 모든 노드들도 방문
+def dfs(x, y):
+    # 주어진 범위를 벗어나는 경우에는 즉시 종료
+    if x <= -1 or x >= n or y <= -1 or y >= m:
+        return False
+    # 현재 노드를 아직 방문하지 않았다면
+    if graph[x][y] == 0:
+        # 해당 노드 방문 처리
+        graph[x][y] = 1
+        # 상,하,좌,우의 위치도 모두 재귀적으로 호출
+        dfs(x -1, y)
+        dfs(x + 1, y) 
+        dfs(x, y - 1)
+        dfs(x, y + 1)
+        return True
+    return False
 
-# 각 노드와 연결된 정보를 리스트 자료형으로 표현
-# (2차원 리스트)    
-graph = [
-    [],
-    [2, 3, 8], # 1
-    [1, 7],    # 2
-    [1, 4, 5], # 3
-    [3, 5],    # 4
-    [3, 4],    # 5
-    [7],       # 6
-    [2, 6, 8], # 7
-    [1, 7]     # 8  
-]       
-
-# 각 노드가 바운된 정보를 리스트 자료형으로 표현
-# (1차원 리스트)
-visited = [False] * 9
-
-# 정의된 DFS 함수 호출
-bfs(graph, 1, visited)
+# 모든 위치에 음료 채우기
+result = 0
+for i in range(n):
+    for j in range(m):
+        if dfs(i, j) == True:
+            result += 1
+        
+print(result)
+        
