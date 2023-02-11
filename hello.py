@@ -1,11 +1,11 @@
 
-# 럭키 스트레이트 다시 풀기
+# 문자열 재정렬 다시 풀기
 
 n = 123402
 
 target = str(n)
 result = 0
-length = (len(target)-1) // 2 + 1
+length = (len(target)) // 2
 
 for i in range(length):
     result += int(target[i])
