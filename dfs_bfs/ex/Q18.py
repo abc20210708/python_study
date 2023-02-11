@@ -1,6 +1,6 @@
 # 괄호 변환
 
-# "균현잡힌 괄호 문자열"의 인덱스 변환
+# "균형잡힌 괄호 문자열"의 인덱스 변환
 def balanced_index(p):
     cnt = 0 # 왼쪽 괄호의 개수
     for i in range(len(p)):
