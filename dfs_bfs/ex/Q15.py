@@ -30,14 +30,19 @@ while q:
         # 아직 방문하지 않은 도시라면
         if distance[next_node] == -1:
             # 최단 거리 갱신
+            # 현재도시와 출발도시 사이의 거리 + 1
             distance[next_node] = distance[now] + 1
             q.append(next_node)
     
 # 최단 거리가 K인 모든 도시의 번호를 오름차순으로 출력
 check = False
 for i in range(1, n + 1):
+    # 도시들간에 최단 거리를 확인해
+    # k와 동일하면 그 도시를 출력
     if distance[i] == k:
         print(i)
+        # 최단 거리가 k인 도시가 존재한다면
+        # True로 바꿔 -1이 출력되지 않도록
         check = True
 
 
