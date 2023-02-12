@@ -24,6 +24,7 @@ def dfs(x, y):
     if graph[x][y] == 0:
         # 해당 노드 방문 처리
         graph[x][y] = 1
+        print(x, y)
         # 상,하,좌,우의 위치도 모두 재귀적으로 호출
         dfs(x -1, y)
         dfs(x, y - 1) 
