@@ -1,21 +1,28 @@
 
-# 정렬된 배열에서 특정 수의 개수 구하기 (bisect) 다시 풀기
+# 고정점 찾기 다시 풀기
 
-from bisect import bisect_left, bisect_right
+def binary_search(arr, start, end):
+    if start > end:
+        return None
+    mid = (start + end) // 2
+    # 고정점을 찾은 경우 인덱스 반환
+    if arr[mid] == mid:
+        return mid
+    elif arr[mid] > mid:
+        return binary_search(arr, start, mid - 1)
+    # 중간점이 가리키는 위치의 값보다
+    # 중간점이 큰 경우 오른쪽 확인
+    else:
+        return binary_search(arr, mid + 1, end)
+    
+n = 5
+arr = [-15, -6, 1, 3, 7]
 
-# 값이[left_value, right_value]인 데이터의 개수
-def cnt_by_range(arr, left_val, right_val):
-    right_idx = bisect_right(arr, right_val)
-    left_idx = bisect_left(arr, left_val)
-    return right_idx - left_idx
+# 이진 탐색 수행
+idx = binary_search(arr, 0, n - 1)
 
-n, x = 7, 2
-arr = [1, 1, 2, 2, 2, 2, 3]
-
-cnt = cnt_by_range(arr, x, x)
-
-# 값이 x인 원소가 존재하지 않는다면
-if cnt == 0:
+# 고정점이 없는 경우 -1 출력
+if idx == None:
     print(-1)
 else:
-    print(cnt)
+    print(idx)
