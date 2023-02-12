@@ -4,15 +4,20 @@ from collections import deque
 
 # N, M을 공백으로 구분하여 입력받기
 # n, m = map(int, input().split())
-n, m = 5, 6
+n, m = 3, 3
 
-# 2차원 리스트의 맵 정보 입력
-graph = [
+'''
     [1,0,1,0,1,0],
     [1,1,1,1,1,1],
     [0,0,0,0,0,1],
     [1,1,1,1,1,1],
     [1,1,1,1,1,1]
+'''
+# 2차원 리스트의 맵 정보 입력
+graph = [
+    [1,1,0],
+    [0,1,0],
+    [0,1,1]
 ]
 #for i in range(n) :
 #    graph.append(list(map(int, input())))
@@ -41,6 +46,7 @@ def bfs(x, y):
                 continue
             # 해당 노드를 처음 방문하는 경우에만 최단 거리 기록
             if graph[nx][ny] == 1:
+
                 graph[nx][ny] = graph[x][y] + 1
                 queue.append((nx, ny))
     # 가장 오른쪽 아래까지의 최단 거리 반환
