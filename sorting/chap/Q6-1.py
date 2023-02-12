@@ -1,6 +1,12 @@
 # 선택 정렬
 array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
 
+'''
+배열 안의 자료 중 가장 작은 수를 찾아 선택해 놓은 다음,
+순서대로 교체하는 방식의 정렬
+'''
+
+
 for i in range(len(array)):
     min_idx = i # 가장 작은 원소의 인덱스
     for j in range(i + 1, len(array)):
