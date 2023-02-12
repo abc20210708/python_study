@@ -1,28 +1,24 @@
 
-# 고정점 찾기 다시 풀기
+# 이진 탐색(재귀 함수) 다시 풀기
 
-def binary_search(arr, start, end):
+def binary_search(arr, target, start, end):
     if start > end:
         return None
     mid = (start + end) // 2
-    # 고정점을 찾은 경우 인덱스 반환
-    if arr[mid] == mid:
+    if arr[mid] == target:
         return mid
-    elif arr[mid] > mid:
-        return binary_search(arr, start, mid - 1)
-    # 중간점이 가리키는 위치의 값보다
-    # 중간점이 큰 경우 오른쪽 확인
+    elif arr[mid] > target:
+        return binary_search(arr, target, start, mid -1)
     else:
-        return binary_search(arr, mid + 1, end)
+        return binary_search(arr, target, mid + 1, end)
     
-n = 5
-arr = [-15, -6, 1, 3, 7]
+n, target = 10, 7
+arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
-# 이진 탐색 수행
-idx = binary_search(arr, 0, n - 1)
-
-# 고정점이 없는 경우 -1 출력
-if idx == None:
-    print(-1)
+# 이진 탐색 결과 출력
+result = binary_search(arr, target, 0, n -1)
+if result == None:
+    print("원소가 존재하지 않습니다.")
 else:
-    print(idx)
+    print(result + 1)
+    
