@@ -1,19 +1,21 @@
 
-# 파이썬 장점을 살린 퀵 정렬 다시 풀기
+# 정렬된 배열에서 특정 수의 개수 구하기 (bisect) 다시 풀기
 
-array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+from bisect import bisect_left, bisect_right
 
-def quick_sort(array):
-    # 리스트 하나 이하의 원소만을 담고 있다면 종료
-    if len(array) <= 1:
-        return array
-    
-    pivot = array[0] # 피벗은 첫 번째 원소
-    tail = array[1: ]# 피벗을 제외한 리스트
-    
-    left_side = [x for x in tail if x <= pivot]
-    right_side = [x for x in tail if x > pivot]
-    return quick_sort(left_side) + [pivot] + quick_sort(right_side)
+# 값이[left_value, right_value]인 데이터의 개수
+def cnt_by_range(arr, left_val, right_val):
+    right_idx = bisect_right(arr, right_val)
+    left_idx = bisect_left(arr, left_val)
+    return right_idx - left_idx
 
-print(quick_sort(array))
+n, x = 7, 2
+arr = [1, 1, 2, 2, 2, 2, 3]
 
+cnt = cnt_by_range(arr, x, x)
+
+# 값이 x인 원소가 존재하지 않는다면
+if cnt == 0:
+    print(-1)
+else:
+    print(cnt)
