@@ -1,24 +1,22 @@
 
-# 이진 탐색(재귀 함수) 다시 풀기
+# 1로 만들기 (다이나믹) 다시 풀기
 
-def binary_search(arr, target, start, end):
-    if start > end:
-        return None
-    mid = (start + end) // 2
-    if arr[mid] == target:
-        return mid
-    elif arr[mid] > target:
-        return binary_search(arr, target, start, mid -1)
-    else:
-        return binary_search(arr, target, mid + 1, end)
-    
-n, target = 10, 7
-arr = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+# 정수 x를 입력받기
+x = 10
 
-# 이진 탐색 결과 출력
-result = binary_search(arr, target, 0, n -1)
-if result == None:
-    print("원소가 존재하지 않습니다.")
-else:
-    print(result + 1)
-    
+# 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
+d = [0] * 11
+
+# 다이나믹 프로그래밍 진행 (보텀업)
+for i in range(2, x + 1):
+    # 현재의 수에서 1을 빼는 경우
+    d[i] = d[i - 1] + 1
+    # 현재의 수가 2로 나누어 떨어지는 경우
+    if i % 2 == 0:
+        d[i] = min(d[i], d[i // 2] + 1)
+    if i % 3 == 0:
+        d[i] = min(d[i], d[i // 3] + 1)
+    if i % 5 == 0:
+        d[i] = min(d[i], d[i // 5] + 1)
+
+print(d[x])
