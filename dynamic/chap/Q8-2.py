@@ -7,6 +7,7 @@ d = [0] * 7 # 1부터 6까지
 # 피보나치 함수를 재귀함수로 구현(탐다운 다이나믹 프로그래밍)
 def fibo(x):
     # 종료 조건(1 혹은 2일 때 1을 반환)
+    print('f(' + str(x) + ')', end=' ')
     if x == 1 or x == 2:
         return 1
     # 이미 계산한 적 있는 문제라면 그대로 반환
@@ -16,4 +17,5 @@ def fibo(x):
     d[x] = fibo(x - 1) + fibo(x - 2)
     return d[x]
 
-print(fibo(6))
+
+print("\nfibo(6):", fibo(6))
