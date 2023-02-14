@@ -12,11 +12,11 @@ second = arr[-2]
 
 result = 0
 
-cnt1 = (m // (k + 1)) * k
-cnt1 += (m % (k + 1))
-cnt2 = (m - cnt1)
+cnt = int(m // (k + 1)) * k
+cnt += (m % (k + 1))
 
-result += cnt1 * first
-result += cnt2 * second
+
+result += cnt * first
+result += (m - cnt) * second
 
 print(result)
