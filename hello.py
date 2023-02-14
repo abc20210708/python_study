@@ -1,22 +1,26 @@
 
-# 1로 만들기 (다이나믹) 다시 풀기
+# 큰 수의 법칙 다시 풀기
 
-# 정수 x를 입력받기
-x = 10
+# 배열의 크기 N, 숫자 더해지는 횟수 M, 그리고 연속할 수 있는 수 K
+n, m, k = 5, 8, 3
+arr = [2, 4, 5, 4, 6]
 
-# 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
-d = [0] * 11
+arr.sort()
 
-# 다이나믹 프로그래밍 진행 (보텀업)
-for i in range(2, x + 1):
-    # 현재의 수에서 1을 빼는 경우
-    d[i] = d[i - 1] + 1
-    # 현재의 수가 2로 나누어 떨어지는 경우
-    if i % 2 == 0:
-        d[i] = min(d[i], d[i // 2] + 1)
-    if i % 3 == 0:
-        d[i] = min(d[i], d[i // 3] + 1)
-    if i % 5 == 0:
-        d[i] = min(d[i], d[i // 5] + 1)
+first = arr[-1]
+second = arr[-2]
 
-print(d[x])
+result = 0
+
+while True:
+    for i in range(k):
+        if m == 0:
+            break
+        result += first
+        m -= 1
+    if m == 0:
+        break
+    result += second
+    m -= 1
+
+print(result)
