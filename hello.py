@@ -1,22 +1,20 @@
 
-# 큰 수의 법칙 다시 풀기
+# 숫자 카드 게임 다시 풀기
 
-# 배열의 크기 N, 숫자 더해지는 횟수 M, 그리고 연속할 수 있는 수 K
-n, m, k = 5, 7, 2
-arr = [3, 4, 3, 4, 3]
+# 카드들이 n * m 형태
 
-arr.sort()
+n, m = 2, 4
 
-first = arr[-1]
-second = arr[-2]
+arr = [
+    [7, 3, 1, 8],
+    [3, 3, 3, 4]
+]
 
 result = 0
 
-cnt = int(m // (k + 1)) * k
-cnt += (m % (k + 1))
-
-
-result += cnt * first
-result += (m - cnt) * second
+for i in range(n):
+    min_val = min(arr[i])
+    # 현재 줄에서 가장 작은 수
+    result = max(result, min_val)
 
 print(result)
