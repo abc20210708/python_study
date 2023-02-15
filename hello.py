@@ -1,20 +1,51 @@
 
-# 숫자 카드 게임 다시 풀기
+# 장애물 인식 프로그램 다시 풀기
 
-# 카드들이 n * m 형태
+import sys
 
-n, m = 2, 4
+def dfs(x, y):
+    if x <= -1 or y <= -1 or x >= n or y >= n:
+        return False
+    # 노드를 방문하지 않았다면
+    if block[x][y] == 1:
+        cnt.append(1)
+        
+        block[x][y] = 0
+        dfs(x - 1, y)
+        dfs(x + 1, y)
+        dfs(x, y - 1)
+        dfs(x, y + 1)
+        return True
+    return False
 
-arr = [
-    [7, 3, 1, 8],
-    [3, 3, 3, 4]
-]
+
+# 지도의 크기 N
+n = 7
+
+block = [
+    [1,1,1,0,1,1,1],
+    [0,1,1,0,1,0,1],
+    [0,1,1,0,1,0,1],
+    [0,0,0,0,1,0,0],
+    [0,1,1,0,0,0,0],
+    [0,1,1,1,1,1,0],
+    [0,1,1,0,0,0,0],
+    ]
+# 자료 입력
+#for i in range(n):
+#   block.append(list(map(int, input())))
 
 result = 0
-
+cnt = []
+result_list = []
 for i in range(n):
-    min_val = min(arr[i])
-    # 현재 줄에서 가장 작은 수
-    result = max(result, min_val)
+    for j in range(n):
+        if dfs(i, j) == True:
+            result += 1
+            result_list.append(len(cnt))
+            cnt = []
 
 print(result)
+result_list.sort()
+for i in result_list:
+    print(i)
