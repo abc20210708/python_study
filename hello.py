@@ -35,17 +35,15 @@ block = [
 #for i in range(n):
 #   block.append(list(map(int, input())))
 
-result = 0
 cnt = []
 result_list = []
 for i in range(n):
     for j in range(n):
         if dfs(i, j) == True:
-            result += 1
             result_list.append(len(cnt))
             cnt = []
 
-print(result)
+print(len(result_list))
 result_list.sort()
 for i in result_list:
     print(i)
