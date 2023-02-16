@@ -9,6 +9,7 @@ jewels = [[90, 1], [70, 2]]
 
  # lambda함수와 reverse=T를 사용하여 가치가 높은 순 으로 정렬 / 무게순으로는 정렬할 필요가 없다.
 jewels = sorted(jewels, key=lambda x: x[1], reverse=True)
+print(jewels)
 total_price = 0
 
 for weight, price in jewels:
