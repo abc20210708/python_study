@@ -37,7 +37,14 @@ graph = [
     [0,1,1,0,0,0,0],
     ]
 #for i in range(n):
-#    graph.append(list(map(int, input())))
+#    graph.append(list(map(int, input().strip())))
+
+'''
+lstrip()은 문자열에서 왼쪽 공백을 모두 삭제하고, 
+rstrip()은 오른쪽 공백을 모두 삭제합니다. 
+strip()은 양쪽 공백을 모두 삭제합니다.
+'''
+
 # 모든 노드(위치)에 대하여 장애물 블록을 만든다.
 result = 0
 result_list = []
