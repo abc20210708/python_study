@@ -17,7 +17,8 @@ max_diff = []
 
 
 while True:
-    if N_section == [] or M_section == []:
+    #if N_section == [] or M_section == []:
+    if len(N_section) == 0 or len(M_section) == 0:
         break
     print(f'M_section[0][0]: {M_section[0][0]}')
     print(f'N_section[0][0]: {N_section[0][0]}')
