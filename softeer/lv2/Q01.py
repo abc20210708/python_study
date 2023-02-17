@@ -29,6 +29,6 @@ for k in range(t):
         for j in range(7): # 7개의 비트를 비교
             print(light[a[i]])
             print(light[a[i]][j])
-            total += (light[a[i]][j] != light[b[i]][j])
+            total += (light[a[i]][j] != light[b[i]][j]) # True면 1, False면 0
     print(total)
         
