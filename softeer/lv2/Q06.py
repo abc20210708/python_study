@@ -24,18 +24,17 @@ while True:
     print(f'N_section[0][0]: {N_section[0][0]}')
     diff_length = M_section[0][0] - N_section[0][0] # 구간 길이 차이
 
+    max_diff.append(M_section[0][1] - N_section[0][1])
+
     if diff_length > 0: # 구간 길이 차가 양수일 때
-        max_diff.append(M_section[0][1] - N_section[0][1]) 
         N_section.pop(0) 
         M_section[0][0] = diff_length # M_section[0][0] 은 두 길이의 차이값이 된다
         
     elif diff_length < 0: # 구간 길이 차가 음수일 때
-        max_diff.append(M_section[0][1] - N_section[0][1])
         M_section.pop(0)
         N_section[0][0] = -diff_length # N_section[0][0] 은 두 길이의 차이값에 -가 붙은 값이 된다. (음수형태로 나오므로) 
 
     else: # 구간 길이 차 = 0
-        max_diff.append(M_section[0][1] - N_section[0][1]) 
         M_section.pop(0)
         N_section.pop(0)
 
