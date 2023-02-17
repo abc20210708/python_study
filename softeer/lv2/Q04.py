@@ -46,19 +46,19 @@ strip()은 양쪽 공백을 모두 삭제합니다.
 '''
 
 # 모든 노드(위치)에 대하여 장애물 블록을 만든다.
-result = 0
+#result = 0
 result_list = []
 for i in range(n):
     for j in range(n):
         # 현재 위치에서 DFS 수행
         if dfs(i, j) == True:
-            result += 1
+           # result += 1
             # 길이를 통해 장애물의 개수 확인
             result_list.append(len(cnt))
             cnt = []
 
 # 총 블록의 수 출력
-print(result)
+print(len(result_list))
 # 장애물의 수 오름차순 정렬 후 출력
 result_list.sort()
 for i in result_list:
