@@ -2,7 +2,7 @@
 
 import sys
 
-d = list(int, sys.stdin.readline().split())
+d = list(map(int, sys.stdin.readline().split()))
 
 asc = d.copy()
 asc.sort()
