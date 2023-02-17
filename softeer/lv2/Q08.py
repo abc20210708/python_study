@@ -40,8 +40,21 @@ k, p, n = 2, 3, 2
 # pow() 계산시 mod값 설정을 하여 시간단축을 시킨 후 
 # K를 곱한 값이 1e9+7 을 넘어갈 수 있기 때문에 
 # 한번더 1e9+7로 나눈 나머지 값을 구한다
-print(k * pow(p, n) % int(1e9 + 7) % int(1e9 + 7))
+#print(k * pow(p, n) % int(1e9 + 7) % int(1e9 + 7))
 
-print(k * pow(p, n, int(1e9+7)) % int(1e9+7))
+#print(k * pow(p, n, int(1e9+7)) % int(1e9+7))
 
-        
+print((k * pow(p, n, 1000000007)) % 1000000007)
+
+'''
+참고 블로그 https://hwisaek.tistory.com/entry/Softeer-%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4-Python
+
+제곱을 그대로 하게 된다면 숫자가 기하급수적으로 증가해
+다른 언어로 한다면 데이터의 범위를 벗어날 수도 있고,
+연산하는데 엄청난 시간을 소모하게 된다.
+
+pow(base, exp, mod)를 이용해야 합니다. pow라는 함수는
+base를 exp 제곱하는 함수인데, mod 파라미터를 이용하게 된다면
+거듭제곱을 수행하면서 숫자가 커지면 나머지 연산을 수행하여
+효율적으로 계산할 수 있다.
+'''
