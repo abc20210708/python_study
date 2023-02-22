@@ -13,7 +13,8 @@ for i in nums:
         continue # 1일 때 먼저 예외처리
     for j in range(2, i):
         if i % j == 0: # 나눠지면 1로 변경
-            chk = 1    
+            chk = 1
+            break    
     if chk == 0:    #반복문 후 상태가 0이면 cnt +1
         cnt += 1
         
