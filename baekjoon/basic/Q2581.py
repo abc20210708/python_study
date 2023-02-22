@@ -5,6 +5,8 @@ import sys, math
 start = int(input())
 end = int(input())
 
+print(int(math.sqrt(end)) + 1)
+
 nums = [True] * 10001 # 전부 소수로 초기화
 nums[1] = False
 
