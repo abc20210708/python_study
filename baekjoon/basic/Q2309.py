@@ -1,5 +1,6 @@
 # 일곱 난쟁이
 
+## del과 remove 참고 블로그 https://ooyoung.tistory.com/49
 
 arr = []
 
