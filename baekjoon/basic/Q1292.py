@@ -16,3 +16,20 @@ for i in range(n, m + 1):
     val += arr[i]
     
 print(val)
+
+'''
+import sys
+input = sys.stdin.readline
+
+a, b = map(int, input().split())
+
+arr = [0]
+
+for i in range(1, b + 1):
+    for j in range(i):
+        arr.append(i)
+        
+temp = arr[a : b+1]
+print(sum(temp))
+print(sum(temp))
+'''
