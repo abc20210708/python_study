@@ -1,6 +1,6 @@
 
 def solution(nums):
-    decimal = [False, True] + [True] * 3000
+    decimal = [False, False] + [True] * 3000
     res = 0
     sum_arr = []
     length = len(nums)
