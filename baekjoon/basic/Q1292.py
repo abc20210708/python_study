@@ -17,6 +17,19 @@ for i in range(n, m + 1):
     
 print(val)
 
+
+'''
+a,b = map(int,input().split())
+ 
+arr = [0]
+for i in range(46):
+    for j in range(i):
+        arr.append(i)
+ 
+print(sum(arr[a:b+1]))
+'''
+
+
 '''
 import sys
 input = sys.stdin.readline
