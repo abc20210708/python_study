@@ -1,5 +1,8 @@
 # 단어 뒤집기
 
+## 참고 블로그
+# https://art-coding3.tistory.com/40
+
 n = int(input())
 
 for i in range(n):
