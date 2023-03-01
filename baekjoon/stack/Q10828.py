@@ -42,3 +42,5 @@ for i in range(n):
             print(-1)
         else:
             print(stack[-1])
+    # 스택에서 원소를 제거하지 않고 가져오기만 할 때에는
+    # [-1]을 이용하여 찾을 수 있습니다.
