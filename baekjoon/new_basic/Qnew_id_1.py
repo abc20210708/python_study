@@ -10,6 +10,7 @@ def solution(new_id):
     # 2단계 new_id에서 
     # 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를
     # 제외한 모든 문자를 제거합니다.
+    ## isalnum()문자열이 영어, 한글 혹은 숫자로 되어있으면 참 리턴, 아니면 거짓 리턴.
 
     result = ''
     for word in new_id:
@@ -25,6 +26,12 @@ def solution(new_id):
 
     # 4단계 new_id에서 마침표(.)가 
     # 처음이나 끝에 위치한다면 제거합니다.
+    
+    ## 삼항연산자 
+    ## print("짝수") if a % 2 == 0 else print("홀수")
+    ##[True] if [Condition] else [False]
+    ##[참일때] if [조건문] else [거짓일때]
+    
 
     result = result[1:] if result[0] == '.' and len(result) > 1 else result
     result = result[:-1] if result[-1] == '.' else result
