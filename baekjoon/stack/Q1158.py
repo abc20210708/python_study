@@ -24,6 +24,9 @@ for _ in range(n):
     if num >= len(arr):
         num = num % len(arr)
     result.append(str(arr.pop(num)))
+
+#   result.append(str(arr[num]))
+#   arr.pop(num)
     
 
 print("<",", ".join(result),">", sep='')
