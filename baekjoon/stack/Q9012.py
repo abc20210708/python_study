@@ -1,4 +1,6 @@
 # 괄호
+# 참고 블로그
+# https://wook-2124.tistory.com/442
 import sys
 input = sys.stdin.readline
 
