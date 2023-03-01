@@ -13,6 +13,10 @@ front: 큐의 가장 앞에 있는 정수를 출력한다.
 
 back: 큐의 가장 뒤에 있는 정수를 출력한다. 
 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다
+
+참고 블로그
+https://velog.io/@deannn/BOJ-%EB%B0%B1%EC%A4%80-10845%EB%B2%88-%ED%81%90-Python
+
 '''
 
 import sys
