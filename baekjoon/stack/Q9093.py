@@ -3,6 +3,9 @@
 ## 참고 블로그
 # https://art-coding3.tistory.com/40
 
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 
 for i in range(n):
