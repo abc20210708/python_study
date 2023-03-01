@@ -13,8 +13,15 @@ new_id = new_id.lower()
 new_id = re.sub(r"[^a-z0-9-_.]", "", new_id)
 print(new_id)
 
-# 3단계 new_id에서 마침표(.)가 
-# 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
+# 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을
+# 하나의 마침표(.)로 치환합니다.
+
+for _ in new_id:
+    if '..' in new_id:
+        new_id = new_id.replace("..", ".")
+        print(new_id)
+
+
 
 # 4단계 new_id에서 마침표(.)가 
 # 처음이나 끝에 위치한다면 제거합니다.
