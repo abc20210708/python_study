@@ -3,18 +3,14 @@
 import re
 
 # 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
-new_id = "...!@BaT#*..y.abcdefghijklm"
+new_id = "...!@88BaT#*..y.abcdefghijklm-._"
 new_id = new_id.lower()
-#print(new_id)
 
 # 2단계 new_id에서 
 # 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를
 # 제외한 모든 문자를 제거합니다.
 
-new_id = re.sub(r"[^a-z0-9]", "", new_id)
-new_id = re.sub(r"[^-_.]", "", new_id)
-
-
+new_id = re.sub(r"[^a-z0-9-_.]", "", new_id)
 print(new_id)
 
 # 3단계 new_id에서 마침표(.)가 
