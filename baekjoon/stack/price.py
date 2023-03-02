@@ -34,3 +34,27 @@
 '''
 
 ## 참고 블로그 https://velog.io/@soo5717/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9-Python
+
+def solution(prices):
+    n = len(prices)
+    result = [0] * n # 가격이 떨어지지 않는 기간을 저장하는 배열
+    stack = [] # 현재 인덱스 이전의 인덱스를 저장
+    
+    for i in range(n):
+        while stack and prices[stack[-1]] > prices[i]:
+            j = stack.pop()
+            result[j] = i - j
+        stack.append(i)
+        
+    while stack:
+        j = stack.pop()
+        result[j] = n - 1 - j
+        
+    return result
+    
+    
+    
+    
+    
+    
+print(solution([1,2,3,2,3]))
