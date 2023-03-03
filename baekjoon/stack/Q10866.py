@@ -1,4 +1,4 @@
-
+# deque
 
 from collections import deque
 import sys
@@ -12,16 +12,16 @@ for i in range(n):
     temp = input().split()
     
     if temp[0] == 'push_front':
-        d.appendleft(temp[1])
+        d.appendleft(temp[1]) # 앞에 넣는다
     elif temp[0] == 'push_back':
-        d.append(temp[1])
-    elif temp[0] == 'pop_front':
+        d.append(temp[1])     # 뒤에 넣는다.
+    elif temp[0] == 'pop_front': # 가장 앞에 있는 수를 빼고 출력
         if d:
             print(d[0])
             d.popleft()
         else:
             print(-1)
-    elif temp[0] == 'pop_back':
+    elif temp[0] == 'pop_back': # 가장 뒤에 있는 수를 빼고 출력
         if d: 
             print(d[len(d)-1])
             d.pop()
