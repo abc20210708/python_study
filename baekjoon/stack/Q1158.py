@@ -28,8 +28,8 @@ for _ in range(n):
 #   result.append(str(arr[num]))
 #   arr.pop(num)
     
-
-print("<",", ".join(result),">", sep='')
+print(f"<{', '.join(map(str,answer))}>")
+#print("<",", ".join(result),">", sep='')
 
 '''
 def josephus(n, k):
