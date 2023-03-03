@@ -28,7 +28,7 @@ for _ in range(n):
 #   result.append(str(arr[num]))
 #   arr.pop(num)
     
-print(f"<{', '.join(map(str,answer))}>")
+print(f"<{', '.join(map(str,result))}>")
 #print("<",", ".join(result),">", sep='')
 
 '''
