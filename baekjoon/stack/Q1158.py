@@ -32,6 +32,30 @@ for _ in range(n):
 print("<",", ".join(result),">", sep='')
 
 '''
+def josephus(n, k):
+    people = list(range(1, n+1))
+    result = []
+    idx = 0
+    
+    while people:
+        idx = (idx + k - 1) % len(people)
+        result.append(people.pop(idx))
+    
+    return result[-1]
+    
+이 함수는 두 개의 인자 n과 k를 받아서 요세푸스 문제를 해결합니다. 
+리스트 people에 1부터 n까지의 숫자를 넣고, while 루프를 사용해서 
+요세푸스 문제를 해결합니다. while 루프 내에서는 인덱스 idx를 사용해서 
+리스트에서 요소를 제거하고, 결과를 result 리스트에 저장합니다. 
+마지막으로, 결과 리스트의 마지막 요소를 반환합니다.
+
+예를 들어, josephus(7, 3)을 호출하면 [3, 6, 2, 7, 5, 1]이 반환됩니다. 
+마지막으로, 리스트의 마지막 요소인 1이 반환됩니다.
+'''
+
+
+
+'''
 sep(separation) 
  
 
