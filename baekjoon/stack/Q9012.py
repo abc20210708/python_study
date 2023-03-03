@@ -10,7 +10,6 @@ input = sys.stdin.readline
 n = int(input())
 
 for _ in range(n):
-    stack = []
     temp = list(input())
     cnt = 0
     
