@@ -26,6 +26,31 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
+
+d = list()
+
+for _ in range(n):
+    temp = input().split()
+    
+    if temp[0] == "push":
+        d.append(int(temp[1]))
+    elif temp[0] == "pop":
+        if d: print(d.pop(0))
+        else: print(-1)
+    elif temp[0] == "size":
+        print(len(d))
+    elif temp[0] == "empty":
+        if d: print(0)
+        else : print(1)
+    elif temp[0] == "front":
+        if d: print(d[0])
+        else: print(-1)
+    elif temp[0] == "back":
+        if d: print(d[-1])
+        else: print(-1)
+    
+
+'''
 queue = list() 
    
 for i in range(n):
@@ -47,3 +72,4 @@ for i in range(n):
     elif temp[0] == "back":
         if not queue: print(-1)
         else: print(queue[-1])
+'''
