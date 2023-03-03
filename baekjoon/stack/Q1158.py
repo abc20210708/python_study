@@ -9,9 +9,11 @@ N명의 사람들이 있고, K를 주기로 사람들을 제거하는 문제
 
 참고 블로그 https://infinitt.tistory.com/213
 '''
+
+
 n, k = map(int, input().split())
 # 맨 처음에 원에 앉아있는 사람들
-arr = [i for i in range(1, n+1)]
+people = [i for i in range(1, n+1)]
 
 # 제거된 사람들을 넣을 배열
 result = []
@@ -20,15 +22,16 @@ num = 0
 
 for _ in range(n):
     num += k-1
-    if num >= len(arr):
-        num = num % len(arr)
-    result.append(str(arr.pop(num)))
+    if num >= len(people):
+        num = num % len(people)
+    result.append(str(people.pop(num)))
 
-#   result.append(str(arr[num]))
-#   arr.pop(num)
+#   result.append(str(people[num]))
+#   people.pop(num)
     
 print(f"<{', '.join(result)}>")
 #print("<",", ".join(result),">", sep='')
+
 
 '''
 n, k = map(int, input().split())
