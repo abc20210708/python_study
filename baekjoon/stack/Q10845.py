@@ -1,4 +1,6 @@
 '''
+큐
+
 push X: 정수 X를 큐에 넣는 연산이다.
 
 pop: 큐에서 가장 앞에 있는 정수를 빼고, 그 수를 출력한다. 
@@ -32,7 +34,7 @@ for i in range(n):
     if temp[0] == 'push':
         queue.append(int(temp[1]))
     elif temp[0] == 'pop':
-        if not queue : print(-1)
+        if not queue : print(-1) # queue가 빈 경우
         else : print(queue.pop(0))
     elif temp[0] == 'size':
         print(len(queue))
