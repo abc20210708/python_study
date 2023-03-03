@@ -9,7 +9,7 @@ N명의 사람들이 있고, K를 주기로 사람들을 제거하는 문제
 
 참고 블로그 https://infinitt.tistory.com/213
 '''
-'''k = map(int, input().split())
+n, k = map(int, input().split())
 # 맨 처음에 원에 앉아있는 사람들
 arr = [i for i in range(1, n+1)]
 
@@ -23,14 +23,14 @@ for _ in range(n):
     if num >= len(arr):
         num = num % len(arr)
     result.append(str(arr.pop(num)))
-'''
+
 #   result.append(str(arr[num]))
 #   arr.pop(num)
     
-#print(f"<{', '.join(result)}>")
+print(f"<{', '.join(result)}>")
 #print("<",", ".join(result),">", sep='')
 
-
+'''
 n, k = map(int, input().split())
 people = list(range(1, n+1))
 result = []
@@ -41,7 +41,7 @@ while people:
     result.append(str(people.pop(idx)))
 
 print("<",", ".join(result),">", sep='')
-
+'''
     
 '''
 이 함수는 두 개의 인자 n과 k를 받아서 요세푸스 문제를 해결합니다. 
