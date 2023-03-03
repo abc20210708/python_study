@@ -22,7 +22,31 @@ stack = []
 input = sys.stdin.readline
 n = int(input())
 
-for i in range(n):
+for _ in range(n):
+    temp = input().split()
+    
+    if temp[0] == "push":
+        stack.append(temp[1])
+    elif temp[0] == "pop":
+        if stack: print(stack.pop())
+        else: print(-1)
+    elif temp[0] == "size":
+        print(len(stack))
+    elif temp[0] == "empty":
+        if stack: print(0)
+        else: print(1)
+    elif temp[0] == "top":
+        if stack: print(stack[-1])
+        else: print(-1)
+
+    # 스택에서 원소를 제거하지 않고 가져오기만 할 때에는
+    # [-1]을 이용하여 찾을 수 있습니다.
+    
+    # peek => 엿보기:
+    # 맨 위의 값 반환만 하고 삭제는 하지 않는다.
+    
+'''
+    for i in range(n):
     temp = input().split()
     
     if temp[0] == 'push':
@@ -44,8 +68,5 @@ for i in range(n):
             print(-1)
         else:
             print(stack[-1])
-    # 스택에서 원소를 제거하지 않고 가져오기만 할 때에는
-    # [-1]을 이용하여 찾을 수 있습니다.
-    
-    # peek => 엿보기:
-    # 맨 위의 값 반환만 하고 삭제는 하지 않는다.
+
+'''
