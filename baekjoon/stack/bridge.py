@@ -26,6 +26,7 @@ weight를 넘지 않아야 합니다.
 '''
 from collections import deque
 
+'''
 def solution(bridge_length, weight, truck_weights):
     q = deque([0] * bridge_length)
     
@@ -52,4 +53,37 @@ def solution(bridge_length, weight, truck_weights):
     # 다리를 빠져오지 못한 트럭 + total 시간
     
 print(solution(2, 10, [7,4,5,6]))
-        
+'''
+
+
+def solution(bl, w, tw):
+    ing=[]
+    time=0
+
+    e=0
+    while True:
+        if e!=0: #다리지나간 트럭 제거
+            ing.pop(0)
+
+        time+=1
+
+        if tw == [] and ing == []:
+            return time
+
+        if ing:  #건너는 트럭있을때
+            sum=0
+            for i in ing:
+                sum+=i[0]
+            if tw and sum + tw[0] <= w:                
+                ing.append([tw.pop(0),0])       
+        else:   #건너는 트럭 없을때
+            ing.append([tw.pop(0),0])    
+
+        e=0
+        for i in ing:  #건너는 트럭들 경과시간추가
+            i[1]+=1
+            if i[1]==bl:
+                e=i
+
+    
+print(solution(2, 10, [7,4,5,6]))
