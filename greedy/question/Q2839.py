@@ -1,4 +1,5 @@
 # 설탕 배달
+## 참고 블로그 https://ooyoung.tistory.com/81
 
 sugar = int(input())
 
@@ -10,5 +11,5 @@ while sugar >= 0:
         break
     sugar -= 3
     bag += 1 # 5의 배수가 될 때까지 설탕 -3, 봉지 + 1
-else:
+else: # sugar 변수가 0보다 작아지면 else문으로 내려옴
     print(-1)
