@@ -1,5 +1,6 @@
+# ROT13 
 
-target = "Baekjoon Online Judge"
+target = "One is 1"
 temp = ""
 
 for i in target:
@@ -15,3 +16,5 @@ for i in target:
         if temp > 90:
             temp -= 26
         print(chr(temp), end="")
+    elif ord(i) >= 48 and 57 >= ord(i):
+        print(i, end="")
