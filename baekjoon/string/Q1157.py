@@ -1,5 +1,5 @@
 # 단어 공부
-
+## 참고 블로그 https://velog.io/@beaver-zip/1157%EB%B2%88-%EB%8B%A8%EC%96%B4-%EA%B3%B5%EB%B6%80-Python
 word = "Mississipi".upper()
 cnt = 0
 
