@@ -32,7 +32,9 @@ def solution(prices):
         price = q.popleft()
         cnt = 0
         for i in q:
-            cnt += 1
+            cnt += 1  ## 다음에 바로 떨어지더라도 1초 후라는 
+                      ## 조건이므로 비교하자마자 증가해도됨
+                      # 참고 https://school.programmers.co.kr/questions/35807
             if price > i:
                 break
         res.append(cnt)
