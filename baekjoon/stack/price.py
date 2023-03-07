@@ -1,7 +1,7 @@
 
 
 ## 참고 블로그 https://velog.io/@soo5717/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9-Python
-
+'''
 def solution(prices):
     n = len(prices)
     result = [0] * n # 가격이 떨어지지 않는 기간을 저장하는 배열
@@ -21,8 +21,27 @@ def solution(prices):
 
     
 print(solution([1,2,3,2,3]))
+'''
+from collections import deque
+
+def solution(prices):
+    q = deque(prices)
+    res = []
+    
+    while q:
+        price = q.popleft()
+        cnt = 0
+        for i in q:
+            cnt += 1
+            if price > i:
+                break
+        res.append(cnt)
+    return res
+
+print(solution([1,2,3,2,3]))
 
 '''
+
 
 주식의 가격이 [1, 2, 3, 2, 3]일 때, 
 각 날짜별로 뒤에 있는 날들 중 
