@@ -1,26 +1,17 @@
-# 전자레인지 다시 풀기
-#100, 189
-t = [300, 60, 10]
-n = int(input())
-temp = [0, 0, 0]
+# 단어 공부 다시 풀기
 
-for i in range(len(t)):
-    if n % 10 != 0:
-        print(-1)
-        break
-    else:
-        cnt = (n // t[i])
-        temp[i] = cnt
-        n %= t[i]
+word = "baaa".upper()
+cnt = 0
 
-if max(temp) != 0:
-    for i in temp:
-        print(i, end=" ")
-    
-
+for i in set(word):
+    if word.count(i) > cnt:
+        temp = i
+        cnt = word.count(i)
+    elif word.count(i) == cnt:
+        temp = "?"
         
-        
-    
+print(temp)
+
     
     
 
