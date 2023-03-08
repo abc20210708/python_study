@@ -7,9 +7,9 @@ temp = ""
 
 for i in target:
     if 'a' <= i <= 'z':
-        temp += chr((ord(i) + 13) if i <= 'm' else ord(i) - 13)
+        temp += chr(ord(i) + 13 if i <= 'm' else ord(i) - 13)
     elif 'A' <= i <= 'Z':
-        temp += chr((ord(i) + 13) if i <= 'M' else ord(i) - 13)
+        temp += chr(ord(i) + 13 if i <= 'M' else ord(i) - 13)
     else:
         temp += i
         
