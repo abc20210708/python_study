@@ -5,8 +5,11 @@ s = ["가나다다나가"]
 
 if s == s[::-1]:
     print("회문이다")
+    
 
 '''
+
+## 참고 블로그 https://han-py.tistory.com/331
 import re
 
 def inPalindrome(str):
