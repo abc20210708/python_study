@@ -1,5 +1,5 @@
 # 카드 2
-
+## 참고 블로그 https://tooo1.tistory.com/88
 num = int(input())
 cnt = 2
 
