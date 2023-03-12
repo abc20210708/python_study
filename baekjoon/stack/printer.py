@@ -2,7 +2,7 @@
 
 ## 참고 블로그 https://hwisaek.tistory.com/entry/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%94%84%EB%A6%B0%ED%84%B0-Python
 
-'''
+
 def solution(p, location):
     result = 0
     
@@ -20,9 +20,10 @@ def solution(p, location):
         location = location -1 if location > 0 else len(p) -1
         
     return result
+
+print(solution([1, 1, 9, 1, 1, 1], 0))
+
 '''
-
-
 from collections import deque
 
 def solution(p, location):
@@ -46,4 +47,5 @@ def solution(p, location):
         
           
 #print(solution([2, 1, 3, 2], 2))
-print(solution([1, 1, 9, 1, 1, 1], 0))
+
+'''
