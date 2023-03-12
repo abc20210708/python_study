@@ -1,4 +1,19 @@
 # 카드 2
+
+num = int(input())
+cnt = 2
+
+while 1:
+    if (num == 1 or num == 2):
+        print(num)
+        break
+    cnt *= 2
+    if (cnt >= num):
+        print((num - (cnt // 2)) * 2)
+        break
+
+
+'''
 from collections import deque
 num = int(input())
 
@@ -10,3 +25,4 @@ while len(q) != 1:
     q.append(temp)
     
 print(q[0])
+'''
