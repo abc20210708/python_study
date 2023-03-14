@@ -1,5 +1,7 @@
 # IOIOI
 
+## 참고 블로그 https://black-hair.tistory.com/135
+
 n = int(input())
 m = int(input())
 s = input()
