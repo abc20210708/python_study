@@ -4,7 +4,7 @@ n = int(input())
 
 # 카운트를 처음부터 전체 단어의 개수의 n으로 
 # 그룹 단어가 아닐 경우 하나씩 빼는 방식으로 접근
-
+## 참고 블로그 https://kbwplace.tistory.com/73
 '''
 5
 ab
