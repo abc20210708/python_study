@@ -1,4 +1,7 @@
 # 듣보잡
+
+## 참고 블로그 https://dojinkimm.github.io/problem_solving/2019/09/26/boj-1764-deutbo.html
+
 import sys
 input = sys.stdin.readline
 
