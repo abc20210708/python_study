@@ -1,9 +1,10 @@
 # 단어 뒤집기 2
+## 참고 블로그 https://polarcompass.tistory.com/40
 
 import sys
 input = sys.stdin.readline
 
-s = input().rstrip()
+s = "<problem>17413<is hardest>problem ever<end>"
 
 temp = ''
 res = ''
