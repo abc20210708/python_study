@@ -1,4 +1,10 @@
 # 단어의 개수
 
-arr = list(map(str, input().split()))
-print(len(arr))
+words = input().split()
+print(len(words))
+
+#print(len(input().split()))
+
+
+#arr = list(map(str, input().split()))
+#print(len(arr))
