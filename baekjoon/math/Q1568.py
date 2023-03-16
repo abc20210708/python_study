@@ -1,5 +1,6 @@
 # 새
 
+## 참고 블로그 https://www.acmicpc.net/problem/1568
 # 현재 앉아 있는 새의 수
 n = int(input())
 
