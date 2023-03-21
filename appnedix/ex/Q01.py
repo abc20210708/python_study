@@ -17,3 +17,13 @@ def isTrue(s):
     return False
 
 print(isTrue(s))
+
+
+def is_palindrome(s):
+    s = s.lower() # 대소문자 구분 없이 판단위해 변환
+    reversed_s = s[::-1] # 문자열을 뒤집은 문자열 생성
+    
+    #두 문자열이 같은지 비교하여 True 또는 False
+    return s == reversed_s
+
+print(is_palindrome(s))
