@@ -27,6 +27,7 @@ def solution(s1, s2):
         else:
             char_cnt[char] = 1
     
+    print(char_cnt)
     # 두 번째 문자열의 각 문자를 하나씩 확인하면서
     # 등장횟수를 감소시키고, 딕셔너리 내에 해당문자가
     # 없거나 등장횟수가 0보다 작아지면 애너그램이 아님
@@ -34,7 +35,8 @@ def solution(s1, s2):
         if char not in char_cnt or char_cnt[char] == 0:
             return False
         char_cnt[char] -= 1
-        
+    
+    print(char_cnt)
     # 모든 문자에 대해 등장횟수가 정확히 일치하면 애너그램
     return True
 
