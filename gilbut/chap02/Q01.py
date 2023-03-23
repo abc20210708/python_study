@@ -30,3 +30,24 @@ sample = [0, 1, 2, 3, 4, 5]
 print(sample)
 sample[1:4] = [9,9,9]
 print(sample)
+
+set1 = {1, 2, 3, 'a', 'b', 'c'}
+set1.remove(1)
+
+#set1.remove(1)
+'''
+에러 발생 이유는 집합에서 1이라는 값을
+제거하라고 했지만 이미 1이라는 값을 제거해서 없다.
+그래서 KeyError가 발생
+'''
+
+set1.discard(1)
+
+'''
+지우라는 키가 집합에 없어도 에러가 발생하지 않는다
+remove()s는 실제 존재하는 엘리먼트를 지우는 동작에 사용
+discard()는 집합에 존재하지 않음을 보장하려고 할 때 사용
+
+참고 블로그 https://hbase.tistory.com/111
+'''
+print(set1)
