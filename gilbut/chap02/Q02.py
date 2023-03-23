@@ -11,3 +11,11 @@ get()메서드 두 개의 인자 일 때,
 '''
 
 print(d.get('d', 9)) 
+
+
+## 제곱해서 반환
+
+def solution(data):
+    return [i * i for i in data]
+
+print(solution([1,2,3,4,5]))
