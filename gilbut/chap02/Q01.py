@@ -25,3 +25,8 @@ comprehension = [num ** 2 for num in range(1000000)]
 ## 제너레이터
 generator = (num ** 2 for num in range(1000000))
 
+## 값 범위 할당
+sample = [0, 1, 2, 3, 4, 5]
+print(sample)
+sample[1:4] = [9,9,9]
+print(sample)
