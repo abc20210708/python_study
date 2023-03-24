@@ -51,4 +51,5 @@ def permutations_2(arr, n):
             result.append([num] + j)
     return result
 
+##참고 블로그 https://juhee-maeng.tistory.com/91
 print(permutations_2([1,2,3], 3))
