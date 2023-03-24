@@ -24,3 +24,5 @@ students = [
     ('lee', 'A+', 21),
     ('jeong', 'A', 18),
 ]
+
+## 참고 블로그 https://pearlluck.tistory.com/462
