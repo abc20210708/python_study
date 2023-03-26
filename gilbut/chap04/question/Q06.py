@@ -7,16 +7,12 @@ def solution(s, n):
     for i in s:
         if i == " ":
             res += i
-        elif i.islower():
-            if ord(i) + n > 122:
-                res += chr(ord(i) - 26 + n) 
+        else:
+            if i.islower() and ord(i) + n > 122 :
+                res += chr(ord(i) - 26 + n)
+            elif i.isupper() and ord(i) + n > 90:
+                res += chr(ord(i) - 26 + n)
             else:
                 res += chr(ord(i) + n)
-        elif i.isupper():
-            if ord(i) + n > 90:
-                res += chr(ord(i) - 26+ n)
-            else:
-                res += chr(ord(i) + n)
-    
     
     return res
