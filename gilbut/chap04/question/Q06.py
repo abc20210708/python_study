@@ -1,5 +1,21 @@
 ## 시저 암호
 
+def explain(s, n):
+    # 1. 문자열을 배열로 만듭니다.
+    s = list(s)
+    '''
+     2. 반복문으로 순회하면서 문자에 숫자를 더합니다.
+     (현재 글자의 숫자 - 알파벳 처음 위치
+     + 더해야 할 숫자) % 26 + 알파벳 처음 위치
+    '''
+    for i in range(len(s)):
+        if s[i] == ' ': continue
+        corr = ord('A') if s[i].isupper() else ord('a')
+        s[i] = chr((ord(s[i]) - corr + n) % 26 + corr)
+    
+    return ''.join(s)
+
+
 def solution(s, n):
     res = ''
     ## 32는 공백
