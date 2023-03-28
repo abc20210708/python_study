@@ -1,5 +1,19 @@
 ## 이진 변환 반복하기
 
+def explain(s):
+    change, zero = 0, 0
+    
+    while s != '1':
+        change += 1
+        num = s.count("1")
+        zero += len(s) - num
+        s = bin(num)[2:]
+    
+    return [change, zero]
+
+print(explain("0111010"))
+
+
 def solution(s):
     res = [0, 0]
     temp = s
