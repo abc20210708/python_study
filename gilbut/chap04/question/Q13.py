@@ -1,4 +1,40 @@
 # 신규 아이디 추천
+
+
+def explain(temp):
+    # 1. 문자열 전체를 소문자로 변환
+    res = temp.lower()
+    
+    # 2. 지정된 문자를 제외한 나머지 문자를 전부 제거
+    filtered = []
+    for c in res:
+        if c.isalpha() or c.isdigit() or c in ('-', '_', '.'):
+            filtered.append(c)
+    res = ''.join(filtered)
+    
+    # 3.마침표가 2번 찍혔다면 그 중 하나만 제거
+    while '..' in res:
+        # replace는 가장 먼저 발견된 것만 수정
+        res = res.replace("..", ".")
+    
+    # 4. 마침표 양옆으로 문자열을 1개씩 제거
+    res = res.strip('.')
+    
+    # 5. 전부 제거했는데, 아무것도 없다면 'a'를 할당
+    if res == '' : res = "a"
+    
+    # 6. 나온 결과가 16자 이상이면 그 이상은 모두 삭제,
+    # 마지막 문자가 따옴표인 경우 따옴표 삭제
+    if len(res) > 15 : res = res[:15]
+    if res[-1] == '.': res = res[:-1]
+    
+    # 7. 반대로 3자 미만이면 마지막 문자를 반복해서 3글자 이상으로
+    while len(res) < 3:
+        res += res[-1]
+        
+    return res
+
+
 import re
 '''
 아이디 길이는 3자 이상 15자 이하
