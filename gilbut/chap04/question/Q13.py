@@ -49,6 +49,25 @@ def solution(temp):
     # 2. 알파벳 소문자, 숫자, -_. 제외한 모든 문자 제거
     temp = re.sub(r"[^a-z0-9-_.]", "", temp)
 
+    '''
+    2. 문자열에서 숫자만 남기기
+    숫자를 제외한 문자들을 패턴으로 만들면 [^0-9]가 됩니다. 
+    0-9는 0에서 9사이의 숫자를 의미하고 ^는 not이므로, 
+    숫자가 아닌 문자열을 찾는 패턴이 됩니다.
+
+    import re
+
+    string = "AA**BB#@$CC 가나다-123"
+
+    new_str = re.sub(r"[^0-9]", "", string)
+    print(new_str)
+    
+    Output:
+    123
+    
+    참고 블로그 https://codechacha.com/ko/python-remove-special-letters/
+    '''
+
     # 3. 마침표가 2번 이상이면 연속된 부분을 하나로 치환
     while ".." in temp:
         if ".." in temp:
