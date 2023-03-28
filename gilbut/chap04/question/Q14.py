@@ -8,6 +8,11 @@ def explain(s):
 # 알파벳만 있는지 ^[a-zA-z]*$
 # 한글만 있는지 ^[가-힣]*$
 
+def new_solution(s):
+    return bool(re.match("^(\d{4}|\d{6})$", s))
+# 주어진 문자열이 숫자 4개 또는 6개인지 판단하는
+# 그룹을 생성해 문자열을 검사하는 방식
+
 def solution(s):
     
     if len(s) == 4 or len(s) == 6:
