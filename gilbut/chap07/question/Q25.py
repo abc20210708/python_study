@@ -1,5 +1,28 @@
 ## 두 개 뽑아서 더하기
 
+from itertools import combinations
+
+def explain(numbers):
+    res = set()
+    selects = list(combinations(numbers, 2))
+    for select in selects:
+        (a, b) = select
+        res.add(a + b)
+    
+    return sorted(res)
+
+print(explain([2, 1, 3, 4, 1]))
+
+
+def solution_1(numbers):
+    res = set()
+    
+    for i in range(len(numbers)-1):
+        for j in range(i+1, len(numbers)):
+            res.add(numbers[i] + numbers[j])
+
+    return sorted(res)
+
 def solution(numbers):
     res = []
     
@@ -12,12 +35,3 @@ def solution(numbers):
     res.sort()
     
     return res
-
-def solution_1(numbers):
-    res = set()
-    
-    for i in range(len(numbers)-1):
-        for j in range(i+1, len(numbers)):
-            res.add(numbers[i] + numbers[j])
-
-    return sorted(res)
