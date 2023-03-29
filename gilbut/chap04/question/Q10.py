@@ -1,4 +1,4 @@
-## 문자열 압축
+## 문자열 압축 *
 
 def compress(s, length):
     words = [s[i:i+length] for i in range(0, len(s), length)]

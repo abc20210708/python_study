@@ -1,4 +1,4 @@
-## 소수 찾기
+## 소수 찾기 *
 
 from itertools import permutations
 # 소수인지 판별하는 함수

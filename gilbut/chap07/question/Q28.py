@@ -1,4 +1,4 @@
-## 가장 큰 수
+## 가장 큰 수 *
 
 def explain(numbers):
     numbers = [str(x) for x in numbers]

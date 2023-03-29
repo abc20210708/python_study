@@ -1,4 +1,4 @@
-## 카펫
+## 카펫 *
 
 # 1.전체 넓이를 구합니다.
 def solution(brown, yellow):
