@@ -21,4 +21,8 @@ def solution(word):
     # 전체 탐색으로 찾기
     for i in range(len(data)):
         if data[i] == word:
-            res 
+            res = i + 1
+            break
+    return res
+
+print(solution("AAAE"))
