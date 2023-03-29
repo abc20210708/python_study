@@ -1,5 +1,14 @@
 ## 가장 큰 수
 
+def explain(numbers):
+    numbers = [str(x) for x in numbers]
+    numbers.sort(key=lambda x: x*3, reverse=True)
+    res = ''.join(numbers)
+    if '0' * len(numbers) == res: return '0'
+    return res
+    
+print(explain([6, 10, 2]))
+
 from functools import cmp_to_key
 
 def new_solution(numbers):
