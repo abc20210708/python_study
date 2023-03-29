@@ -13,6 +13,9 @@ def explain(numbers):
 
 print(explain([2, 1, 3, 4, 1]))
 
+def new_solution(numbers):
+    return sorted(set(map(sum, combinations(numbers, 2))))
+
 
 def solution_1(numbers):
     res = set()
