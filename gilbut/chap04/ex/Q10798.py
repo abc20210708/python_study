@@ -14,3 +14,21 @@ for i in range(15):
     
 print(res)
 
+
+words = []
+max_len = 0
+
+# 입력받은 5개의 문자열을 리스트에 저장하고
+# 가장 긴 문자열의 길이를 구하기
+for i in range(5):
+    word = input()
+    words.append(word)
+    max_len = max(max_len, len(word))
+    
+# 각 문자열의 n번째 문자열 세로로 출력
+for i in range(max_len):
+    for j in range(5):
+        if i < len(words[j]):
+            print(words[j][i], end="")
+        else:
+            continue
