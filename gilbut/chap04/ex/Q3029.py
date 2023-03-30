@@ -1,7 +1,9 @@
 ## 경고 (브론즈 3) *
 
-h1, m1, s1 = map(int, input().split(":"))
-h2, m2, s2 = map(int, input().split(":"))
+#h1, m1, s1 = map(int, input().split(":"))
+#h2, m2, s2 = map(int, input().split(":"))
+h1, m1, s1 = map(int, "12:34:56".split(":"))
+h2, m2, s2 = map(int, "14:36:22".split(":"))
 
 t1 = h1* 60 * 60  + m1 * 60 + s1
 t2 = h2* 60 * 60  + m2 * 60 + s2
@@ -13,6 +15,16 @@ m = t // 60 % 60
 s = t % 60
 
 print("%02d:%02d:%02d" % (h, m, s))
+
+'''
+a, b, c = map(int,input().split('.'))
+print('%04d.%02d.%02d' % (a,b,c))
+# 입력 : 2020.8.20
+# 출력 : 2020.08.20
+
+# 참고 블로그 https://hyjykelly.tistory.com/65
+'''
+
     
 
 first = list(map(int, input().split(":")))
