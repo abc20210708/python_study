@@ -2,6 +2,7 @@
 
 for _ in range(3):
     start, end = input().split()
+
     h1, m1, s1 = map(int, start.split(":"))
     h2, m2, s2 = map(int, end.split(":"))
     
@@ -19,7 +20,7 @@ for _ in range(3):
         
     print(res)
 
-
+# 참고 블로그 http://cobinding.tistory.com/81
 
 '''
 # 참고 블로그 https://kau-algorithm.tistory.com/929
