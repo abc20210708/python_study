@@ -16,13 +16,9 @@ while True:
         
     word = '?'
     for i in range(h):
-        know = False
-        if know == True:
-            break
         for j in range(jj,jj+w):
             if l[i][j] != '?':
                 word = l[i][j]
-                know = True
                 break
                 
     result += word
