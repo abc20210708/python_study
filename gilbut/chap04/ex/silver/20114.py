@@ -1,9 +1,11 @@
 ## 미아 노트 (실버 5) *
 
 # 참고 블로그 https://jeonnew.tistory.com/4
-
+'''
 n, h, w = map(int, input().split())
 l = [[] for _ in range(h)]
+
+
 for i in range(h):
     inp = input()
     for j in inp:
@@ -70,3 +72,33 @@ ans=''
 for i in range(n):
     note(i)
 print(ans)
+'''
+
+n, h, w = 6, 2, 3
+l = [
+['?', '?', '?', 'r', 'r', 'r', 'u', 'u', 'u', '?', '?', '?', 't', 't', 't', '?', '?', '?'],
+['f', '?', 'f', '?', 'r', 'r', 'u', 'u', 'u', '?', '?', '?', '?', '?', '?', 't', '?', '?']
+]
+result = ""
+jj = 0
+
+while True:
+    print("jj:", jj)
+    print("result:", result)
+
+
+    if len(result) == n:
+        break
+    
+    word = '?'
+    for i in range(h):
+        for j in range(jj,jj+w):
+            if l[i][j] != '?':
+                word = l[i][j]
+                break
+            
+    print("word:", word)
+    result += word
+    jj += w
+            
+print(result)
