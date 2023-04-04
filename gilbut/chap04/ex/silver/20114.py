@@ -1,5 +1,37 @@
 ## 미아 노트 (실버 5) *
 
+# 참고 블로그 https://jeonnew.tistory.com/4
+
+n, h, w = map(int, input().split())
+l = [[] for _ in range(h)]
+for i in range(h):
+    inp = input()
+    for j in inp:
+        l[i].append(j)
+result = ""   
+jj = 0
+while True:
+    if len(result) == n:
+        break
+        
+    word = '?'
+    for i in range(h):
+        know = False
+        if know == True:
+            break
+        for j in range(jj,jj+w):
+            if l[i][j] != '?':
+                word = l[i][j]
+                know = True
+                break
+                
+    result += word
+    jj += w
+                
+print(result)
+
+
+
 # 참고 블로그 https://dreamtreeits.tistory.com/147
 import sys
 
