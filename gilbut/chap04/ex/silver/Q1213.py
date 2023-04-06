@@ -3,6 +3,8 @@
 import collections
 import sys
 
+# 참고 블로그 https://velog.io/@rovna/%EB%B0%B1%EC%A4%80-1213%EB%B2%88-%ED%8C%B0%EB%A6%B0%EB%93%9C%EB%A1%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0
+# 참고 블로그 https://fre2-dom.tistory.com/310
 #input = "ABACABA"
 input = sys.stdin.readline
 word = input().rstrip()
