@@ -1,0 +1,36 @@
+## 팰린드롬 만들기 (실버 3) *
+
+import collections
+import sys
+
+#input = "ABACABA"
+input = sys.stdin.readline
+word = input().rstrip()
+chk_word = collections.Counter(word)
+cnt = 0
+
+res = ""
+mid = ""
+
+for k,v in list(chk_word.items()):
+    if v % 2 == 1: 
+        cnt += 1
+        mid = k
+        if cnt >= 2: # 홀수가 2개 이상이면 팰린드롬이 X
+            print("I'm Sorry Hansoo")
+            exit()
+            
+for k, v in sorted(chk_word.items()):
+    res += (k * (v // 2))
+print(res + mid + res[::-1])
+
+'''
+코드에서 break 대신 exit() 함수를 사용하는 이유는 
+break는 내부 루프에서만 빠져나오고 나머지 코드는 
+계속 실행되는 반면, exit()는 프로그램을 즉시 종료시킵니다. 
+
+이 경우, 입력된 문자열이 회문으로 재배열될 수 없다는 것이 
+결정되면 나머지 코드를 계속 실행할 필요가 없기 때문에 
+exit() 함수를 사용하여 프로그램을 종료하고 
+"I'm Sorry Hansoo" 메시지를 출력합니다.
+'''
