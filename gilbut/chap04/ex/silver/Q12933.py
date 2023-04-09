@@ -2,19 +2,20 @@
 
 # 참고 블로그 https://yuna0125.tistory.com/179
 quack = 'quack'
-duck = "quqacukqauackck"
+str = "quqacukqauackck"
+#str = "kcauq"
 #duck = input()
-visitied = [0] * len(duck)
+visitied = [0] * len(str)
 
 def solution(start):
     global cnt
     j = 0
     first = 1
-    for i in range(start, len(duck)):
+    for i in range(start, len(str)):
         # 울음 소리 비교
-        if duck[i] == quack[j] and not visitied[i]:
+        if str[i] == quack[j] and not visitied[i]:
             visitied[i] = 1
-            if duck[i] == 'k':
+            if str[i] == 'k':
                 if first:
                     cnt += 1
                     first = 0
@@ -22,13 +23,13 @@ def solution(start):
             else:
                 j += 1
 
-if len(duck) % 5 != 0:
+if len(str) % 5 != 0:
     print(-1)
     exit()
     
 cnt = 0
-for i in range(len(duck)):
-    if duck[i] == 'q' and not visitied[i]:
+for i in range(len(str)):
+    if str[i] == 'q' and not visitied[i]:
         solution(i)
         
 if cnt == 0 or not all(visitied):
