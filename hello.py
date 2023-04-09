@@ -1,16 +1,18 @@
-print(2 ** 4 + 11 % 5 - (20 / 2) + 13 // 2 * 3)
+# replace 매개변수 3개
 
-n1 = int(input())
-n2 = int(input())
+text = "orange,orange,melon"
+text_mod = text.replace("orange", "apple", 1)
 
-temp = 0
-if n1 > n2:
-    temp = n1
-else:
-    temp = n2
+temp = "apple,orange,melon"
+print(text_mod)
 
-if temp % 2 == 0:
-    print("더 큰 값인", temp, "은(는) 짝수입니다.")
-else:
-    print("더 큰 값인", temp, "은(는) 홀수입니다.")
-    
+'''
+replace 메서드는 일치하는 검색 문자와 
+일치하는 문자가 있는 경우 모두 변경합니다.
+
+만약 제일 처음에 일치하는 문자만 치환하고 
+싶은 경우에는 3번째 파라미터인 치환 횟수를 지정해주면 됩니다
+
+가장 처음에 검색된 orange만 apple로 
+치환되고 두 번째 orange는 치환되지 않았습니다.
+'''
