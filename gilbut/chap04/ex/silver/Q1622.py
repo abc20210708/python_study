@@ -4,16 +4,15 @@
 
 while 1:
     try:
-        str1 = input()
-        str2 = input()
-        
-        arr = []
-        for i in str1:
-            if i in str2:
-                arr.append(i)
-                b = b.replace(i, "", 1)
-        arr.sort()
-        print(''.join(arr))
+        s1 = input()
+        s2 = input()
+        res = []
+        for i in s1:
+            if i in s2:
+                res.append(i)
+                s2 = s2.replace(i, "", 1)
+        res.sort()
+        print(''.join(res))
     except:
         break
         
