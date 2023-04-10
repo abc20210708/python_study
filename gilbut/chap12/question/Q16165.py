@@ -1,5 +1,6 @@
 # 걸그룹 마스터 준석이 (실버 3) *
 
+# 참고 블로그 https://chancoding.tistory.com/74
 import sys
 input = sys.stdin.readline
 
