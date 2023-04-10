@@ -1,6 +1,8 @@
 # 두 개의 손 (브론즈 2) *
 
 # S - 가위, R - 바위, P - 보, 무조건 이기는 방법
+# 0 < 1< 2 & 2 < 0
+
 
 ml, mr, tl, tr = ('SPR'.index(i) for i in input().split())
 '''
