@@ -11,6 +11,21 @@ https://codesyun.tistory.com/175
 
 '''
 
+forms = {'c': 26, 'd': 10}
+s = input()
+
+res = forms[s[0]]
+
+for i in range(1, len(s)):
+    mul = forms[s[i]]
+    if s[i] == s[i-1]:
+        mul -= 1
+    res *= mul
+    
+print(res)
+
+
+'''
 s = input()
 
 if s[0] == 'c':
@@ -31,3 +46,4 @@ for i in range(1, len(s)):
             res *= 10
 
 print(res)
+'''
