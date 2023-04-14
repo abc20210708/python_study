@@ -1,16 +1,13 @@
-# 차량 번호판 다시 풀기
+# 명령 프롬프트 다시 풀기
+
+n = int(input())
+arr = list(input())
 
 
-s = input()
-
-forms = {'c':26, 'd':10}
-
-res = forms[s[0]]
-   
-for i in range(1, len(s)):
-    tmp = forms[s[i]]
-    if s[i] == s[i - 1]:
-        tmp -= 1
-    res *= tmp
-        
-print(res)
+for i in range(n - 1):
+    temp = list(input())
+    for j in range(len(arr)):
+        if arr[j] != temp[j]:
+            arr[j] = "?"
+            
+print(''.join(arr))
