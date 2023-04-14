@@ -1,21 +1,9 @@
-# 농구 경기 다시 풀기
+# 팰린드롬수 다시 풀기
 
-n = int(input())
-
-arr = []
-for i in range(n):
-    arr.append(input()[0])
-    
-res = []
-s = set(arr)
-
-for i in s:
-    if arr.count(i) >= 5:
-        res.append(i)
-        
-res.sort()
-
-if len(res) == 0:
-    print("PREDAJA")
-else:
-    print(''.join(res))
+while 1:
+    s = input()
+    if s == "0":break
+    if s == s[::-1]:
+        print("yes")
+    else:
+        print("no")
