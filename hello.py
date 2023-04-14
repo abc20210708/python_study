@@ -1,18 +1,16 @@
-# replace 매개변수 3개
+# 차량 번호판 다시 풀기
 
-text = "orange,orange,melon"
-text_mod = text.replace("orange", "apple", 1)
 
-temp = "apple,orange,melon"
-print(text_mod)
+s = input()
 
-'''
-replace 메서드는 일치하는 검색 문자와 
-일치하는 문자가 있는 경우 모두 변경합니다.
+forms = {'c':26, 'd':10}
 
-만약 제일 처음에 일치하는 문자만 치환하고 
-싶은 경우에는 3번째 파라미터인 치환 횟수를 지정해주면 됩니다
-
-가장 처음에 검색된 orange만 apple로 
-치환되고 두 번째 orange는 치환되지 않았습니다.
-'''
+res = forms[s[0]]
+   
+for i in range(1, len(s)):
+    tmp = forms[s[i]]
+    if s[i] == s[i - 1]:
+        tmp -= 1
+    res *= tmp
+        
+print(res)
