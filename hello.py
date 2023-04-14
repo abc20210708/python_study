@@ -1,13 +1,21 @@
-# 명령 프롬프트 다시 풀기
+# 농구 경기 다시 풀기
 
 n = int(input())
-arr = list(input())
 
+arr = []
+for i in range(n):
+    arr.append(input()[0])
+    
+res = []
+s = set(arr)
 
-for i in range(n - 1):
-    temp = list(input())
-    for j in range(len(arr)):
-        if arr[j] != temp[j]:
-            arr[j] = "?"
-            
-print(''.join(arr))
+for i in s:
+    if arr.count(i) >= 5:
+        res.append(i)
+        
+res.sort()
+
+if len(res) == 0:
+    print("PREDAJA")
+else:
+    print(''.join(res))
