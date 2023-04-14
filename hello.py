@@ -1,11 +1,16 @@
-# 민균이의 비밀번호 다시 풀기
+# 피카츄 다시 풀기
 
-n = int(input())
-arr = [input() for _ in range(n)]
+# pikaqiu
 
+import sys
+import re
 
-for i in arr:
-    if i[::-1] in arr:
-        print(len(i), i[len(i)//2])
-        break
-    
+input = sys.stdin.readline().rstrip()
+
+tmp = re.sub('pi|ka|chu', "", input)
+
+print(tmp)
+if not tmp:
+    print("YES")
+else:
+    print("NO")
