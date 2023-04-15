@@ -4,13 +4,13 @@
 
 while 1:
     try:
-        s1 = input()
-        s2 = input()
+        a = input()
+        b = input()
         res = []
-        for i in s1:
-            if i in s2:
+        for i in a:
+            if i in b:
                 res.append(i)
-                s2 = s2.replace(i, "", 1)
+                b = b.replace(i, "", 1)
         res.sort()
         print(''.join(res))
     except:
