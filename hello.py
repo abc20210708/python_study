@@ -1,16 +1,25 @@
-# 피카츄 다시 풀기
+# 팰린드롬 만들기 다시 풀기
 
-# pikaqiu
-
+import collections
 import sys
-import re
 
-input = sys.stdin.readline().rstrip()
+input = sys.stdin.readline
+word = input().strip()
 
-tmp = re.sub('pi|ka|chu', "", input)
+chk_word = collections.Counter(word)
+cnt = 0
 
-print(tmp)
-if not tmp:
-    print("YES")
-else:
-    print("NO")
+res = ""
+mid = ""
+
+for k,v in list(chk_word.items()):
+    if v % 2 == 1:
+        cnt += 1
+        mid = k
+        if cnt > 1:
+            print("I'm Sorry Hansoo")
+            exit()
+            
+for k, v in sorted(chk_word.items()):
+    res += (k * (v // 2))
+print(res + mid + res[::-1])
