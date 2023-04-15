@@ -13,7 +13,6 @@ if '_' in s:
         for i in s:
             if i.isupper():
                 res = "Error!"
-                break
             if i == "_":
                 flag = 1
                 continue
