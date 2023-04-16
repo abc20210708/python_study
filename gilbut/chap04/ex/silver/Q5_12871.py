@@ -4,6 +4,10 @@ t = input()
 
 s_len = len(s)
 t_len = len(t)
+
+print(s * t_len)
+print(t * s_len)
+
 if s * t_len == t * s_len:
     print(1)
 else:
