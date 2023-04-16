@@ -36,3 +36,25 @@ break는 내부 루프에서만 빠져나오고 나머지 코드는
 exit() 함수를 사용하여 프로그램을 종료하고 
 "I'm Sorry Hansoo" 메시지를 출력합니다.
 '''
+
+s = list(map(str, sys.stdin.readline().strip()))
+s.sort()
+check = collections.Counter(s)
+
+count = 0
+center = ""
+
+for i in check:
+    if check[i] % 2 == 1:
+        count += 1
+        center += i
+        s.remove(i)
+    if count > 1: break
+
+if count > 1:
+    print("I'm Sorry Hansoo")
+else:
+    result = ""
+    for i in range(0, len(s), 2):
+        result += s[i]
+    print(result + center + result[::-1])
