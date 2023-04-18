@@ -48,6 +48,7 @@ def new_solution(s):
         #문자열 인덱스
         for k in range(i,len(s),i):
             #앞에 문자와 같다면
+            print(s[k:k+i])
             if s[k:k+i] == tmp:
                 cnt +=1
             #앞에 문자와 다르다면, 단 이전것 정리해줘야함.
@@ -57,7 +58,7 @@ def new_solution(s):
                     q += tmp
                 else:
                     q+= str(cnt)+tmp
-                    #tmp 자신으로 바꿔주기
+                #tmp 자신으로 바꿔주기
                 tmp = s[k:k+i]
                 cnt = 1
         if cnt == 1:
@@ -67,4 +68,4 @@ def new_solution(s):
         mini = min(mini,len(q))            
     return mini
 
-new_result = new_solution("abcabcabcabcdededededede")
+new_result = new_solution("abcabcdede")
