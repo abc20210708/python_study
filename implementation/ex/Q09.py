@@ -39,32 +39,35 @@ B까지가 아닌 B-1 이라는 것에 주의하세요.
 
 ## 다른 풀이
 def new_solution(s):
-    mini = len(s)
-    #간격
+    mini = len(s) # 최소 압출 길이 초기화
+    
+    # 압축 간격을 1부터 문자열 길이의 절반까지 
     for i in range(1,len(s)//2+1):
-        q = ''
-        cnt = 1
+        q = '' # 압축된 문자열을 저장할 변수
+        cnt = 1 # 연속된 문자열의 개수를 세는 변수
+        # 비교할 기준 문자열 초기화
         tmp = s[:i]
-        #문자열 인덱스
+        #문자열 인덱스를 압축 간격만큼 증가
         for k in range(i,len(s),i):
-            #앞에 문자와 같다면
             print(s[k:k+i])
+            print(f"tmp : {tmp}")
+            # 현재 문자열이 기준 문자열과 같다면
             if s[k:k+i] == tmp:
-                cnt +=1
-            #앞에 문자와 다르다면, 단 이전것 정리해줘야함.
-            else:
-                #앞문자와 다른데, cnt에 따라 다르게
-                if cnt==1:
-                    q += tmp
-                else:
-                    q+= str(cnt)+tmp
-                #tmp 자신으로 바꿔주기
+                cnt += 1 # 연속된 문자열 개수 증가 
+            else: # 현재 문자열이 기준 문자열과 다르면
+                if cnt == 1: # 연속된 문자열이 1개라면
+                    q += tmp #압축하지 않고 그대로 추가
+                else: # 연속된 문자열이 1개 이상이라면
+                    # 연속된 문자열 개수와 기준 문자열을 압축해 추가
+                    q += str(cnt) + tmp
+                # 새로운 기준 문자열로 변경
                 tmp = s[k:k+i]
+                # 연속된 문자열 개수 초기화
                 cnt = 1
-        if cnt == 1:
-            q+=tmp
-        else:
-            q+= str(cnt)+tmp
+        if cnt == 1: # 마지막으로 남은 연속된 문자열이 1개라면
+            q += tmp # 압축하지 않고 그대로 추가
+        else: # 마지막으로 남은 연속된 문자열이 1개 이상이라면
+            q += str(cnt) + tmp # 연속된 문자열 개수와 기준 문자열을 압축해 추가   
         mini = min(mini,len(q))            
     return mini
 
