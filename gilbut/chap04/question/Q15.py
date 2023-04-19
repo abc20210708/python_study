@@ -11,5 +11,9 @@ def explain(phone_number):
 def solution(phone_number):
     res = '*' * (len(phone_number) - 4)
     res += phone_number[-4:]
+    print(phone_number[:-4]) #0103333
+    print(phone_number[-4:]) #4444
     
     return res
+
+print(solution("01033334444"))
