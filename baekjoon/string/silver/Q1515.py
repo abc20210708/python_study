@@ -41,6 +41,7 @@
 20을 출력하면 됩니다.
 '''
 # 234092
+'''
 nums = input()
 i = 0
 while 1:
@@ -53,4 +54,23 @@ while 1:
     if nums == '':
         print(i)
         break
+'''  
     
+import sys
+n = sys.stdin.readline().rstrip()
+# n의 최솟값을 저장할 변수를 0으로 초기화
+cnt = 0 
+while len(n) > 0: # 남은 수가 비어있지 않을 때까지 반복
+    # n의 후보 값, cnt를 1씩 증가
+    cnt += 1
+    # cnt를 문자열로 변환하여 result에 저장
+    result = str(cnt)
+    # result와 n이 둘 다 비어있지 않을 때까지 반복
+    while result and n:       
+        # result와 n의 첫 번재 숫자를 비교해 같으면
+        if result[0] == n[0]:
+            # n의 첫 번째 숫자를 제거
+            n = n[1:]
+        # result의 첫 번째 문자를 제거
+        result = result[1:]
+print(cnt)
