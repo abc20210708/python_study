@@ -14,7 +14,7 @@ def new_solution(n):
 # 입력받은 숫자를 3진수로 변환한 다음, 변환된 문자열을 
 # 역으로 뒤집고, 다시 10진수로 변환
 
-print(new_solution(45))
+#print(new_solution(45))
 
 '''
 # n진수 -> 10진수
@@ -41,9 +41,11 @@ def solution(n):
     #print(temp)
     
     number = 0
-    num = 0
+    cnt = 0
     for i in temp:
-        number += (math.pow(3, num) * int(i))
-        num += 1
+        number += (math.pow(3, cnt) * int(i))
+        cnt += 1
         
-    return number
+    return int(number)
+
+print(solution(45))
