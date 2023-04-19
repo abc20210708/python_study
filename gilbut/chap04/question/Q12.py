@@ -7,11 +7,13 @@ def explain(s):
         change += 1
         num = s.count("1")
         zero += len(s) - num
+        print(bin(num))
         s = bin(num)[2:]
+        print(f"s : {s}")
     
     return [change, zero]
 
-print(explain("0111010"))
+print(explain("01110"))
 
 
 def solution(s):
@@ -29,4 +31,4 @@ def solution(s):
     
     return res
     
-print(solution("0111010"))
+#print(solution("0111010"))
