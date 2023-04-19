@@ -1,41 +1,57 @@
 ## 오리 (실버 3) *
 
 # 참고 블로그 https://yuna0125.tistory.com/179
-quack = 'quack'
-str = "quqacukqauackck"
-#str = "kcauq"
-#duck = input()
-visitied = [0] * len(str)
+# "quack"이라는 문자열이 주어진 문자열에서 
+# 몇 번 나타나는지 세는 문제를 해결하는 코드
+
+# 찾아야 할 문자열 "quack"을 변수에 저장
+quack = 'quack'                  
+str = input()  
+# 문자열의 길이만큼의 리스트를 생성하고 
+# 0으로 초기화된 방문 여부 리스트 생성       
+visited = [0] * len(str)         
 
 def solution(start):
-    global cnt
+    # 전역 변수 cnt를 사용하기 위해 선언
+    global cnt 
+    # "quack" 문자열의 인덱스를 나타내는 변수             
     j = 0
-    first = 1
+    # 첫 번째 'k'인 경우를 체크하기 위한 변수   
+    first = 1                     
     for i in range(start, len(str)):
-        # 울음 소리 비교
-        if str[i] == quack[j] and not visitied[i]:
-            visitied[i] = 1
-            if str[i] == 'k':
-                if first:
-                    cnt += 1
-                    first = 0
-                j = 0
+        # 현재 문자와 "quack"의 문자를 비교하고 방문하지 않은 경우에만 실행
+        if str[i] == quack[j] and not visited[i]:    
+            visited[i] = 1  # 현재 문자를 방문 처리
+            if str[i] == 'k':  # 현재 문자가 'k'인 경우
+                if first:   # 첫 번째 'k'인 경우
+                    cnt += 1  # 카운트를 증가
+                    first = 0  # 첫 번째 'k'인 경우를 처리했음을 표시
+                # 다음에 비교할 문자열의 인덱스를 초기화
+                j = 0               
             else:
-                j += 1
+                # 다음에 비교할 문자열의 인덱스를 증가
+                j += 1              
 
-if len(str) % 5 != 0:
-    print(-1)
+# 입력 문자열의 길이가 5의 배수가 아닌 경우
+if len(str) % 5 != 0: 
+    print(-1) # -1을 출력하고 프로그램 종료
     exit()
-    
-cnt = 0
-for i in range(len(str)):
-    if str[i] == 'q' and not visitied[i]:
-        solution(i)
-        
-if cnt == 0 or not all(visitied):
-    print(-1)
-else:
-    print(cnt)
+
+# "quack" 문자열이 몇 번 나타났는지 
+# 카운트하는 변수 초기화
+cnt = 0                          
+for i in range(len(str)):  # 문자열의 각 문자에 대해 반복
+    # 현재 문자가 'q'이고 방문하지 않은 경우
+    if str[i] == 'q' and not visited[i]:   
+        # solution 함수를 호출하여 "quack"이 나타나는지 확인
+        solution(i)               
+
+# "quack" 문자열이 하나도 나타나지 않거나 모든 문자가 방문되지 않은 경우
+if cnt == 0 or not all(visited):   
+    print(-1)  # -1을 출력
+else: # 그렇지 않은 경우에는 "quack" 문자열이 나타난 횟수를 출력
+    print(cnt)                    
+
                 
 '''
 "quqacukqauackck"와 같은 문자열을 보면, 
