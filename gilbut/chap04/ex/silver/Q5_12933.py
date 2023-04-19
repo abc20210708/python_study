@@ -79,3 +79,52 @@ else: # 그렇지 않은 경우에는 "quack" 문자열이 나타난 횟수를 �
 따라서 "quqacukqauackck"와 같은 문자열은 "quack"의 순서가 일치하지 않으므로, 
 이 문자열은 한 마리 이상의 오리가 울은 것으로 가정할 수 있습니다.
 '''
+
+
+duck = input()                 
+visited = [False] * len(duck) 
+# "quack" 문자열이 몇 번 나타났는지 
+# 카운트하는 변수 초기화
+cnt = 0                        
+
+ # 입력 문자열의 길이가 5의 배수가 아닌 경우
+ # -1을 출력하고 프로그램 종료
+if len(duck) % 5 != 0:
+    print(-1)                  
+    exit()
+
+def solve(start):
+    # 전역 변수 cnt를 사용하기 위해 선언
+    global cnt       
+    # 찾아야 할 문자열 "quack"을 변수에 저장          
+    quack = 'quack'      
+    # "quack" 문자열의 인덱스를 나타내는 변수  
+    # 첫 번째 'k'인 경우를 체크하기 위한 변수    
+    j = 0                     
+    first = True       
+    for i in range(start, len(duck)):
+        # 현재 문자와 "quack"의 문자를 비교하고 방문하지 않은 경우에만 실행
+        if duck[i] == quack[j] and not visited[i]:   
+            visited[i] = True   # 현재 문자를 방문 처리
+            if duck[i] == 'k':  # 현재 문자가 'k'인 경우
+                if first:       # 첫 번째 'k'인 경우
+                    cnt += 1     # 카운트를 증가
+                    first = False # 첫 번째 'k'인 경우를 처리했음을 표시
+                j = 0             # 다음에 비교할 문자열의 인덱스를 초기화
+                # 'k'인 경우는 더 이상 비교할 필요가 없으므로 
+                # continue로 다음 반복으로 넘어감
+                continue     
+            # 다음에 비교할 문자열의 인덱스를 증가   
+            j += 1               
+
+# 문자열의 각 문자에 대해 반복
+for i in range(len(duck)):      
+    # 현재 문자가 'q'이고 방문하지 않은 경우
+    if duck[i] == 'q' and not visited[i]:   
+        solve(i)# solve 함수를 호출하여 "quack"이 나타나는지 확인
+
+ # "quack" 문자열이 하나도 나타나지 않거나 모든 문자가 방문되지 않은 경우
+if not all(visited) or cnt == 0: 
+    print(-1) # -1을 출력
+else:
+    print(cnt)  # 그렇지 않은 경우에는 "quack" 문자열이 나타난 횟수를 출력
