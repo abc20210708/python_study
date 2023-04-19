@@ -55,7 +55,7 @@ while 1:
         print(i)
         break
 '''  
-    
+## 참고 블로그 http://oripre.tistory.com/67
 import sys
 n = sys.stdin.readline().rstrip()
 # n의 최솟값을 저장할 변수를 0으로 초기화
