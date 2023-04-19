@@ -128,3 +128,12 @@ if not all(visited) or cnt == 0:
     print(-1) # -1을 출력
 else:
     print(cnt)  # 그렇지 않은 경우에는 "quack" 문자열이 나타난 횟수를 출력
+    
+'''
+예제 5의 경우에 다음과 같이 오리 3마리가 울었다고 할 수 있다.
+
+  녹음: quqaquuacakcqckkuaquckqauckack
+오리 1: ____q_u__a___ck_______________
+오리 2: __q__u_ac_k_q___ua__ckq_u__ack
+오리 3: qu_a_______c___k__qu___a_ck___
+'''
