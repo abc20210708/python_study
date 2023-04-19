@@ -80,7 +80,7 @@ else: # 그렇지 않은 경우에는 "quack" 문자열이 나타난 횟수를 �
 이 문자열은 한 마리 이상의 오리가 울은 것으로 가정할 수 있습니다.
 '''
 
-
+## 참고 블로그 https://tmdrl5779.tistory.com/128
 duck = input()                 
 visited = [False] * len(duck) 
 # "quack" 문자열이 몇 번 나타났는지 
