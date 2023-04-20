@@ -1,4 +1,51 @@
 ## 비밀번호 발음하기 (실버 5) *
+
+## 참고 블로그 https://velog.io/@holawan/%EB%B0%B1%EC%A4%80-4659%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B0%9C%EC%9D%8C%ED%95%98%EA%B8%B0-python
+
+# 모음 받아오기
+moem = ['a', 'e', 'i', 'o', 'u']
+
+while 1:
+    x = y = 0
+    pswd = input()
+    if pswd == 'end':
+        break
+    
+    # 카운트
+    cnt = 0
+    # 모음 개수 세기
+    for i in moem:
+        if i in pswd:
+            cnt += 1
+    # 모음이 없으면 부적합
+    if cnt < 1:
+        print(f'<{pswd}> is not acceptable.')
+        continue
+    # 모음만 연속 3개 or 자음만 연속 3개인 경우 체크
+    for i in range(len(pswd)-2):
+        if pswd[i] in moem and pswd[i+1] in moem and pswd[i+2] in moem:
+            x = 1
+        elif not(pswd[i] in moem) and not(pswd[i+1] in moem) and not(pswd[i+2] in moem):
+            x = 1
+    if x == 1:
+        print(f'<{pswd}> is not acceptable.')
+        continue
+    # 같은 글이 연속 두개인지 체크하지만 'e' 나 'o'는 continue
+    for i in range(len(pswd)-1):
+        if pswd[i] == pswd[i+1]:
+            if pswd[i] == 'e' or pswd[i] == 'o':
+                continue
+            else:
+                y = 1
+    if y == 1:
+        print(f'<{pswd}> is not acceptable.')
+        continue
+    # 예외 케이스를 통과하면 적합
+    print(f'<{pswd}> is acceptable.')
+    
+
+
+'''
 import re
 import sys
 
@@ -26,7 +73,7 @@ while 1:
         print(f"<{s}> is not acceptable.")
         
 # 참고 블로그 https://velog.io/@youngcheon/%EB%B0%B1%EC%A4%80-4659-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B0%9C%EC%9D%8C%ED%95%98%EA%B8%B0-Python
-
+'''
 '''
 len(re.findall('([a-df-np-z])\\1', s))
 이 코드는 Python의 re (Regular Expression) 모듈을 사용하여, 
