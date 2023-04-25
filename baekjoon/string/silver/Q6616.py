@@ -1,4 +1,6 @@
 ## 문자열 암호화 (실버 3) *
+
+# 참고 블로그 https://becca-codingdiary.tistory.com/entry/6616-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%94%ED%98%B8%ED%99%94
 import sys
 
 while 1:
