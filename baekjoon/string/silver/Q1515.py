@@ -68,6 +68,7 @@ while len(n) > 0: # 남은 수가 비어있지 않을 때까지 반복
     # result와 n이 둘 다 비어있지 않을 때까지 반복
     while result and n:       
         # result와 n의 첫 번재 숫자를 비교해 같으면
+        print(n[0])
         if result[0] == n[0]:
             # n의 첫 번째 숫자를 제거
             n = n[1:]
