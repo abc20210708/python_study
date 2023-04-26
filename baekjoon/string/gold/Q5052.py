@@ -1,5 +1,6 @@
 ## 전화번호 목록 (골드 4) *
 
+# 참고 블로그 https://fre2-dom.tistory.com/209
 import sys
 input = sys.stdin.readline
 
