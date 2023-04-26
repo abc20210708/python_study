@@ -16,6 +16,9 @@ for _ in range(t):
         # 현재 전화번호 길이만큼의 문자열과 같은지 확인
         # 같으면 일관성이 없는 것
         if arr[i] == arr[i+1][0:len(arr[i])]:
+            print(arr[i+1][0:len(arr[i])])
+            print(arr[i+1])
+            print(arr[0:len(arr[i])])
             check = "no"
     if check == "no":
         print("NO")
