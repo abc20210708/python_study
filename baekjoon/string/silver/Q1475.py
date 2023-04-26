@@ -1,5 +1,6 @@
 ## 방 번호 (실버 5) *
 
+# 참고 블로그 https://bgspro.tistory.com/62
 import sys
 input = sys.stdin.readline().rstrip
 
