@@ -48,6 +48,8 @@ def new_suotion(s):
             res.append(int(ss.pop()))
         
     for i in range(2, n+1):
+        print(dic[i])
+        print(dic[i-1])
         intersection = dic[i] - dic[i-1]
         res.append(int(intersection.pop()))
     return res
