@@ -31,3 +31,25 @@ def solution(s):
                 res.append(value)
     
     return res
+
+# 참고 블로그 https://p-uyoung.github.io/coding_test/string/
+import re
+def new_suotion(s):
+    dic = {}
+    n = 1
+    res = []
+    
+    s = s.split('},')
+    for ss in s:
+        ss = re.findall(r'\d+', ss)
+        dic[len(ss)] = set(ss)
+        n = max(n, len(ss))
+        if len(ss) == 1:
+            res.append(int(ss.pop()))
+        
+    for i in range(2, n+1):
+        intersection = dic[i] - dic[i-1]
+        res.append(int(intersection.pop()))
+    return res
+
+print(new_suotion("{{2},{2,1},{2,1,3},{2,1,3,4}}"))
