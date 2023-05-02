@@ -1,12 +1,15 @@
-# 예제 시각 다시 풀기
+# 방 번호(실버 5) 다시 풀기
 
-hour = int(input())
-cnt = 0
+s = input()
+arr = [0] * 10
 
-for i in range(hour+1):
-    for j in range(60):
-        for k in range(60):
-            if '3' in str(i)+str(j)+str(k):
-                cnt += 1
+for i in s:
+    if int(i) == 6 or int(i) == 9:
+        if arr[6] <= arr[9]:
+            arr[6] += 1
+        else:
+            arr[9] += 1
+    else:
+        arr[int(i)] += 1
 
-print(cnt)
+print(max(arr))
