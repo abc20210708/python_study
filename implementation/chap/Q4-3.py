@@ -10,8 +10,8 @@
 '''
 
 # 현재 나이트의 위치 입력받기
-here = input()
-## here = "a1"
+#here = input()
+here = "a1"
 row = int(here[1]) #행
 #column = int(ord(here[0])) - int(ord('a')) + 1 #열
 column = int(ord(here[0])) - 96 #열
@@ -48,3 +48,22 @@ for i in temp_list:
 
 print(result)
 '''
+
+# 예제 왕실의 나이트 다시 풀기
+
+w = "a1"
+y = int(ord(w[0])) - 96
+x = int(w[1])
+
+steps = [(2, 1), (-2, 1), (-2, -1), (2, -1),
+         (1, 2), (-1, 2), (-1, -2), (1, -2)]
+
+cnt = 0
+
+for step in steps:
+    nx, ny = x + step[0], y + step[1]
+    if nx < 1 or ny < 1 or nx > 8 or ny > 8:
+        continue
+    cnt += 1
+
+print(cnt)
