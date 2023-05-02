@@ -3,14 +3,15 @@
 # 참고 블로그 https://clap0107.tistory.com/16
 
 from collections import deque
+import sys
 
 t = int(input())
 
 for _ in range(t):
-    p = input()
+    p = sys.stdin.readline().strip()
     n = int(input())
-    x = input()[1:-1]
-    nums = x.split(',')
+    nums = input()[1:-1].split(',')
+    p = p.place("RR", "")
 
     queue = deque(nums)
 
