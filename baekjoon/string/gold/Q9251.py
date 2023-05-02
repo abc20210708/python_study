@@ -48,3 +48,5 @@ for i in range(1, len(str_a)):
             dp[i][j] = max(dp[i-1][j], dp[i][j-1])
 
 print(dp[-1][-1])
+
+# 참고 블로그 https://suri78.tistory.com/11

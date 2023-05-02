@@ -11,7 +11,7 @@ for _ in range(t):
     p = sys.stdin.readline().strip()
     n = int(input())
     nums = input()[1:-1].split(',')
-    p = p.place("RR", "")
+    p = p.replace("RR", "")
 
     queue = deque(nums)
 
