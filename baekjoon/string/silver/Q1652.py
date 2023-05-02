@@ -9,6 +9,8 @@ n = int(input())
 li = []
 w, h = 0, 0
 cnt = 0
+
+# 가로
 for i in range(n):
     li.append(list(input().rstrip()))
 for i in range(n):
@@ -20,6 +22,7 @@ for i in range(n):
             cnt = 0
         if cnt == 2:
             w += 1
+# 세로            
 for i in range(n):
     cnt = 0
     for j in range(n):
