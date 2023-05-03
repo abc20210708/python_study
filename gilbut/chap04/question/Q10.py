@@ -15,14 +15,15 @@ def new_solution(s):
         tmp = s[:i]
         
         for j in range(i, len(s), i):
-            if tmp == s[j:i+j]:
+            new = s[j:i+j]
+            if tmp == new:
                 cnt += 1
             else:
                 if cnt != 1:
                     b = b + str(cnt) + tmp
                 else:
                     b = b + tmp
-                tmp = s[j:j+i]
+                tmp = new
                 cnt = 1
         if cnt != 1:
             b = b + str(cnt) + tmp
