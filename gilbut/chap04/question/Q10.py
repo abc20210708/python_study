@@ -1,5 +1,57 @@
 ## 문자열 압축 *
 
+# 참고 블로그 https://eunhee-programming.tistory.com/135
+def new_solution(s):
+    # 쪼갠 문자열들의 길이들을 담는 list
+    res = []
+    if len(s) == 1:
+        return 1
+    for i in range(1, (len(s)//2)+1):
+        # 매번 쪼갰을 때 나오는 문자열을 저장
+        b = ''
+        # 문자열이 연속으로 반복하는지
+        cnt = 1
+        #그 다음 문자열과 연속되는지 보기 위한 변수
+        tmp = s[:i]
+        
+        for j in range(i, len(s), i):
+            if tmp == s[j:i+j]:
+                cnt += 1
+            else:
+                if cnt != 1:
+                    b = b + str(cnt) + tmp
+                else:
+                    b = b + tmp
+                tmp = s[j:j+i]
+                cnt = 1
+        if cnt != 1:
+            b = b + str(cnt) + tmp
+        else:
+            b = b + tmp
+        res.append(len(b))
+    
+    return min(res)
+       
+print(new_solution("aabbaccc"))         
+'''
+ for i in range(1, (len(s)//2)+1)은 쪼갤 수 있는
+ 최대 길이가 문자열 s의 반
+ 
+ b="aabbaaccc" 같이 홀수인 경우, 
+ len(b)=9, len(b)//2 = 4이므로 4가 쪼갤 수 있는 최대 길이
+ 5씩 쪼개면 10 이상이 되므로 index가 범위를 벗어나 오류.
+ 
+
+'''
+
+
+
+
+
+
+
+
+
 def compress(s, length):
     words = [s[i:i+length] for i in range(0, len(s), length)]
     res = []
