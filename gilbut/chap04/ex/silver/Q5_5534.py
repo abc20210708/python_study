@@ -30,7 +30,7 @@ def sol(s, target):
                         if s[start + i * gap] == target[i]:
                             i += 1
                         # 문자열이 일치하지 않는 경우, 비교를 중단합니다.
-                        elif s[start + i * gap] != target[i]:
+                        else:
                             break
                     # 문자열이 일치하는 경우 1을 반환합니다.
                     else:
