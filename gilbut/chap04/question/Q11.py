@@ -1,20 +1,24 @@
 ## 3진법 뒤집기
 
+# 몫과 나머지를 동시에 구하고 싶을 때
+# >>> divmod(8, 2)
+# (4, 0)
 
-def radixChange(num, radix):
+def radixChange(num, radix=3):
     if num == 0: return '0'
     nums = []
     while num:
         num, digit = divmod(num, radix)
         nums.append(str(digit))
-    return ''.join(reversed(nums))
+    print(''.join(nums))
+    return ''.join(nums)
 
 def new_solution(n):
-    return int(radixChange(n, 3)[::-1], 3)
+    return int(radixChange(n), 3)
 # 입력받은 숫자를 3진수로 변환한 다음, 변환된 문자열을 
 # 역으로 뒤집고, 다시 10진수로 변환
 
-#print(new_solution(45))
+print(new_solution(45))
 
 '''
 # n진수 -> 10진수
