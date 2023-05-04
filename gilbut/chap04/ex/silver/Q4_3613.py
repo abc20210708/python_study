@@ -2,6 +2,7 @@
 
 # 참고 블로그 http://mrk0607.tistory.com/767
 #s = "long_and_mnemonic_identifier"
+
 # 입력받은 문자열
 import sys
 s = sys.stdin.readline().rstrip()
@@ -11,8 +12,7 @@ res = ''
 # '_'이 포함되어 있는 경우, C++ 형식인 경우
 if '_' in s:
     flag = 0
-    # '_'이 문자열의 첫 글자 또는 
-    # 마지막 글자에 위치하거나, '__'가 존재하면 에러
+    # '_'이 문자열의 첫 글자 또는 마지막 글자에 위치하거나, '__'가 존재하면 에러
     if s[0] == '_' or s[-1] == '_' or '__' in s:
         res = "Error!"
     else:
@@ -35,7 +35,8 @@ if '_' in s:
 else:
     # 첫글자가 대문자인 경우 에러
     if s[0].isupper():
-        res = "Error!"
+        print("Error!")
+        exit()
     else:
         for i in s:
             # 대문자가 나타난 경우 '_'를 추가하고, 소문자로 변환한다
