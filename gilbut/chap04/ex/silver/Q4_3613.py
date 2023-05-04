@@ -14,18 +14,19 @@ if '_' in s:
     flag = 0
     # '_'이 문자열의 첫 글자 또는 마지막 글자에 위치하거나, '__'가 존재하면 에러
     if s[0] == '_' or s[-1] == '_' or '__' in s:
-        res = "Error!"
+        print("Error!")
+        exit()
     else:
         for i in s:
             # 대문자가 포함된 경우 에러
             if i.isupper():
-                res = "Error!"
-                break
+                print("Error!")
+                exit()
             # '_'가 나타난 경우, 그 다음 문자를 대문자로 바꿔준다
             if i == "_":
                 flag = 1
                 continue
-            if flag == 1:
+            if flag :
                 res += i.upper()
                 flag = 0
                 continue
