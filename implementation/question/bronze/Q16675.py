@@ -20,7 +20,7 @@ else:
 
 
 ## 다른 풀이 2
-
+# 참고 블로그 https://velog.io/@kjo1130/%EB%B0%B1%EC%A4%80-16675-%EB%91%90%EA%B0%9C%EC%9D%98-%EC%86%90
 # 'SPR' 문자열에서 ml, mr, tl, tr 변수에 입력값에 해당하는 인덱스 값을 할당한다.
 ml, mr, tl, tr = ('SPR'.index(i) for i in input().split())
 
