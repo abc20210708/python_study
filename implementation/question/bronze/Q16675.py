@@ -1,9 +1,57 @@
 ## 두 개의 손 (브론즈 1) *
+
+## 다른 풀이
+
+# 'SPR' 문자열에서 ml, mr, tl, tr 변수에 입력값에 해당하는 인덱스 값을 할당한다.
+ml, mr, tl, tr = ('SPR'.index(i) for i in input().split())
+
+# 결과 출력을 위한 변수 chk를 False로 초기화 한다.
+chk = False
+
+# 만약 ml과 mr이 같은 경우,
+if ml == mr:
+    # 만약 ml이 0인 경우,
+    if ml == 0:
+        # 만약 tl 또는 tr이 2인 경우,
+        if 2 in (tl, tr):
+            # 결과 출력을 위한 변수 chk를 True로 변경하고 "TK"를 출력한다.
+            chk = True
+            print("TK")
+    else:
+        # 만약 ml-1이 tl 또는 tr에 속하는 경우,
+        if (ml-1) in (tl, tr):
+            # 결과 출력을 위한 변수 chk를 True로 변경하고 "TK"를 출력한다.
+            chk = True
+            print("TK")
+            
+# 만약 tl과 tr이 같은 경우,
+if tl == tr:
+    # 만약 tl이 0인 경우,
+    if tl == 0:
+        # 만약 ml 또는 mr이 2인 경우,
+        if 2 in (ml, mr):
+            # 결과 출력을 위한 변수 chk를 True로 변경하고 "MS"를 출력한다.
+            chk = True
+            print("MS")
+    else:
+        # 만약 tl-1이 ml 또는 mr에 속하는 경우,
+        if (tl-1) in (ml, mr):
+            # 결과 출력을 위한 변수 chk를 True로 변경하고 "MS"를 출력한다.
+            chk = True
+            print("MS")
+            
+# 만약 결과 출력을 위한 변수 chk가 False인 경우,
+if chk == False:
+    # "?"를 출력한다.
+    print("?")
+
+
+
 # 참고 블로그 https://polarcompass.tistory.com/39
 
 
 # 1. 두 플레이어의 가위-바위-보 움직임을 나타내는 4개의 문자를 입력받음
-#    - "S"는 가위, "P"는 바위, "R"은 보를 의미함
+#    - "S"는 가위, "P"는 보, "R"은 바위를 의미함
 ml, mr, tl, tr = map(lambda x:"SPR".find(x), input().split())
 
 # 2. 입력된 문자를 0, 1, 2 중 하나의 숫자로 변환하는 함수를 정의함
