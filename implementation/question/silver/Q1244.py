@@ -2,7 +2,6 @@
 
 ## 다른 풀이
 import sys
-
 input = sys.stdin.readline
 
 n = int(input()) 
@@ -46,8 +45,6 @@ for i in range(1, n+1): # 스위치 상태 출력
 
 
 # 참고 블로그 https://my-coding-notes.tistory.com/438
-import sys
-input = sys.stdin.readline
 
 n = int(input()) # 스위치의 개수 입력
 # 스위치의 상태 입력
