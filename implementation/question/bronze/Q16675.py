@@ -1,6 +1,25 @@
 ## 두 개의 손 (브론즈 1) *
 
-## 다른 풀이
+## 다른 풀이 1
+
+
+ML, MR, TL, TR = map(lambda x:"SRP".find(x), input().split())
+
+def lose_case(x):
+    if x == 0: return 1
+    elif x == 1: return 2
+    else: return 0
+
+
+if ML == MR and lose_case(ML) in [TL,TR]:
+    print("TK")
+elif TL == TR and lose_case(TL) in [ML,MR]:
+    print("MS")
+else:
+    print("?")
+
+
+## 다른 풀이 2
 
 # 'SPR' 문자열에서 ml, mr, tl, tr 변수에 입력값에 해당하는 인덱스 값을 할당한다.
 ml, mr, tl, tr = ('SPR'.index(i) for i in input().split())
