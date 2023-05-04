@@ -7,7 +7,7 @@ input = sys.stdin.readline
 n = int(input()) 
 s = list(map(int, input().split())) 
 # 인덱스를 1부터 사용하기 위해 [-1]을 추가함.
-s = [-1] + [1 if s[i] == 1 else 0 for i in range(n)] 
+s = [-1] + s
 
 for _ in range(int(input())): # 조작 횟수 입력
     # 성별(1: 남학생, 2: 여학생), 번호(1부터 시작)
