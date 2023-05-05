@@ -7,17 +7,17 @@ import sys
 
 string = str(sys.stdin.readline().strip())
 
-arr_1 = string.split("1")
-arr_0 = string.split("0")
+arr_0 = string.split("1")
+arr_1 = string.split("0")
 
-res_1 = 0
 res_0 = 0
+res_1 = 0
 
-for i in arr_1:
+for i in arr_0:
     if "0" in i:
         res_1 += 1
         
-for i in arr_0:
+for i in arr_1:
     if "1" in i:
         res_0 += 1
         
