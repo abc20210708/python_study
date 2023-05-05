@@ -5,7 +5,7 @@ for i in range(N):  # N번 반복
     a = input()  # 문자열을 입력받음
     # 만약 문자열이 문자의 첫 등장 위치에 따라 정렬한 결과와 다르다면
     if list(a) != sorted(a, key=a.find):
-        #print(sorted(a, key=a.find)
+        print(sorted(a, key=a.find))
         N -= 1  # N에서 1을 빼줌
 print(N)  # 결과 출력
 
