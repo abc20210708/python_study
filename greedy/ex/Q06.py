@@ -1,5 +1,5 @@
 ## 무지의 먹방 라이브
-
+# 참고 블로그 https://dante666.tistory.com/162
 import heapq
 
 def solution(food_times,k):
@@ -27,3 +27,30 @@ def solution(food_times,k):
     return h[tmp % len(h)][1]
 
 print(solution([3,1,2], 5))
+
+## 다른 풀이
+# 참고 블로그 https://2hs-rti.tistory.com/entry/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B4%EC%A7%80%EC%9D%98-%EB%A8%B9%EB%B0%A9-%EB%9D%BC%EC%9D%B4%EB%B8%8C-%ED%8C%8C%EC%9D%B4%EC%8D%AC
+import heapq
+
+
+def solution(food_times, K):
+    answer = -1
+    food = []
+    for i in range(len(food_times)):
+        heapq.heappush(food, (food_times[i], i+1))
+
+    prev = 0
+    l = len(food)
+    while food:
+        temp = (food[0][0] - prev) * l
+        if K >= temp:
+            K -= temp
+            prev, _ = heapq.heappop(food)
+            l -= 1
+        else:
+            index = K % l
+            food.sort(key=lambda x: x[1])
+            answer = food[index][1]
+            break
+
+    return answer
