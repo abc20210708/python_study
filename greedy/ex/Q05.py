@@ -15,7 +15,7 @@ data = list(map(int, input().split()))
 # 1부터 10까지 무게를 담을 수 있는 리스트
 a = [0] * 11
 
-for x in a:
+for x in data:
     # 각 무게에 해당하는 볼링공의 개수 카운트
     a[x] += 1
     
