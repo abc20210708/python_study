@@ -32,6 +32,26 @@ for ch in combinations(chicken, m):
 
 print(minv)  # 최소값을 출력
 
+'''
+이 코드에서 combinations(chicken, m)는 
+chicken 리스트에서 m개의 치킨집을 선택하는 
+모든 조합을 생성합니다. 
+
+즉, 치킨집 리스트에서 m개의 치킨집을 선택하여 
+가능한 모든 경우의 수를 만들어냅니다.
+
+그런 다음, for ch in combinations(chicken, m): 
+구문을 통해 각 조합을 하나씩 반복하면서 
+최적의 해를 찾습니다. 
+
+각 조합에 대해서는 집과 선택된 치킨집들 간의 거리를 
+계산하여 거리의 합을 구하고, 최소값인 minv와 비교하여 
+최소값을 갱신합니다.
+
+이렇게 함으로써 combinations 함수를 사용하여 
+가능한 모든 치킨집 조합을 확인하고, 
+각 조합에 대한 거리를 계산하여 최적의 조합을 찾을 수 있습니다.
+'''
 
 # 참고한 코드 https://www.acmicpc.net/source/53589083
 
