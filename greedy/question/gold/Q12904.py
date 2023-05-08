@@ -25,7 +25,4 @@ while t:
         chk = True
         break
     
-if chk:
-    print(1)
-else:
-    print(0)
+print(1) if chk else print(0)
