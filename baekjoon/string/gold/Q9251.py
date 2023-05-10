@@ -1,6 +1,7 @@
 ## LCS (골드 5) *
 
 # 참고 블로그 https://myjamong.tistory.com/317
+## 참고 블로그 https://zidarn87.tistory.com/293
 import sys
 
 input = sys.stdin.readline
