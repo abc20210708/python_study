@@ -1,5 +1,6 @@
 ## 로봇 청소기 (골드 5) *
 # 참고한 코드 https://www.acmicpc.net/source/53195845
+# 참고 블로그 https://resilient-923.tistory.com/164
 
 n, m = map(int, input().split())
 graph = []
