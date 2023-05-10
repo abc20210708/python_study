@@ -44,3 +44,5 @@ if not chk or list:
     print(0)
 else:
     print(res)
+    
+# enumerate() 참고 블로그 https://www.daleseo.com/python-enumerate/
