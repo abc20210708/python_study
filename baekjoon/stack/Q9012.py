@@ -4,6 +4,13 @@
 import sys
 input = sys.stdin.readline
 
+## 다른 풀이
+# 참고 코드 https://www.acmicpc.net/source/54716952
+for _ in range(int(input())):
+    s = input().strip()
+    while '()' in s:
+        s = s.replace("()", "")
+    print("NO") if s else print("YES")
 
 
 
@@ -26,4 +33,5 @@ for _ in range(n):
         print("NO")
     elif cnt == 0:
         print("YES")
+       
        
