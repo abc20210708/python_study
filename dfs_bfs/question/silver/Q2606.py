@@ -1,5 +1,6 @@
 ## 바이러스 (실버 3) *
 # 참고 코드 https://www.acmicpc.net/source/54241783
+## 참고 블로그 https://bio-info.tistory.com/152
 
 import sys
 input = sys.stdin.readline
