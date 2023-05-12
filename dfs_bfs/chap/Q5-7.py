@@ -22,7 +22,10 @@ graph = [
 ]
 
 # 각 노드가 방문된 정보를 리스트 자료형으로 표현 (1차원 리스트)
-visited = [False] * 9
-
+visited = [False] * len(graph)
 # 정의된 DFS 함수 호출
 dfs(graph, 1, visited)
+
+# DFS는 스택 자료구조에 기초한다.
+# 실제로는 스택을 쓰지 않아도 되며 탐색을 수행함에 있어서
+# 데이터의 개수가 N개인 경우 O(N)의 시간이 소요됩니다.
