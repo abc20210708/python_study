@@ -1,25 +1,28 @@
-# 걸그룹 마스터 준석이(실버 3) 다시 풀기
+# 음료수 얼려 먹기 다시 풀기
 
 n, m = map(int, input().split())
-dic1 = {}
-dic2 = {}
 
-for _ in range(n):
-    group = input()
-    tmp = []
-    for i in range(int(input())):
-        name = input()
-        dic1[name] = group
-        tmp.append(name)
-    tmp.sort()
-    dic2[group] = tmp
+graph = []
+for i in range(n):
+    graph.append(list(map(int, input())))
+    
+    
+def dfs(x, y):
+    if x < 0 or x >= n or y < 0 or y >= m :
+        return False
+    if graph[x][y] == 0:
+        graph[x][y] = 1
+        dfs(x - 1, y)
+        dfs(x + 1, y)
+        dfs(x, y - 1)
+        dfs(x, y + 1)
+        return True
+    return False
+            
 
-for _ in range(m):
-    target = input()
-    num = int(input())
-    if num == 1:
-        print(dic1[target])
-    else:
-        temp = dic2.get(target)
-        for i in temp:
-            print(i)
+res = 0
+for i in range(n):
+    for j in range(m):
+        if dfs(i,j) == True: res += 1 
+        
+print(res)
