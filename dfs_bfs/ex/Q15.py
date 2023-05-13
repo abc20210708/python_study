@@ -1,5 +1,5 @@
 # 특정 거리의 도시 찾기
-
+##PyPy로 제출
 # 참고 블로그 https://soopeach.tistory.com/14
 
 from collections import deque
