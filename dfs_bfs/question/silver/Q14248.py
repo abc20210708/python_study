@@ -26,3 +26,30 @@ chk = [0] * n  # 돌을 방문한 여부를 저장하는 리스트를 초기화
 bfs(k)  # bfs 함수를 호출하여 시작점부터 탐색을 시작
 #print(chk.count(1))  # 방문한 돌의 개수를 출력
 print(sum(chk))
+
+
+# 다른 풀이
+# 참고 블로그 https://yeoooo.github.io/algorithm/BOJ14248/
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
+
+n = int(input().rstrip())
+v = [0]*(n+1)
+bridge = list(map(int, input().split()))
+s = int(input().rstrip())
+cnt = 1
+def dfs(x):
+    global cnt
+    for i in range(2):
+        if not i:
+            nx = x+bridge[x]
+        else:
+            nx = x-bridge[x]
+        if 0<=nx<n and not v[nx]:
+            v[nx] = 1
+            cnt += 1
+            dfs(nx)
+dfs(s-1)
+print(cnt)
+
