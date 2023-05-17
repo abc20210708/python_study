@@ -13,3 +13,9 @@ try:
         print(input())
 except:
     exit()
+
+# 다른 풀이 2
+# 참고 코드 https://www.acmicpc.net/source/54153013
+
+import sys
+print(sys.stdin.read())
