@@ -13,3 +13,11 @@ for _ in range(int(input())):
             print(1)
         else:
             print(0)
+            
+# set 이용해 풀어보기    
+# 참고 코드 https://www.acmicpc.net/source/31076205
+for _ in range(int(input())):
+    n = int(input())
+    s = set(input().split())
+    m = input()
+    print('\n'.join('1' if i in s else '0' for i in input().split()))
