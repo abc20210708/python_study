@@ -1,4 +1,27 @@
 # 최대 힙 
+
+# 참고 블로그 https://velog.io/@yyj8771/Python-heapq%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%B5%9C%EC%86%8C-%ED%9E%99-%EC%B5%9C%EB%8C%80-%ED%9E%99
+# heapq에서는 최대 힙을 제공하지 않는다. 
+# 따라서 다음과 같이 부호를 변경하는 방법을 
+# 사용해서 최대 힙을 구현한다. 
+# 부호를 바꿔서 최소 힙에 넣어준 뒤에 
+# 최솟값부터 pop을 해줄 때 다시 부호를 바꿔주면 최대 힙과 동일하다.
+
+import heapq
+
+heap = []
+values = [1,5,3,2,4]
+
+# 아래 for문을 실행시키고 나면 heap은 [-5,-4,-3,-1,-2]가 된다.
+for value in values:
+	heapq.heappush(heap, -value)
+
+# 아래 for문을 실행시키면 5,4,3,2,1이 출력된다. 즉, 큰 숫자부터 출력이 된다.
+for i in range(5):
+	print(-heapq.heappop(heap))
+
+
+
 # 참고 블로그 https://velog.io/@plate0113/Python-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90-heapq
 import heapq
 
