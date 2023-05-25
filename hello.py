@@ -1,28 +1,36 @@
-# 음료수 얼려 먹기 다시 풀기
+# Java vs C++ 다시 풀기
 
-n, m = map(int, input().split())
+import sys
+target = sys.stdin.readline().rstrip()
+res = ""
 
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input())))
-    
-    
-def dfs(x, y):
-    if x < 0 or x >= n or y < 0 or y >= m :
-        return False
-    if graph[x][y] == 0:
-        graph[x][y] = 1
-        dfs(x - 1, y)
-        dfs(x + 1, y)
-        dfs(x, y - 1)
-        dfs(x, y + 1)
-        return True
-    return False
-            
+if '_' in target:
+    chk = False
+    if "__" in target or target[-1] == '_' or target[0] == '_': 
+        print('Error!')
+        exit()
+    else:
+        for i in target:
+            if i.isupper():
+                print("Error!")
+                exit()
+            if chk:
+                res += i.upper()
+                chk = False
+                continue
+            if i == "_":
+                chk = True
+                continue
+            res += i
+else:
+    if target[0].isupper():
+        print('Error!')
+        exit()
+    else:
+        for i in target:
+            if i.isupper():
+                res += "_" + i.lower()
+                continue
+            res += i
 
-res = 0
-for i in range(n):
-    for j in range(m):
-        if dfs(i,j) == True: res += 1 
-        
-print(res)
+print(res)     
