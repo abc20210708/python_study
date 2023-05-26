@@ -1,34 +1,26 @@
-# 이름궁합 테스트
+## 이름 궁합 테스트 (브론즈 1) *
 
-import string
-
-alp_list = list(string.ascii_uppercase)
-cnt_list = [3,2,1,2,4,3,1,3,1,1,3,1,3,2,1,2,2,2,1,2,1,1,1,2,2,1]
-alpha_count = dict()
-x = 0
-
-for a in alp_list:
-    alp_list[a] = cnt_list[x]
-    x += 1
-    
 n, m = map(int, input().split())
-a, b = map(int, input().split())
-i, j = 0, 0
-c = []
+s1, s2 = input().split()
 
-while i <= len(a) or j <= len(b):
-    if i < len(a):
-        c.append(alpha_count[a[i]])
-    if j < len(b):
-        c.append(alpha_count[b[j]])
-    i += 1
-    j += 1
-    
-while len(c) > 2:
-    c1 = c.pop(0)
-    for x in range(len(c)):
-        c2 = c.pop(0)
-        c.append((c1+c2)%10)
-        c1 = c2
+alp = [3,2,1,2,4,3,1,3,1,1,3,1,3,2,1,2,2,2,1,2,1,1,1,2,2,1]
+s = ""
+end = min(n, m)
 
-print("%s%%" % str(c[0]*10+c[1]))
+for i in range(end):
+    s += s1[i] + s2[i]
+s += s1[end:] + s2[end:]
+
+lst = [alp[ord(i)-ord('A')] for i in s]
+
+# 계산 수행 횟수(세로) 
+# 마지막에 두 개의 숫자를 남겨야 하므로 N+M-2 만큼 반복
+for i in range(n + m -2):
+    # 계산 (가로)
+    for j in range(n + m -1 -i):
+        lst[j] += lst[j+1]
+        
+# 십의 자리이기 때문에 *10
+print("{}%".format(lst[0]%10*10 + lst[1]%10))
+
+
