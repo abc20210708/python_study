@@ -4,10 +4,12 @@
 import sys
 input = sys.stdin.readline
 
+dx = [1, 0, -1, 0]
+dy = [0, 1, 0, -1]
+
+
 def make_snail(n):
     global tx,ty
-    dx = [1, 0, -1, 0]
-    dy = [0, 1, 0, -1]
     arr = [[0] * n for _ in range(n)]
     
     # 0,0 에서 초기화
