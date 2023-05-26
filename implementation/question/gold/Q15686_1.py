@@ -15,6 +15,7 @@ for r in range(n):
 
 # 모든 치킨 집 중에서 m개의 치킨집을 뽑는 조합 계산
 mixes = list(combinations(chicken, m))
+print(mixes)
 
 # 치킨 거리의 합을 계산하는 함수
 def get_sum(mix):
