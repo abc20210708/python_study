@@ -7,8 +7,8 @@ graph = []
 visited = [[0] * m for _ in range(n)]
 r, c, d = map(int, input().split())
 
-#     북, 서, 남, 동
-# d => 0, 3, 2, 1 순서로 돌아야 한다.
+#     북, 동, 남, 서
+# d => 0, 1, 2, 3 
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 
