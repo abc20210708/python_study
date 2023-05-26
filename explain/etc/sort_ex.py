@@ -11,7 +11,7 @@ B리스트를 정렬하고자 할 때는, A 리스트의 인덱스의
 b = [12, 14, 23, 24, 16]
 b_idx = sorted(range(len(b)), key=lambda k:b[k])
 
-print(b_idx)
+print(b_idx) # [0, 1, 4, 2, 3]
 
 '''
 sorted 함수에서 key 매개변수에 전달된 람다 함수는 각 요소의 
@@ -26,7 +26,7 @@ sorted 함수에서 key 매개변수에 전달된 람다 함수는 각 요소의
 '''
 
 b_idx = sorted(b_idx, key=lambda k: b_idx[k])
-print(b_idx)
+print(b_idx) # [0, 1, 3, 4, 2]
 ## b_idx를 sorted 함수에 전달하는 대신 인덱스를 
 # 직접 정렬한 후에 그 결과를 사용해야 합니다. 
 # 다음과 같이 코드를 작성할 수 있습니다:
@@ -50,7 +50,7 @@ a = [1, 2]
 b = [3, 4]
 
 combinations = list(product(a, b))
-print(combinations)
+print(combinations)  # [(1, 3), (1, 4), (2, 3), (2, 4)]
 '''
 위 코드를 실행하면, 출력 결과로 [(1, 3), (1, 4), (2, 3), (2, 4)]라는 리스트가 나옵니다. 
 각 튜플은 첫 번째 리스트의 요소와 두 번째 리스트의 요소를 조합한 결과를 나타냅니다.
@@ -88,7 +88,7 @@ sorted 함수의 reverse 매개변수를 True로 설정하면 내림차순으로
 
 a = [5, 2, 8, 1, 9]
 sorted_a = sorted(a, reverse=True)
-print(sorted_a)
+print(sorted_a) # [9, 8, 5, 2, 1]
 '''
 위 코드를 실행하면, 출력 결과로 [9, 8, 5, 2, 1]이 나옵니다. 
 리스트 a가 내림차순으로 정렬된 결과입니다.
