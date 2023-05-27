@@ -8,7 +8,7 @@ while 1:
     if n == 0: break
     #s = sys.stdin.readline().rstrip().upper()
     #s = [i for i in s if i != ' ']
-    s = "".join(sys.stdin.readline().rstrip().split()).upper()
+    s = "".join("This is a secret message that noone should ever see Lets encrypt it".split()).upper()
     dt = dict() # 문성를 연결하는 사전 dt 선언
     
     i = 0
