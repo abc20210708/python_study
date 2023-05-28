@@ -30,5 +30,4 @@ for i in range(n):
 if not tmp:
     print("NO")
 else:
-    for i in res:
-        print(i)
+    print("\n".join(res))
