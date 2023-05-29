@@ -4,7 +4,7 @@ import sys
 
 def solution(picks, minerals):
     
-    res = sys.maxsize
+    res = sys.maxsize # 최대 int 범위 가져오기, 922경이라는 숫자
     
     visited = [0 for _ in range(3)] # 사용 개수
     orders = []
