@@ -54,5 +54,29 @@ def solution(picks, minerals):
     dfs(0,0)
     return res
     
-solution([1, 3, 2],
-         ["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"])
+print(solution([1, 3, 2],
+         ["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"]))
+
+# global nonlocal 차이
+## 참고 블로그 https://devpouch.tistory.com/194
+
+c = 11
+def test():
+   a = 3
+   b = 9
+
+   def sum():
+       nonlocal a
+       global b
+       a = 7        # nonlocal 변수는 상위 변수의 접근 O
+       b = 11       # global 변수는 중첩함수내에서 상위 함수의 변수는 접근 X
+
+       global c
+       c = 13       # global 변수는 함수 외부의 변수는 접근 가능
+       return True
+
+   sum()
+   return a, b, c
+
+result = test()
+print(result)     # (7, 9 , 13) 출력
