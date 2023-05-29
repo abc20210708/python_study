@@ -1,61 +1,71 @@
 ## 광물캐기
 
-import sys 
+import sys
 
 def solution(picks, minerals):
-    
-    res = sys.maxsize # 최대 int 범위 가져오기, 922경이라는 숫자
-    
-    visited = [0 for _ in range(3)] # 사용 개수
-    orders = []
-    
+    # 최대 int 범위 가져오기, 922경이라는 숫자
+    res = sys.maxsize  
+
+    # 각 광물 종류(다이아몬드, 철, 돌)의 선택된 개수를 저장하는 리스트
+    visited = [0 for _ in range(3)]  
+    # 각 광물을 캐는 순서를 저장하는 리스트입니다.
+    orders = []  
+
     def dfs(depth, tired):
         nonlocal res
-        
-        if depth == sum(picks):
-            res = min(res, tired)
+        # 선택된 개수의 합이 원하는 개수와 같으면 
+        # 모든 광물을 선택한 것이므로 탐색을 종료
+        if depth == sum(picks):  
+            res = min(res, tired)  
             return
 
         for i in range(3):
-            if visited[i] < picks[i]:
-                visited[i] += 1
-                orders.append(i)
-                plus = calc(depth)
-                tired += plus
-                
-                if res > tired:
+            # 선택된 개수가 원하는 개수보다 작은 경우에만 해당 광물을 선택
+            if visited[i] < picks[i]:  
+                visited[i] += 1  # 해당 광물 선택 개수를 증가
+                orders.append(i)  # 해당 광물을 순서에 추가
+                plus = calc(depth)  # 선택한 광물로 인해 증가되는 피로도를 계산
+                tired += plus  # 총 피로도에 더해줍니다.
+
+                 # 현재 피로도가 최솟값보다 작은 경우에만 다음 탐색을 진행
+                if res > tired: 
                     dfs(depth+1, tired)
-                visited[i] -= 1
-                orders.pop()
-                tired -= plus
-    
+                # 탐색이 끝났으므로 해당 광물 선택 개수를 다시 감소
+                visited[i] -= 1  
+                orders.pop()  # 마지막으로 추가한 광물을 순서에서 제거
+                # 탐색이 끝났으므로 해당 광물로 인해 증가된 피로도를 감소
+                tired -= plus  
+
     tired_lst = [
-        (1,1,1),
-        (5,1,1),
-        (25,5,1)    
-    ] # 피로도 리스트 
-    
-    DIA = 0
-    IRON = 1
-    STONE = 2
-    
-    
+        (1,1,1),  # 다이아몬드 선택 시 피로도 증가량
+        (5,1,1),  # 철 선택 시 피로도 증가량
+        (25,5,1)  # 돌 선택 시 피로도 증가량
+    ]
+
+    DIA = 0  # 다이아몬드를 나타내는 상수
+    IRON = 1  # 철을 나타내는 상수
+    STONE = 2  # 돌을 나타내는 상수
+
     def calc(depth):
         plus = 0
-        for i in range(depth*5, (depth+1)*5):
-            if i >= len(minerals):
+         # 현재 탐색하는 광물 선택으로 인해 얻을 수 있는 피로도를 계산
+        for i in range(depth*5, (depth+1)*5): 
+             # 광물 리스트의 범위를 벗어나면 탐색을 종료
+            if i >= len(minerals): 
                 break
-            if minerals[i] == "diamond":
+             #해당 광물 선택에 따른 피로도를 더하기
+            if minerals[i] == "diamond":  
                 plus += tired_lst[orders[depth]][DIA]
-            elif minerals[i] == "iron":
+            elif minerals[i] == "iron":  
                 plus += tired_lst[orders[depth]][IRON]
-            elif minerals[i] == "stone":
+            elif minerals[i] == "stone": 
                 plus += tired_lst[orders[depth]][STONE]
-        
+
         return plus
-    
-    dfs(0,0)
-    return res
+
+    dfs(0, 0)  # DFS 탐색을 시작
+    return res  # 최솟값을 반환
+
     
 print(solution([1, 3, 2],
          ["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"]))
