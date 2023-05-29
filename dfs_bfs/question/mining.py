@@ -3,10 +3,12 @@
 import sys 
 
 def solution(picks, minerals):
+    
     res = sys.maxsize
     
     visited = [0 for _ in range(3)] # 사용 개수
     orders = []
+    
     def dfs(depth, tired):
         nonlocal res
         
@@ -37,6 +39,7 @@ def solution(picks, minerals):
     IRON = 1
     STONE = 2
     
+    
     def calc(depth):
         plus = 0
         for i in range(depth*5, (depth+1)*5):
@@ -57,7 +60,37 @@ def solution(picks, minerals):
 print(solution([1, 3, 2],
          ["diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"]))
 
+
+
+
+
 # global nonlocal 차이
+
+# nonlocal 키워드
+# 말그대로 해당 변수는 'local이 아니다'고 선언해주는 키워드다. 
+# 즉, 상위 함수에 변수를 참조한다고 미리 선언한다는 것이다. 
+
+
+def test():
+   a = 3
+
+   def sum():
+       nonlocal a
+       a = 7
+       return True
+
+   sum()
+   return a
+
+result = test()
+print(result)
+ 
+
+#위와 같이 실행하면 7 이라는 값을 의도대로 출력한다.
+# nonlocal로 선언함으로써 a 값을 상위 함수의 a 값을 사용한다. 
+
+
+
 ## 참고 블로그 https://devpouch.tistory.com/194
 
 c = 11
@@ -80,3 +113,4 @@ def test():
 
 result = test()
 print(result)     # (7, 9 , 13) 출력
+
