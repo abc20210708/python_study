@@ -1,41 +1,42 @@
 ## 유기농 배추 (실버 2) *
-# 참고 블로그 https://wonyoung2257.tistory.com/55
+# 참고 블로그 https://hongcoding.tistory.com/72
 
-import sys
-sys.setrecursionlimit(10000) # 재귀 깊이 설정
+from collections import deque
 
-T = int(sys.stdin.readline()) # 테스트 케이스 받는 부분
+dx = [0, 0, 1, -1]
+dy = [1, -1, 0, 0]
 
-dx = [-1, 1, 0, 0] # 상하좌우 이동하여 계산하기 위한 list
-dy = [0, 0, -1, 1]
+t = int(input())
 
-def dfs(x, y):
-    if x < 0 or x >= N or y < 0 or y >= M:
-        return False
+def bfs(graph, a, b):
+    queue = deque()
+    queue.append((a, b))
+    graph[a][b] = 0
 
-    if graph[x][y] == 1:
-        graph[x][y] = 0
-
+    while queue:
+        x, y = queue.popleft()
         for i in range(4):
-            dfs(x + dx[i], y+dy[i])
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or nx >=n or ny < 0 or ny >= m:
+                continue
+            if graph[nx][ny] == 1:
+                graph[nx][ny] = 0
+                queue.append((nx, ny))
+    return
 
-        return True
-    return False
-
-
-for _ in range(T):
-    M, N, K = list(map(int, sys.stdin.readline().split()))  
-
-    graph = [[0]*M  for _ in range(N)]
-
-    for _ in range(K):
-        x, y = map(int, input().split())
-        graph[y][x] = 1
-
+for i in range(t):
     cnt = 0
-    for i in range(N):
-        for j in range(M):
-            if dfs(i, j):
-                cnt += 1
+    n, m, k = map(int,input().split())
+    graph = [[0] * m for _ in range(n)]
 
+    for j in range(k):
+        x, y = map(int, input().split())
+        graph[x][y] = 1
+
+    for a in range(n):
+        for b in range(m):
+            if graph[a][b] == 1:
+                bfs(graph, a, b)
+                cnt += 1
     print(cnt)
