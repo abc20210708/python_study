@@ -27,4 +27,6 @@ for _ in range(int(input())):  # 입력 횟수(n)만큼 반복합니다.
     elif i[0] == 'P':
         st1.append(i[2])
 
+#st2.reverse()
+#print(''.join(st1 + st2))
 print(''.join(st1 + list(reversed(st2))))
