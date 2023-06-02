@@ -2,7 +2,25 @@
 
 # 참고 블로그 https://sangminlog.tistory.com/entry/boj-2559
 # https://m.blog.naver.com/repeater1384/222169483201
+
+
+
 ## https://my-coding-notes.tistory.com/489
+
+import sys
+input = sys.stdin.readline
+
+n, k = map(int,input().split())
+arr = list(map(int,input().split()))
+summ = maxx = sum(arr[:k])
+
+for i in range(k,n):
+    summ = summ + arr[i] - arr[i-k]
+    maxx = max(maxx, summ)
+print(maxx)
+
+
+'''
 n, k = map(int, input().split())
 lst = list(map(int, input().split()))
 
@@ -14,7 +32,7 @@ for i in range(k, n):
     res = max(res, tmp)
 
 print(res)
-
+'''
 
 
 
