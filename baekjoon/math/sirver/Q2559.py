@@ -1,6 +1,8 @@
 ## 수열 (실버 3) *
 
 # 참고 블로그 https://sangminlog.tistory.com/entry/boj-2559
+# https://m.blog.naver.com/repeater1384/222169483201
+## https://my-coding-notes.tistory.com/489
 n, k = map(int, input().split())
 lst = list(map(int, input().split()))
 
