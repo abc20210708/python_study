@@ -18,7 +18,9 @@ for value in values:
 
 # 아래 for문을 실행시키면 5,4,3,2,1이 출력된다. 즉, 큰 숫자부터 출력이 된다.
 for i in range(5):
-	print(-heapq.heappop(heap))
+	print(-heapq.heappop(heap), end=" ")
+  
+print()
 
 
 
@@ -32,10 +34,11 @@ for num in nums:
   heapq.heappush(heap, (-num, num)) 
 
 while heap:
-  print(heapq.heappop(heap)[1])
-  
-  '''
+  print(heapq.heappop(heap)[1], end=" ")
+
+print(heap)
+'''
 힙에 원소를 추가할때 (-원소의 값,원소의 값)으로 저장을 해준다면
 음수의 값으로 최소 힙이 되므로 그 뜻은 원래 양수의 값에서 최대 힙이 된다는 뜻이다.
 이런 식으로 조금 응용을 한다면 최대 힙을 구할 수 있다.
-  '''
+'''
