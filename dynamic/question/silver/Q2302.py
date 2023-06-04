@@ -1,4 +1,35 @@
 ## 극장 좌석 (실버 1) *
+
+# 참고 코드 https://www.acmicpc.net/source/53662484
+
+import sys
+
+N = int(sys.stdin.readline())
+M = int(sys.stdin.readline())
+vip = [False] * (N+1)
+
+for _ in range(M):
+    vip[int(sys.stdin.readline())] = True
+
+dp = [0] * (N+1)
+dp[0] = 1
+dp[1] = 1
+
+for i in range(2, N+1):
+    # 만약 자리를 바꿀 수 없는 좌석이면
+    if vip[i]: dp[i] = dp[i-1]
+    elif vip[i-1]: dp[i] = dp[i-1]
+    else:
+        if vip[i-2]: dp[i] = dp[i-1]*2
+        else: dp[i] = dp[i-1]+dp[i-2]
+    
+print(dp[-1])
+
+
+
+
+
+
 # 참고 블로그 https://codedrive.tistory.com/432
 # https://parase.tistory.com/9
 
