@@ -1,4 +1,5 @@
 ## 극장 좌석 (실버 1) *
+# 참고 블로그 https://yabmoons.tistory.com/550 (설명)
 
 # 참고 코드 https://www.acmicpc.net/source/53662484
 
