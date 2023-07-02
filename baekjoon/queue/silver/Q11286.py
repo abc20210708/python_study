@@ -10,7 +10,7 @@ for _ in range(int(input())):
     if x == 0:
         if len(heap) == 0:
             print(0)
-        else:
-            print(heapq.heappop(heap)[1])
-    else:
+        else: # 힙에서 최소값을 꺼내어 출력
+            print(heapq.heappop(heap)[1]) 
+    else:  # 입력값의 절댓값과 원래값을 힙에 추가
         heapq.heappush(heap, (abs(x), x))
