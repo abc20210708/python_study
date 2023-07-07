@@ -9,10 +9,12 @@ def solution(n, computers):
     def dfs(computers, visited, v):
         visited[v] = True
         for i in range(n):
+            # 현재 컴퓨터(v)와 연결된 컴퓨터(i)를 확인하고, 방문하지 않았다면 재귀적으로 방문
             if computers[v][i] == 1 and not visited[i]:
                 dfs(computers, visited, i)
                 
     for i in range(n):
+        # 아직 방문하지 않은 컴퓨터라면, 네트워크의 개수를 증가시키고 DFS로 연결된 모든 컴퓨터 방문
         if not visited[i]:
             dfs(computers, visited, i)
             res += 1
