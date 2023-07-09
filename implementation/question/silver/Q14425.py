@@ -14,7 +14,7 @@ for _ in range(m):
 print(cnt)
 '''
 ## 다른 풀이 dictionary 사용
-from itertools import count
+# from itertools import count
 # 참고 블로그 https://velog.io/@jswon/%EB%B0%B1%EC%A4%80-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-python
 # dictionary 사용
 d = {}
