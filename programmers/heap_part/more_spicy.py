@@ -1,5 +1,25 @@
 ## 더 맵게
 
+# 참고 블로그 https://velog.io/@younge/프로그래머스-더-맵게-힙
+
+import heapq
+
+def solution(arr, k):
+    cnt = 0
+    
+    heapq.heapify(arr)
+    
+    while arr[0] < k:
+        cnt += 1
+        tmp = heapq.heappop(arr) + (heapq.heappop(arr) * 2)
+        heapq.heappush(arr, tmp)
+        if len(arr) == 1 and arr[0] < k:
+            return -1
+    
+    return cnt
+
+'''
+다른 풀이
 
 import heapq
 
@@ -20,7 +40,7 @@ def solution(arr, k):
         else:
             return -1
     return cnt
-
+'''
 
 '''
 
