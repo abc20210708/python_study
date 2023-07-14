@@ -57,6 +57,8 @@ cnt = 0
 heapq.heapify(arr)
 print(arr)
 
+# !(문제 발견) 파이썬의 heapq 모듈에는 min 함수가 없습니다.
+
 while min(arr) <= k:
     cnt += 1
     n1 = heapq.heappop(arr)
