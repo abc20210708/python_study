@@ -19,6 +19,23 @@ def solution(arr, k):
     return cnt
 
 '''
+try, except 적용한 다른풀이
+
+import heapq as h
+def solution(scoville, K): 
+    cnt = tmp = 0
+    hq = scoville # s리스트 복사 
+    h.heapify(hq) # heapq 리스트로 생성 
+    
+    while hq [0] < K:
+        try: h.heappush(hq, h.heappop(hq)+(h.heappop(hq)*2))
+        except IndexError: return -1
+        cnt + =1
+    return cnt
+
+'''
+
+'''
 다른 풀이
 
 import heapq
