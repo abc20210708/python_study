@@ -23,7 +23,7 @@ for i in range(1, n+1):
         ## 다시 문제를 풀었을 때 헷갈리는 부분
         # 1. dp[day]에 값을 저장하는 것
         # 2. max에서 dp[i-1] + p[i]로 적용하는 것
-             왜 dp[i] + p[i]가 아닌지
+             왜 dp[i] + p[i]가 아닌지           
         '''
 print(max(dp))
         
