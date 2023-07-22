@@ -1,5 +1,6 @@
 ## 2xn 타일링 2 (실버 3) *
 # 참고 블로그 https://bgeun2.tistory.com/68
+# https://jokerldg.github.io/algorithm/2021/07/26/2xn-tiling2.html
 
 import sys
 n = int(sys.stdin.readline())
