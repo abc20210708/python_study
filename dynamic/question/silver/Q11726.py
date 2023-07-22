@@ -12,3 +12,20 @@ else:
     for i in range(3, n):
         res[i] = res[i-1] + res[i-2]
     print(res[n-1] % 10007)
+    
+'''
+
+n = int(input())
+
+d = [0] * (n+1)
+
+if n <= 2:
+    print(n)
+else:
+    d[1] = 1 # IndexError발생으로 else문에 추가
+    d[2] = 2
+    
+    for i in range(3, n+1):
+        d[i] = d[i-2] + d[i-1]    
+    print(d[n] % 10007)
+'''
