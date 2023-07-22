@@ -1,7 +1,7 @@
 ## 1로 만들기 (실버 3) *
 # 참고 블로그 https://bio-info.tistory.com/159
 # https://jae04099.tistory.com/199
-
+# https://duckracoon.tistory.com/entry/%EB%B0%B1%EC%A4%80-1463-1%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-python
 
 target = int(input())
 d = [0] * (target + 1)
