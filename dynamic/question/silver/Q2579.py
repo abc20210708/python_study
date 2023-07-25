@@ -23,6 +23,7 @@ print(max(d))
 '''
 
 # 참고 블로그 https://bio-info.tistory.com/158
+# https://chanos.tistory.com/entry/%EB%B0%B1%EC%A4%80-2579%EB%B2%88-%EA%B3%84%EB%8B%A8-%EC%98%A4%EB%A5%B4%EA%B8%B0-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4
 
 n = int(input())
 s = [int(input()) for _ in range(n)]
