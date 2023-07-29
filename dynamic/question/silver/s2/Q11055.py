@@ -4,9 +4,13 @@ import sys
 input = sys.stdin.readline
 
 # 참고 블로그 https://cotak.tistory.com/46
+# 리스트 복사 참고 https://inkkim.github.io/python/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/
+# dp = a[:] 리스트를 다른 리스트에 복사하는 방법
+# 시작점과 끝점을 생략한 슬라이싱은 리스트의 모든 요소를 뜻한다.
+# 슬라이싱을 통해 변수를 정의하면 파이썬은 새로운 객체를 만든다.
 
-n = int(sys.stdin.readline().strip())
-a = [int(x) for x in sys.stdin.readline().split()]
+n = int(input().strip())
+a = list(map(int, input().split()))
 dp = a[:]
 
 for i in range(n):
