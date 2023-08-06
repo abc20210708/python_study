@@ -1,4 +1,21 @@
-## 1, 2, 3 더하기 (실버 3) *
+## 1, 2, 3 더하기 (실버 3) 
+
+## 다른 풀이
+
+n = int(input())
+
+dp = [1] * 11
+dp[2] = 2
+
+for i in range(3, 11):
+    dp[i] = dp[i-1] + dp[i-2] + dp[i-3]
+
+for _ in range(n):
+    print(dp[int(input())]) 
+
+
+
+'''
 # 참고 블로그 https://e-you.tistory.com/304
 d = [0] * 11
 d[1] = 1
@@ -21,3 +38,4 @@ for _ in range(n):
     # n을 입력받고, n개의 수에 대해 경우의 수를 출력합니다.
     # m을 입력받아 d[m]을 출력합니다.
     print(d[m])
+'''
