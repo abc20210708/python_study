@@ -15,21 +15,20 @@
 import re
 
 
-print("숫자 0 입력하면 종료, 1부터 숫자를 입력하세요 :)")
+print("1부터 숫자를 입력하세요 :)")
 
-while 1:
-    try:
-        n = int(input())
-        if n == 0: exit
-        for i in range(1, n+1):
-            if str(i) not in '3' and '6' and '9':
-                print(i, end=" ")
-            elif str(i) in '3' or '6' or '9':
-                tmp = str(i)
-                tmp = tmp.replace("3", "_")
-                tmp = tmp.replace("6", "_")
-                tmp = tmp.replace("9", "_")
-                tmp = re.sub(r'[0-9]+', '', tmp)
-                print("X" * len(tmp), end=" ")
-    except ValueError:
-        print("에러!! 숫자를 입력하세요 :)")
+
+try:
+    n = int(input())
+    for i in range(1, n+1):
+        if str(i) not in '3' and '6' and '9':
+            print(i, end=" ")
+        elif str(i) in '3' or '6' or '9':
+            tmp = str(i)
+            tmp = tmp.replace("3", "_")
+            tmp = tmp.replace("6", "_")
+            tmp = tmp.replace("9", "_")
+            tmp = re.sub(r'[0-9]+', '', tmp)
+            print("X" * len(tmp), end=" ")
+except ValueError:
+    print("에러!! 숫자를 입력하세요 :)")
