@@ -22,16 +22,14 @@ try:
     n = int(input())
     for i in range(1, n+1):
         tmp = str(i)
-        tmp = tmp.replace("3", "_")
-        tmp = tmp.replace("6", "_")
-        tmp = tmp.replace("9", "_")
+        tmp = tmp.replace("3", "_").replace("6", "_").replace("9", "_")
         # 만약 문자열에서 모든 문자열이 숫자면
         if tmp.isdigit():
             print(i, end=" ")
         else:
             tmp = re.sub(r'[0-9]+', '', tmp)
-            print("X" * len(tmp), end=" ")
-        
+            print("X" * len(tmp), end=" ")     
             
+                  
 except ValueError:
     print("에러!! 숫자를 입력하세요 :)")
