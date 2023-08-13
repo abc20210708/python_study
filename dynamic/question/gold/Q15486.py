@@ -1,4 +1,22 @@
-## 퇴사 2
+## 퇴사 2 (골드 5)
+
+# 다른 풀이
+# 참고 블로그 https://ddiyeon.tistory.com/49
+from sys import stdin
+
+N = int(stdin.readline())
+dp = [0] * (N+1)
+for i in range(1, N+1):
+    t, p = map(int, stdin.readline().split())
+    dp[i] = max(dp[i-1], dp[i])
+    day = i+t-1
+    if day <= N:
+        dp[day] = max(dp[i-1]+p, dp[day])
+
+print(dp[-1])
+
+
+
 
 # 참고 블로그 https://velog.io/@sunkyuj/python-백준-15486-퇴사-2
 
