@@ -3,7 +3,6 @@
 
 import sys
 input = sys.stdin.readline
-
 # 집의 수 입력
 n = int(input())
 
