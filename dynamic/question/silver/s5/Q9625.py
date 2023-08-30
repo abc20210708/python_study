@@ -10,6 +10,15 @@ for i in range(1,K): # 2번 누른것부터 for문 반복
     
 print(a,b) # A개수, B개수 출력
 
+'''
+1. A          1 0
+2. B          0 1
+3. BA         1 1
+4. BAB        1 2
+5. BABBA      2 3
+
+'''
+
 
 #  참고 블로그 https://ywtechit.tistory.com/126
 
