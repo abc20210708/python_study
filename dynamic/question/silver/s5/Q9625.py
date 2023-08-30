@@ -1,4 +1,16 @@
 ## BABBA (실버 5)
+
+# 참고 블로그 https://bio-info.tistory.com/217
+
+K = int(input()) # 버튼을 누른 횟수 K
+a, b = 0, 1 # 버튼을 1번 누른 경우로 초기화
+
+for i in range(1,K): # 2번 누른것부터 for문 반복
+    a,b = b,a+b # 피보나치 수열 진행
+    
+print(a,b) # A개수, B개수 출력
+
+
 #  참고 블로그 https://ywtechit.tistory.com/126
 
 k = int(input())
