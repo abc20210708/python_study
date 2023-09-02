@@ -1,4 +1,13 @@
 ## 다리 놓기 (실버 5)
+
+# 참고 블로그  https://dmaolon00.tistory.com/entry/%EB%B0%B1%EC%A4%80python-%EB%8B%A4%EB%A6%AC-%EB%86%93%EA%B8%B0-1010-%EC%A1%B0%ED%95%A9
+import math
+
+t = int(input())
+for _ in range(t):
+    n, m = map(int, input().split())
+    print(math.comb(m, n))
+
 #  참고 블로그 https://yoonsang-it.tistory.com/33
 
 import sys
