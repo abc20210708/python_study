@@ -7,6 +7,18 @@ t = int(input())
 for _ in range(t):
     n, m = map(int, input().split())
     print(math.comb(m, n))
+    
+'''
+
+조합(Combination)을 구하는 식:
+C(n, r) = n! / (r! * (n - r)!)
+
+1, 5 인 경우
+ 
+5! / (1! * (5-1)!)
+
+'''    
+    
 
 #  참고 블로그 https://yoonsang-it.tistory.com/33
 
