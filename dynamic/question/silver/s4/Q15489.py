@@ -23,3 +23,12 @@ for i in range(r, r+w-1): #  참고 블로그 https://changsroad.tistory.com/141
         tmp += dp[i][j]
         
 print(tmp)
+
+## 다른 풀이
+import math
+r, c, w = map(int,input().split())
+n = 0
+for i in range(r, r+w):
+    for j in range(c, c+i-r+1):
+        n += math.comb(i-1, j-1)
+print(n)
