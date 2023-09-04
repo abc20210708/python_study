@@ -25,6 +25,18 @@ for i in range(r, r+w-1): #  참고 블로그 https://changsroad.tistory.com/141
 print(tmp)
 
 ## 다른 풀이
+#  참고 블로그 https://airzinc.tistory.com/entry/%EB%B0%B1%EC%A4%80-15489-%ED%8C%8C%EC%8A%A4%EC%B9%BC-%EC%82%BC%EA%B0%81%ED%98%95-%ED%8C%8C%EC%9D%B4%EC%8D%AC
+tmp, cnt = 0, 0
+for i in range(r-1, r+w-1):
+    for j in range(c-1, c + cnt):
+        tmp += dp[i][j]
+    cnt += 1
+        
+print(tmp)
+
+
+
+## 다른 풀이
 import math
 r, c, w = map(int,input().split())
 n = 0
