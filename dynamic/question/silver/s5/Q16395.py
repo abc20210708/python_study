@@ -13,3 +13,17 @@ for i in range(n):
             dp[i].append(dp[i-1][j-1] + dp[i-1][j])
             
 print(dp[n-1][k-1])
+
+
+## 다른 풀이
+
+n, k = map(int, input().split())
+
+t = [[0 for _ in range(n+1)] for _ in range(n+1)]
+t[1][1] = 1
+
+for i in range(2, n+1):
+    for j in range(i+1):
+        t[i][j] = t[i-1][j-1] + t[i-1][j]
+
+print(t[n][k])
