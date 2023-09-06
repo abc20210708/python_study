@@ -26,3 +26,12 @@ for i in range(5, n + 1):
         d[i] = 0
 
 print(tmp[d[n]])
+
+## 다른 풀이
+#  참고 블로그 https://steady-coding.tistory.com/168
+N = int(input())
+
+if N % 7 == 0 or N % 7 == 2:
+    print("CY")
+else:
+    print("SK")
