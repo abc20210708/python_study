@@ -8,7 +8,9 @@ dp[0][0] = 1
 
 for i in range(1, k + 1):
     for j in range(n + 1):
-        dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
-        dp[i][j] %= 1000000000
+        dp[i][j] = (dp[i - 1][j] + dp[i][j - 1]) % 1000000000
 
 print(dp[k][n])
+
+## dp[0][0] = 1에 대한 내 생각
+#  dp[1][1] = 1이기 때문에 => dp[1][0]과 dp[0][0]은 1
