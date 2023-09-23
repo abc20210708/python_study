@@ -16,3 +16,9 @@ res = 0
 for i in arr:
     res += i.count(1)
 print(res)
+'''
+for i in range(20):
+    for j in range(20):
+        print(arr[i][j], end=' ')
+    print()
+'''
