@@ -24,12 +24,13 @@ weight를 넘지 않아야 합니다.
 마지막 트럭이 다리를 지나간 시간을 반환하면 됩니다.
 
 '''
+
 from collections import deque
 
 
 def solution(bl, weight, tw):
     q = deque([0] * bl)
-    
+    tw = deque(tw) # deque 변경
     cnt = 0 # 걸리는 total 시간
     qSum = 0 # 다리 weight
     
@@ -45,7 +46,8 @@ def solution(bl, weight, tw):
             # 0을 추가
         
         else: #다음 트럭이 올라갈 수 있으면
-            next = tw.pop(0) #다음 트럭 나옴
+            # next = tw.pop(0) #다음 트럭 나옴
+            next = tw.popleft() #다음 트럭 나옴
             qSum += next # 다음 트럭 무게 추가
             q.append(next) # 다음 트럭 queue에 추가
     
