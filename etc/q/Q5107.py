@@ -1,8 +1,47 @@
 ## 마니또 (실버 1)
+
+## 참고 코드 https://www.acmicpc.net/source/47207355
+import sys
+
+input = sys.stdin.readline
+caseNum = 0
+
+while True:
+    
+    n = int(input())
+    if n == 0:
+        break
+    caseNum += 1
+    manito = dict()
+    
+    for _ in range(n):
+        toYou, toMe = map(str, input().split())
+        manito[toYou] = toMe
+        
+    cnt = 0
+    
+    while manito:
+        origin = next(iter(manito))
+        start = origin
+        end = manito.get(start)
+        manito.pop(start)
+        
+        while end in manito.keys():
+            start = end
+            end = manito.get(start)
+            if end == origin:
+                cnt += 1
+            manito.pop(start)
+    print(caseNum, cnt)
+
+
+
+
+
+
 #  참고 블로그 https://velog.io/@jsbryan/BOJ%EB%B0%B1%EC%A4%805107-Silver-1-%EB%A7%88%EB%8B%88%EB%98%90-Python-%ED%8C%8C%EC%9D%B4%EC%8D%AC
 
 
-import sys
 input= sys.stdin.readline
 
 def dfs(v): #dfs
