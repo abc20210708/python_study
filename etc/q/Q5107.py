@@ -21,7 +21,7 @@ while True:
     cnt = 0
     
     while manito:
-        origin = next(iter(manito))
+        origin = next(iter(manito)) ##ChatGPT 참고 
         start = origin
         end = manito.get(start)
         manito.pop(start)
@@ -34,7 +34,37 @@ while True:
             manito.pop(start)
     print(caseNum, cnt)
 
+## ChatGPT 참고 - origin = next(iter(manito)) 
 
+'''
+
+next(iter(manito))은 Python 코드에서 사용되는 여러 개의 
+데이터를 저장할 수 있는 자료구조인 딕셔너리(dict) manito에서 
+첫 번째 키-값 쌍을 가져오는 부분입니다.
+
+
+1. manito는 딕셔너리 자료형입니다. 딕셔너리는 키(key)와 
+값(value)을 연관시키는 데이터 구조로, 특정 키를 사용하여 
+해당 키와 연관된 값을 빠르게 찾을 수 있습니다.
+
+2. iter(manito)는 manito 딕셔너리의 이터레이터(iterator)를 
+생성합니다. 이터레이터는 반복문에서 데이터를 하나씩 순회하며 
+가져오는 역할을 합니다.
+
+3. next(iter(manito))는 이터레이터에서 다음 값을 가져오는 
+함수입니다. 딕셔너리의 경우, 이 함수를 사용하면 딕셔너리의 
+키(key) 중에서 첫 번째 키를 가져옵니다. 이때, 딕셔너리의 순서는 
+키가 추가된 순서가 아니라 임의로 정해집니다. 
+Python 3.7 이전 버전에서는 딕셔너리의 순서가 보장되지 않았지만, 
+Python 3.7부터는 키-값 쌍이 입력된 순서대로 유지됩니다.
+
+따라서 next(iter(manito))는 manito 딕셔너리에서 첫 번째 키를 
+가져올 것이며, 이 키는 변수 origin에 저장됩니다. 
+이 코드는 딕셔너리에서 첫 번째 키를 가져와서 해당 키에 
+연관된 값을 찾을 때 사용됩니다. 이후에는 해당 키와 연관된 값을 
+사용하고 나면, 해당 키-값 쌍을 딕셔너리에서 제거하게 됩니다.
+
+'''
 
 
 
