@@ -68,6 +68,7 @@ Python 3.7부터는 키-값 쌍이 입력된 순서대로 유지됩니다.
 
 ## 유니온 파인드 참고한 풀이 추가
 #  분리 집합 https://www.jongung.com/292
+#           https://chiefcoder.tistory.com/55
 #  참고 블로그 https://blog.naver.com/ej_0109/222801473404
 def find(x) :
     if x != parent[x] :
