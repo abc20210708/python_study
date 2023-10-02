@@ -66,6 +66,48 @@ Python 3.7부터는 키-값 쌍이 입력된 순서대로 유지됩니다.
 
 '''
 
+## 유니온 파인드 참고한 풀이 추가
+#  분리 집합 https://www.jongung.com/292
+#  참고 블로그 https://blog.naver.com/ej_0109/222801473404
+def find(x) :
+    if x != parent[x] :
+        parent[x] = find(parent[x])
+    return x
+
+def union(x,y) :
+    x = find(x)
+    y = find(y)
+
+    if x < y :
+        parent[y] = x
+    else :
+        parent[x] = y
+
+cnt = 0
+while True :
+    n = int(input())
+    parent = [i for i in range(n + 1)]
+    m = {}
+    cnt += 1
+
+    if n == 0 :
+        break
+
+    for _ in range(n) :
+        t1, t2 = map(str, input().split())
+
+        if not t1 in m :
+            m[t1] = len(m) + 1
+        if not t2 in m :
+            m[t2] = len(m) + 1
+
+        union(parent[m[t1]], parent[m[t2]])
+
+    parent = set(parent)
+    print(cnt, len(parent)-1)
+
+
+
 
 
 
