@@ -1,5 +1,24 @@
 ## 과수원 
 
+def solution(n, p, c):
+    stock, value, total = 0, 100, 0
+    for day in range(n):
+        if value == 0:
+            n = day
+            break
+        stock += p[day]
+        if stock >= c[day]:
+            stock -= c[day]
+            total += value * c[day]
+            value = 100
+        else:
+            value -= 20
+    return f"{total/n:.2f}"
+
+print(solution(7, [3, 4, 3, 4, 5, 0, 2], [1, 5, 3, 2, 6, 3, 2]))
+
+
+''''
 n = int(input())
 p = list(map(int, input().split()))
 c = list(map(int, input().split()))
@@ -13,7 +32,7 @@ for i in range(n):
         res += tmp * c[i]
     else:
         continue
- 
+'''
 '''
 1 6 4 5 8 2 2 
 1 5 3 2 6 3 2
