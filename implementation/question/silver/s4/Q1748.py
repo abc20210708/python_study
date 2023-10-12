@@ -1,4 +1,18 @@
 ## 수 이어 쓰기 1 (실버 4)
+
+## 다른 풀이
+#  참고 블로그 https://introfor.tistory.com/232
+n = int(input())
+res, i = 0, 1
+
+while i <= n:
+    res += n - i + 1
+    i *= 10
+    
+print(res)
+
+
+
 #  참고 블로그 https://gudwns1243.tistory.com/24
 
 n = input()
