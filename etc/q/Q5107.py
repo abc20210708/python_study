@@ -21,15 +21,15 @@ while True:
     cnt = 0
     
     while manito:
-        origin = next(iter(manito)) ##ChatGPT 참고 
-        start = origin
+        tmp = next(iter(manito)) ##ChatGPT 참고 
+        start = tmp
         end = manito.get(start)
         manito.pop(start)
         
         while end in manito.keys():
             start = end
             end = manito.get(start)
-            if end == origin:
+            if end == tmp:
                 cnt += 1
             manito.pop(start)
     print(caseNum, cnt)
