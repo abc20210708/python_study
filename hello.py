@@ -1,36 +1,30 @@
-# Java vs C++ 다시 풀기
+## 마니또 다시 풀기
 
-import sys
-target = sys.stdin.readline().rstrip()
-res = ""
+caseNum = 0
 
-if '_' in target:
-    chk = False
-    if "__" in target or target[-1] == '_' or target[0] == '_': 
-        print('Error!')
-        exit()
-    else:
-        for i in target:
-            if i.isupper():
-                print("Error!")
-                exit()
-            if chk:
-                res += i.upper()
-                chk = False
-                continue
-            if i == "_":
-                chk = True
-                continue
-            res += i
-else:
-    if target[0].isupper():
-        print('Error!')
-        exit()
-    else:
-        for i in target:
-            if i.isupper():
-                res += "_" + i.lower()
-                continue
-            res += i
-
-print(res)     
+while 1:
+    n = int(input())
+    if n == 0: 
+        break
+    manito = dict()
+    caseNum += 1
+    
+    for _ in range(n):
+        toYou, toMe = map(str, input().split())
+        manito[toYou] = toMe
+    
+    cnt = 0
+    
+    while manito:
+        tmp = next(iter(manito))
+        start = tmp
+        end = manito.get(start)
+        manito.pop(start)
+        
+        while end in manito.keys():
+            start = end
+            end = manito.get(start)
+            if end == tmp:
+                cnt += 1
+            manito.pop(start)
+    print(caseNum, cnt)        
