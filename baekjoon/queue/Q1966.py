@@ -1,6 +1,31 @@
 ## 프린터 큐 (실버 3)
 from collections import deque
 
+# 참고 블로그 https://hei-jayden.tistory.com/209
+T = int(input())
+
+for i in range(T):
+    N, M = map(int, input().split())
+    q = deque(list(map(int, input().split())))
+    idx = deque(list(range(N)))
+    cnt = 0
+
+    # 최종적으로 M이 제거될 때까지 while문 반복
+    while M in idx:
+
+        # 0번 째 인덱스에 q의 가장 큰 값이 위치하도록 조정
+        while max(q) != q[0]:
+            q.append(q.popleft())
+            idx.append(idx.popleft())
+
+        # 조정이 완료되었을 때, 0번 째 인덱스 값 제거하면서 cnt+1
+        cnt += 1 
+        q.popleft()
+        idx.popleft()
+
+    # M이 제거되었을 때 cnt 값 확인
+    print(cnt)
+
 # 참고 블로그 https://dndi117.tistory.com/14
 t = int(input())
 for _ in range(t):
