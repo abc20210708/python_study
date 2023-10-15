@@ -1,8 +1,28 @@
 ## 프린터 큐 (실버 3)
+from collections import deque
+
+# 참고 블로그 https://dndi117.tistory.com/14
+t = int(input())
+for _ in range(t):
+    n, x = map(int, input().split())
+    que = deque(list(map(int, input().split())))
+    idx_que = deque(list(range(n)))
+    cnt = 0
+    
+    while que:
+        if que[0] == max(que):
+            cnt += 1
+            que.popleft()
+            if idx_que.popleft() == x:
+                print(cnt)
+        else:
+            que.append(que.popleft())
+            idx_que.append(idx_que.popleft())
+
 
 #  duque 이용한 다른 풀이
 #  참고 블로그 https://hongcoding.tistory.com/42
-from collections import deque
+
 
 t = int(input())
 for i in range(t):
