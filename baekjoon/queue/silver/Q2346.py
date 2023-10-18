@@ -17,5 +17,9 @@ while s:
     tmp = s.pop(start)
     res.append(index.pop(start))
     
-for i in res:
-    print(i,end=' ')
+## join 활용
+print(' '.join(map(str, res)))
+
+# 반복물 활용
+#for i in res:
+#    print(i,end=' ')
