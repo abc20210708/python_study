@@ -9,12 +9,12 @@ def solution(K, words):
             tmp = tmp + word
         elif len(tmp+word)+ 1 > K:
             tmp = word
-            res = res + 1
+            res +=  1
         else:
             tmp = tmp + "_" + word
         
     if tmp != "":
-        res = res + 1
+        res += 1
     
     return res
 
