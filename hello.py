@@ -25,3 +25,14 @@ cnt = Counter(['r', 'b', 'r', 'b', 'g', 'b'])
 
 print(cnt['b']) # 'b' 등장횟수, 3
 print(dict(cnt))
+
+# r 개 데이터를 뽑아 일렬로 나열 (순열)
+from itertools import permutations
+data = ['A', 'B', 'C']
+l = list(permutations(data, 3))
+print(l)
+
+# r개의 데이터를 뽑아 순서없이 일렬로 나열 (조합)
+from itertools import combinations
+l2 = list(combinations(data, 2))
+print(l2)
