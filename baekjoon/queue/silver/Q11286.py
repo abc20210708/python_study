@@ -1,5 +1,6 @@
 ## 절댓값 힙 (실버 1) *
 # 참고 블로그 https://duckracoon.tistory.com/entry/%EB%B0%B1%EC%A4%80-11286-%EC%A0%88%EB%8C%93%EA%B0%92-%ED%9E%99-%ED%95%B4%EC%84%A4-python
+# https://www.jongung.com/290
 import heapq
 import sys
 
