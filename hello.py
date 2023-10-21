@@ -1,30 +1,6 @@
-## 마니또 다시 풀기
+## 내장함수
 
-caseNum = 0
-
-while 1:
-    n = int(input())
-    if n == 0: 
-        break
-    manito = dict()
-    caseNum += 1
-    
-    for _ in range(n):
-        toYou, toMe = map(str, input().split())
-        manito[toYou] = toMe
-    
-    cnt = 0
-    
-    while manito:
-        tmp = next(iter(manito))
-        start = tmp
-        end = manito.get(start)
-        manito.pop(start)
-        
-        while end in manito.keys():
-            start = end
-            end = manito.get(start)
-            if end == tmp:
-                cnt += 1
-            manito.pop(start)
-    print(caseNum, cnt)        
+# eval()
+# 수학 수식(문자열 형태) 계산 결과 반환
+res = eval("(3+5)*10")
+print(res)
