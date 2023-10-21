@@ -31,7 +31,7 @@ print(sum(chk))
 
 import sys
 input = sys.stdin.readline
-4
+
 
 n = int(input().rstrip())
 v = [0] * n
