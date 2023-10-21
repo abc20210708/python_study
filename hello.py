@@ -13,6 +13,11 @@ print(nums)
 nums = sorted(nums, reverse=True) # 내림차순
 print(nums)
 
+# key 속성
+tmp = [('a', 40), ('b', 70), ('c', 20)]
+tmp = sorted(tmp, key=lambda x:-x[1])
+print(tmp)
+
 # Counter()
 from collections import Counter
 
