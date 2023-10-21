@@ -36,3 +36,24 @@ print(l)
 from itertools import combinations
 l2 = list(combinations(data, 2))
 print(l2)
+
+# 아스키코드
+print(chr(65)) # A 
+print(ord('a')) # 97
+
+# isalpha() / isdigit() / isalnum()
+
+# isalpha()는 문자열이 모두 문자(영어 혹은 한글)이면
+# Ture를 반환하고 그렇지 않으면 False를 반환
+test1 = 'abcd'
+print(test1.isalpha())
+
+
+# isdigit()는 문자열이 모두 숫자인지
+test2 = '1234'
+print(test2.isdigit())
+
+
+# isalnum()은 문자열이 영어, 한글 혹은 숫자이면 True
+test3 = '0099'
+print(test3.isalnum())
