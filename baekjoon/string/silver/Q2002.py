@@ -1,20 +1,25 @@
 ## 추월 (실버 1)
+#  참고 블로그 https://hbj0209.tistory.com/115
 
 import sys
 input = sys.stdin.readline
 
 n = int(input())
+res = 0
 
-tmp1, tmp2 = [], []
+inn, out = dict(), []
+
+for i in range(n):
+    car = input().rstrip()
+    inn[car] = i
 
 for _ in range(n):
-    tmp1.append(input().rstrip())
+    out.append(input().rstrip())
 
-for _ in range(n):
-    tmp2.append(input().rstrip())
-    
-num1, num2 = 0, 0
+for i in range(n-1):
+    for j in range(i+1, n):
+        if inn[out[i]] > inn[out[j]]:
+            res += 1
+            break
 
-num2 = tmp2.index(tmp1[0])
-
-print(num2 - num1)
+print(res)
