@@ -1,19 +1,31 @@
 ## 진짜 메시지 (실버 5)
-
+#  참고 코드 https://www.acmicpc.net/source/64801600
 import sys
-input = sys.stdin.readline
 
+input = sys.stdin.readline
 n = int(input())
+
 for _ in range(n):
-    s = input().rstrip()
-    tmp = set(s)
-    chk = False
-    for i in tmp:
-        num = s.count(i)
-        if num >= 3:
-            chk = True
-            break
+    
+    alp = [0] * 26
+    tmp = input()
+    chk = True
+
+    for i in range(len(tmp) -1):
+        num = ord(tmp[i]) - ord('A')
+        alp[num] += 1
+
+        if alp[num] == 3 :
+            if tmp[i] != tmp[i+1] :
+                chk = False
+                break
+            else:
+                alp[num] = -1
+
+    
     if chk:
-        print("FAKE")
-    else:
-        print("OK")
+        print('OK')
+    else :
+        print('FAKE')        
+
+
