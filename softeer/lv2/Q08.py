@@ -31,6 +31,19 @@ N초 동안 죽는 바이러스는 없다고 가정한다.
 
 input = sys.stdin.readline
 
+
+### 다른 풀이 
+#   참고 블로그 https://velog.io/@charbs0701/python-%EC%86%8C%ED%94%84%ED%8B%B0%EC%96%B4-%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4
+virus, rate, n = map(int, input().split())
+
+for i in range(n):
+    virus = virus * rate
+    virus = virus % 1000000007
+
+
+print(virus % 1000000007)
+
+
 #k, p, n = map(int, input().split())
 k, p, n = 2, 3, 2
 
