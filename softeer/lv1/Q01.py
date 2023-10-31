@@ -1,11 +1,10 @@
 # A + B
 
 import sys
-
-n = int(sys.stdin.readline())
+input = sys.stdin.readline
+n = int(input())
 
 for i in range(n):
-    a, b = map(int, sys.stdin.readline().split())
-    sum_num = a + b
-    print(F"Case #{i + 1}: {sum_num}")
+    a, b = map(int, input().split())
+    print(f"Case #{i+1}: {a+b}")
 
