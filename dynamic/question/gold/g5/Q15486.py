@@ -12,7 +12,8 @@ for i in range(1, N+1):
     day = i+t-1
     if day <= N:
         dp[day] = max(dp[i-1]+p, dp[day])
-
+        # i일부터는 일을 해야하므로 
+        # i일에 얻을 수 있는 최댓값이 아닌 i-1일까지 얻을 수 있는 최댓값을 구한다
 print(dp[-1])
 
 
