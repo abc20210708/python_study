@@ -17,6 +17,15 @@ price = {"juice":3000, "water":2000, "milk":1500, "apple":7000}
 pr = dict(sorted(price.items()))
 print(pr) # {'apple': 7000, 'juice': 3000, 'milk': 1500, 'water': 2000}
 
+# 최대, 최소 
+print(max(price.values()))
+print(min(price.values()))
+
+# 최댓값을 가지는 key, 최솟값을 가지는 key
+print(max(price, key=price.get))
+print(min(price, key=price.get))
+
+
 # key 값 기준 내림차순
 pr2 = dict(sorted(price.items(), reverse=True))
 print(pr2) # {'water': 2000, 'milk': 1500, 'juice': 3000, 'apple': 7000}
