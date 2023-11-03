@@ -2,7 +2,7 @@
 #  참고 블로그 https://yang-wistory1009.tistory.com/38
 
 fruits = { 'apple': 2, 'banana' : 1, 'pear' : 2, 'melon' : 0, 'plum' : 1}
-
+print(sum(fruits.values())) #6
 # key 기준 정렬
 res = sorted(fruits)
 print(res) # ['apple', 'banana', 'melon', 'pear', 'plum']
@@ -37,6 +37,8 @@ print(lst1) # {'a': 1, 'e': 1, 'b': 2, 'd': 2, 'c': 3}
 
 # value 기준 내림차순
 lst2 = dict(sorted(my_dict.items(), key=lambda x:-x[1]))
+# lst2 = sorted(my_dict, key=lambda x:-my_dict[x])
+# #['c', 'b', 'd', 'a', 'e']
 print(lst2) # {'c': 3, 'b': 2, 'd': 2, 'a': 1, 'e': 1}
 
 
