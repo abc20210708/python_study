@@ -12,7 +12,7 @@
 '''
 
 # 다른 풀이
-# 참고 코드 https://www.acmicpc.net/source/68673596
+# 참고 블로그 https://magentino.tistory.com/231
 import sys
 input = sys.stdin.readline
 
@@ -20,19 +20,24 @@ s = list(input().rstrip())
 length = len(s)
 
 one = s.count('1') // 2
-zero = s.count('0') // 4
+zero = s.count('0') // 2
 
-for x in range(length)[::-1]:
-    if s[x] == '0' and zero:
-        s[x] = ''
+idx = len(s) - 1
+while zero :
+    if s[idx] == '0' :
+        s.pop(idx)
         zero -= 1
+    idx -= 1
 
-for x in range(length):
-    if s[x] == '1' and one:
-        s[x] = ''
+idx = 0
+while one :
+    if s[idx] == '1' :
+        s.pop(idx)
         one -= 1
+    else :
+        idx += 1
 
-print("".join(s))
+print(''.join(s))
 
 
 
