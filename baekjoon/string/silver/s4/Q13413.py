@@ -1,5 +1,5 @@
 ## 오셀로 재배치 (실버 4)
-
+#  참고 블로그 https://jobdong7757.tistory.com/145
 t = int(input())
 arr, res = [], []
 cnt = 0
