@@ -1,5 +1,64 @@
 ## 비밀번호 발음하기 (실버 5) *
 
+## 다른 풀이
+# 1. 모음(a,e,i,o,u) 하나를 반드시 포함
+# 2. 모음이 3개 혹은 자음이 3개 연속으로 오면 안 된다.
+# 3. 같은 글자가 연속적으로 두번 오면 안되나, ee 와 oo는 허용한다.
+
+import sys
+input = sys.stdin.readline
+
+lst = ['a','e','i','o','u']
+
+while 1:
+    s = input().rstrip()
+    chk = False
+    
+    # 종료 
+    if s == "end":
+        break
+    
+    # 1. 모음(a,e,i,o,u) 하나를 반드시 포함
+    for i in lst:
+        if i in s:
+            chk = True
+            break
+    if not chk:
+        print(f"<{s}> is not acceptable.")
+        continue
+    
+    
+    # 2. 모음이 3개 혹은 자음이 3개 연속으로 오면 안 된다.
+    for i in range(len(s)-2):
+        if s[i] in lst and s[i+1] in lst and s[i+2] in lst:
+            chk = False
+            break
+        elif s[i] not in lst and s[i+1] not in lst and s[i+2] not in lst:
+            chk = False
+            break
+    if not chk:
+        print(f"<{s}> is not acceptable.")
+        continue
+    
+    
+    # 3. 같은 글자가 연속적으로 두번 오면 안되나, ee 와 oo는 허용한다.
+    for i in s:
+        if (i*2) in s:
+            if 'ee' in s or 'oo' in s:
+                chk = True
+            else:
+                chk = False
+                break
+    if not chk:
+        print(f"<{s}> is not acceptable.")
+    else:
+        print(f"<{s}> is acceptable.")
+    
+    
+        
+
+
+
 ## 참고 블로그 https://velog.io/@holawan/%EB%B0%B1%EC%A4%80-4659%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EB%B0%9C%EC%9D%8C%ED%95%98%EA%B8%B0-python
 
 # 모음 받아오기
