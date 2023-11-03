@@ -15,7 +15,7 @@ for i, a in enumerate(arr):
     print(f"a : {a}")
     for j, res in enumerate(result):
         print(f"j : {j}")
-        print(f"res : {res}")
+        print(f"cnt : {cnt}")
         # 2. 아직 아무도 안 채워지고, 
         # 앞에 키 큰 사람으로 더 채워야하는 경우: cnt 늘리기
         if res == 0 and cnt < a:
