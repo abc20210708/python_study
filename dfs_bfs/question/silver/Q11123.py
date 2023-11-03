@@ -2,7 +2,7 @@
 # 참고 블로그 https://seokii.tistory.com/m/101
 
 import sys
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(10**7)
 input = sys.stdin.readline
 
 def dfs(x, y):
@@ -12,9 +12,26 @@ def dfs(x, y):
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
-        if 0 <= nx < h and 0 <= ny < w:  # 수정된 부분
+        if 0 <= nx < h and 0 <= ny < w:
             if graph[nx][ny] == '#':
                 dfs(nx, ny)
+
+
+t = int(input())
+
+for _ in range(t):
+    h, w = map(int, input().split())
+    graph = [list(input().rstrip()) for _ in range(h)]
+    cnt = 0
+    for i in range(h):
+        for j in range(w):
+            # 양이 발견된 경우
+            if graph[i][j] == "#":
+                dfs(i, j)
+                cnt += 1
+    print(cnt)          
+
+
 
 '''
 def dfs(x, y):
@@ -31,18 +48,3 @@ def dfs(x, y):
         return True
     return False
 '''
-
-t = int(input())
-
-for _ in range(t):
-    h, w = map(int, input().split())
-    graph = [list(input().rstrip()) for _ in range(h)]
-    cnt = 0
-    for i in range(h):
-        for j in range(w):
-            # 양이 발견된 경우
-            if graph[i][j] == "#":
-                if dfs(i, j):
-                    cnt += 1
-    print(cnt)       
-    
