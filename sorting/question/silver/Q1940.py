@@ -1,5 +1,5 @@
 ## 주몽 (실버 4)
-
+#  참고 블로그 https://jminie.tistory.com/108
 import sys
 input = sys.stdin.readline
 
@@ -8,19 +8,22 @@ target = int(input())
 
 nums = list(map(int, input().split()))
 
-i, j, total, cnt = 0, 0, 0, 0
+nums.sort()
+# i - 왼, j - 오른
+i, j = 0, len(nums) -1
+cnt = 0
 
-while 1:
-    if total >= target:
-        total -= nums[i]
-        i -= 1
-    elif j == n:
-        break
-    else:
-        total += nums[j]
-        j += 1
+
+while i < j:
+    total = nums[i] + nums[j]
     
-    if total == target:
+    if total < target:
+        i += 1
+    elif total > target:
+        j -= 1
+    else:
         cnt += 1
+        i += 1
+        j -= 1
         
 print(cnt)
