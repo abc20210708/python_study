@@ -4,20 +4,19 @@
 a, b = map(int, input().split())
 tmp = 1
 
-while b != a:
-    tmp += 1
-    num = b
-    
-    if b % 10 == 1:
-        b //= 10
-    elif b % 2 == 0:
-        b //= 2
-    
-    if num == b:
-        print(-1)
-        break
+cnt = 1
+while a < b: #a가 더 크면 종료
+    if b % 2 == 0:
+        b /= 2
+    else:
+        b -= 1
+        b /= 10
+    cnt += 1
+
+if a==b:
+    print(cnt)
 else:
-    print(tmp)
+    print(-1)
     
 
 ## BFS
