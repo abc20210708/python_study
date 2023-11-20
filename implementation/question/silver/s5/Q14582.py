@@ -1,5 +1,6 @@
 ## 오늘도 졌다 (실버 5)
 #  참고 블로그 https://woojinhong.tistory.com/m/155
+#  https://ddo-code.tistory.com/54
 
 w = list(map(int, input().split()))
 s = list(map(int, input().split()))
