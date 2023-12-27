@@ -23,3 +23,30 @@ for i in range(n - 1):
         result += 1
 
 print(result)
+
+
+## 다른 풀이
+#  참고 블로그 https://alpyrithm.tistory.com/127
+
+
+n = int(input())
+words = [[0 for _ in range(26)] for _ in range(n)]
+
+for i in range(n):
+    string = input().rstrip()
+    for s in string:
+        words[i][ord(s)-ord('A')] += 1
+
+res = 0
+
+for word in words[1:]:
+    plus, minus = 0, 0
+    for i in range(26):
+        if word[i] > words[0][i]:
+            plus += (word[i]-words[0][i])
+        else:
+            minus += (words[0][i]-word[i])
+    if plus < 2 and minus < 2:
+        res += 1
+        
+print(res)
