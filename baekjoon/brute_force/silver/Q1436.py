@@ -11,3 +11,24 @@ while True: #무한반복
     theEndNumber += 1 #종말번호를 계속해서 1씩 증가
 
 print(theEndNumber) #입력한 n번째의 종말번호 출력
+
+
+## 다른 풀이
+import sys
+
+N = int(sys.stdin.readline())
+
+title = 666
+cnt = 0
+while cnt != N:
+    tmp = title
+    while tmp > 0:
+        if tmp % 1000 == 666:
+            cnt += 1
+            break
+        else:
+            tmp = tmp // 10
+    title += 1
+
+title -= 1
+print(title)
