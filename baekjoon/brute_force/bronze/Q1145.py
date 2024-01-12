@@ -12,3 +12,18 @@ while True:
         break
     min += 1   # 3개를 찾을때까지 값을 올려준다.
 print(min)
+
+
+## 다른 풀이
+#  참고 블로그 https://my-coding-notes.tistory.com/539
+nums = list(map(int,input().split()))
+n = 1
+while True:
+    cnt = 0
+    for i in nums:
+        if n%i==0:
+            cnt+=1
+    if cnt>=3:
+        print(n)
+        break
+    n+=1
