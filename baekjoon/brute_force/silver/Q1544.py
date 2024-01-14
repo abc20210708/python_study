@@ -1,4 +1,29 @@
 ## 사이클 단어 (실버 4)
+
+## 다른 풀이
+#  참고 블로그 https://hueco.tistory.com/259
+
+from collections import deque
+
+n = int(input())
+chk = set()
+chk.add(input())
+for _ in range(n-1):
+    word = deque(input())
+    for _ in range(len(word)):
+        tmp = ''.join(word)
+        if tmp in chk:
+            break
+        word.rotate()
+    else:
+        chk.add(''.join(word))
+print(len(chk))
+
+
+
+
+
+
 #  참고 블로그 https://velog.io/@xenrose/Python-%EB%B0%B1%EC%A4%80-1544%EB%B2%88-%EC%82%AC%EC%9D%B4%ED%81%B4-%EB%8B%A8%EC%96%B4
 
 from collections import deque
@@ -24,3 +49,4 @@ for i in range(n):
             l[j] = rotate_word(l[i], l[j])
 
 print(len(set(l)))
+
