@@ -30,3 +30,30 @@ for i in range(n):
             cnt += 1
 
 print(cnt)
+
+## 다른 풀이
+#  참고 블로그 https://xkdls19.tistory.com/51
+
+N = int(input())
+table = {}
+for i in range(N):
+    string = input()
+    capital = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    temp,s = {},''
+    
+    for word in string : # 들어온 단어를 매핑
+        if word not in temp :
+            temp[word] = capital[0]
+            capital.pop(0)
+        s += str(temp[word])
+ 
+    if s not in table : # 매핑을 tabel에 추가
+        table[s] = 1
+    else :
+        table[s] += 1
+        
+similar = list(table.values())
+answer = 0
+for i in similar :
+    answer += (i*(i-1))/2 # nC2
+print(int(answer))
