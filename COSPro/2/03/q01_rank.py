@@ -1,5 +1,7 @@
 ## 문제1) 학생의 등수 구하기 
 
+## 문제1) 학생의 등수 구하기 
+
 def func_a(scores, score):
     rank = 1
     
@@ -20,6 +22,27 @@ def solution(scores, n):
     func_b(scores)
     answer = func_a(scores, score)
     return answer
+
+
+scores = [20, 60, 98, 59]
+n = 3
+res = solution(scores, n)
+
+print("solution 함수의 반환 값은", res, "입니다.")
+
+
+## 함수 하나로 만들어보기
+
+def solution(scores, n):
+    tmp = scores[n]
+    scores.sort(reverse=True)
+    
+    rank = 1
+    for s in scores:
+        if s == tmp:
+            return rank
+        rank += 1
+    return 0
 
 
 scores = [20, 60, 98, 59]
