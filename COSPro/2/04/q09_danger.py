@@ -1,5 +1,5 @@
 ##  문제9) 위험한 지역 몇개인지 알려주기
-
+#   참고 블로그 https://velog.io/@brown_eyed87/220925TIL-COS-PRO-2%EA%B8%89-Python-4%EC%B0%A8-%EB%AC%B8%EC%A0%9C9-%EC%9C%84%ED%97%98%ED%95%9C-%EC%A7%80%EC%97%AD-%EB%AA%87%EA%B0%9C%EC%9D%B8%EC%A7%80-%EC%95%8C%EB%A0%A4%EC%A3%BC%EA%B8%B0
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
 def chk(i, j):
