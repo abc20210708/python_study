@@ -20,4 +20,7 @@ def solution(shirt_size):
 	return answer
 
 
-solution(["XS", "S", "L", "L", "XL", "S"])
+shirt_size = ["XS", "S", "L", "L", "XL", "S"]
+ret = solution(shirt_size);
+
+print("solution 함수의 반환 값은", ret, "입니다.")
