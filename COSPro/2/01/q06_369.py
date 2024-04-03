@@ -4,18 +4,16 @@
 def solution(number):
     cnt = 0
     
-    for i in range(1, number +1):
+    for i in range(1, number+1):
         current = i
-        tmp = cnt
         while current != 0:
-            if str(current)[-1] in ['3', '6', '9']: # or current%10 in [3, 6, 9]
+            if str(current)[-1] in ['3', '6', '9']:
                 cnt += 1
-                print("pair", end='')
             current = current // 10
-        if tmp == cnt:
-            print(i, end='')
-        print(" ", end='')
-    print("")
     return cnt
 
 
+number = 40
+ret = solution(number)
+
+print("solution 함수의 반환 값은", ret, "입니다.")
