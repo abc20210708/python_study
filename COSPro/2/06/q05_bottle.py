@@ -11,9 +11,9 @@ def solution(money, price, n):
     return answer
 
 
-money2 = 8
+money2 = 6
 price2 = 2
-n2 = 4
+n2 = 2
 ret2 = solution(money2, price2, n2)
 
 print("solution 함수의 반환 값은", ret2, "입니다.")
