@@ -1,4 +1,8 @@
 ## 시험 감독 (브론즈 2)
+#  참고 블로그 https://khsung0.tistory.com/44
+
+import sys
+input = sys.stdin.readline
 
 n = int(input())
 lst = list(map(int, input().split()))
