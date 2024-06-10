@@ -1,4 +1,4 @@
-# 일곱 난쟁이
+# 일곱 난쟁이 - (브론즈 1)
 
 ## del과 remove 참고 블로그 https://ooyoung.tistory.com/49
 
