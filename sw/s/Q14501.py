@@ -1,21 +1,18 @@
 ## 퇴사 (실버 3)
 #  참고 블로그 https://hardenkim.tistory.com/43
 
-def solution():
-    n = int(input())
-    lst = [list(map(int, input().split())) for _ in range(n)]
-    dp = [0] * n
+n = int(input())
+lst = [list(map(int, input().split())) for _ in range(n)]
+dp = [0] * n # n일 동안 선택할 수 있는 최대 금액
     
-    for i in range(n):
-        if i + lst[i][0] <= n : # 퇴사 전에 가능한 상담일 경우
-            dp[i] = lst[i][1] # 당일 상담의 금액을 저장
-            for j in range(i):
-                if j + lst[j][0] <= i : # 이전의 상담이 오늘 전에 가능할 경우
-                    dp[i] = max(dp[i], dp[j]+lst[i][1])
-                    # (이전의 상담 금액 + 당일의 상담 금액)의 최댓값 선택
-    return max(dp)
-
-print(solution())
+for i in range(n):
+    if i + lst[i][0] <= n: # 퇴사 전에 가능한 상담일 경우
+        dp[i] = lst[i][1] # 당일 상담의 금액을 저장
+        for j in range(i):
+            if j + lst[j][0] <= i: # 이전의 상담이 오늘 전에 가능할 경우
+                dp[i] = max(dp[i], dp[j]+lst[i][1])
+                # (이전의 상담 금액 + 당일 상담 금액)의 최댓값 선택
+print(max(dp))
 
 
 
