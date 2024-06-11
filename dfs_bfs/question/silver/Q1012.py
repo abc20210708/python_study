@@ -5,7 +5,7 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**7)
 
 t = int(input())
-res = 0
+
 
 def dfs(x, y):
     # 종료조건 1
@@ -25,7 +25,7 @@ def dfs(x, y):
 
 for _ in range(t):    
     m, n, k = map(int, input().split())
-    
+    res = 0
     graph = [[0]*n for _ in range(m)]
 
     for _ in range(k):
@@ -38,4 +38,4 @@ for _ in range(t):
                 res += 1
                 
     print(res)
-    res = 0
+    
