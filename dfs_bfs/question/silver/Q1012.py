@@ -1,41 +1,41 @@
-## 유기농 배추 (실버 2) *
-# 참고 블로그 https://hongcoding.tistory.com/72
-from collections import deque
+## 유기농 배추 (실버 2) 
+#  참고 블로그 https://moonsungo.tistory.com/entry/%EC%9D%8C%EB%A3%8C%EC%88%98-%EC%96%BC%EB%A0%A4%EB%A8%B9%EA%B8%B0%EC%99%80-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94%EB%B0%B1%EC%A4%80-1012-python
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**7)
 
-dx = [-1 ,1 ,0, 0]  # 상하좌우로 이동하기 위한 x좌표 변화량
-dy = [0, 0, -1, 1]  # 상하좌우로 이동하기 위한 y좌표 변화량
+t = int(input())
+res = 0
 
-t = int(input())  # 테스트 케이스의 개수 입력
+def dfs(x, y):
+    # 종료조건 1
+    if x < 0 or x >= m or y < 0 or y >=n:
+        return False
+    
+    # 성공조건
+    if graph[x][y] == 1:
+        graph[x][y] = 0
+        dfs(x, y-1)
+        dfs(x, y+1)
+        dfs(x-1, y)
+        dfs(x+1, y)
+        return True
+    
+    return False
 
-def bfs(graph, a, b):
-    queue = deque()
-    queue.append((a, b))
-    graph[a][b] = 0  # 현재 위치를 방문했음을 표시하기 위해 0으로 변경
+for _ in range(t):    
+    m, n, k = map(int, input().split())
+    
+    graph = [[0]*n for _ in range(m)]
 
-    while queue:
-        x, y = queue.popleft()
-        for i in range(4):  # 상하좌우로 이동
-            nx = x + dx[i]
-            ny = y + dy[i]
-            if nx < 0 or nx >=n or ny < 0 or ny >= m:  # 그래프 범위를 벗어나는 경우 무시
-                continue
-            if graph[nx][ny] == 1:  # 인접한 배추가 있는 경우
-                graph[nx][ny] = 0  # 인접한 배추를 방문했음을 표시하기 위해 0으로 변경
-                queue.append((nx, ny))  # 인접한 배추의 위치를 큐에 추가
-    return
+    for _ in range(k):
+        a, b = map(int, input().split())
+        graph[a][b] = 1
 
-for i in range(t):
-    cnt = 0
-    n, m, k = map(int,input().split())  # 배추밭의 가로, 세로 길이와 배추의 개수 입력
-    graph = [[0] * m for _ in range(n)]  # 배추밭 초기화
-
-    for j in range(k):
-        x, y = map(int, input().split())  # 배추의 위치 입력
-        graph[x][y] = 1  # 배추가 있는 위치를 1로 표시
-
-    for a in range(n):
-        for b in range(m):
-            if graph[a][b] == 1:  # 아직 방문하지 않은 배추가 있는 경우
-                bfs(graph, a, b)  # 해당 배추와 연결된 모든 배추 방문
-                cnt += 1  # 배추흰지렁이가 필요한 지역 개수 증가
-    print(cnt) 
+    for i in range(m):
+        for j in range(n):
+            if dfs(i, j):
+                res += 1
+                
+    print(res)
+    res = 0
