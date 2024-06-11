@@ -33,3 +33,25 @@ res = []  # 결과를 저장할 리스트
 visited = [False] * n  # 방문 표시 리스트 초기화
 team(0, 0)  # 팀 구성 함수 호출
 print(min(res))  # 결과 리스트 중 가장 작은 값 출력
+
+
+# 참고 블로그 https://ryu-e.tistory.com/m/115
+from itertools import combinations
+
+n = int(input())
+graph = [list(map(int, input().split())) for _ in range(n)]
+ans = int(1e9)
+
+for comb in combinations(range(0, n), n//2):
+    start = list(comb)
+    link = [i for i in range(0, n) if i not in start]
+    
+    numS, numL = 0, 0
+    
+    for i in range(0, len(start)-1):
+        for j in range(i+1, len(start)):
+            numS += graph[start[i]][start[j]] + graph[start[j]][start[i]]
+            numL += graph[link[i]][link[j]] + graph[link[j]][link[i]]
+    ans = min(ans, abs(numS - numL))
+
+print(ans)
