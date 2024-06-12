@@ -3,19 +3,17 @@
 
 t = int(input())
 
-for case in range(1, t+1):
+for tc in range(t):
     n, k = map(int, input().split())
-    hexa_str = input()
-    hexa_str += hexa_str
+    length = n // 4
+    target = input().rstrip()
+    target += target
     
     nums = set()
-    num_len = n // 4 
     
-    for i in range(0, n):
-        hexa_num = hexa_str[i:i+num_len]
-        tmp = int(hexa_num, 16)
-        nums.add(tmp)
+    for i in range(n):
+        tmp = target[i:i+length]
+        nums.add(int(tmp, 16))
         
-    ans = sorted(list(nums), reverse=True)[k-1]
-    
-    print(f"#{case} {ans}")
+    nums = sorted(list(nums), reverse=True)[k-1]
+    print(f"#{tc+1} {nums}")

@@ -12,7 +12,7 @@ def dfs(idx, dir):
         wheel[idx].insert(0, wheel[idx].pop(-1))
         
         # 0~3번 톱니이고, 방문한 적 없다면
-        if 0 <= idx +1 < 4 and chk[idx+1] == 0:
+        if 0 < idx +1 < 4 and chk[idx+1] == 0:
             # 현재 톱니의 3번(이동 전 2번)과 오른쪽 톱니의 6번 확인
             if wheel[idx][3] != wheel[idx+1][6]:
                 dfs(idx+1, -1)
@@ -25,7 +25,7 @@ def dfs(idx, dir):
         wheel[idx].append(wheel[idx].pop(0))
         
         
-        if 0 <= idx +1 < 4 and chk[idx+1] == 0:
+        if 0 < idx +1 < 4 and chk[idx+1] == 0:
             if wheel[idx][1] != wheel[idx+1][6]:
                 dfs(idx+1, 1)
         if 0 <= idx -1 <4 and chk[idx-1] == 0:
